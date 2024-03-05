@@ -1,0 +1,6 @@
+.wrapper {
+  width: 100%;
+  max-width: 144rem;
+  outline: 1px solid tomato;
+  margin: 0 auto;
+}
