@@ -1,8 +1,22 @@
-/* .main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6rem;
-  min-height: 90vh;
-} */
+.sectionGallary {
+  padding: 4rem 0;
+}
+.visuallyHidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 230px);
+  gap: 2rem;
+}
+
+.Card {
+  width: 23rem;
+  height: 15rem;
+  border: 1px solid #ccc;
+}
