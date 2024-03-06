@@ -10,7 +10,7 @@ export default function Home() {
       <ul>
         {pages.map((page) => (
           <li key={page.id} style={{ fontSize: "2rem", marginBottom: "1rem" }}>
-            <Link key={page.id} href={page.link}>
+            <Link key={page.id} href={page.link} style={{ color: "blue" }}>
               {page.title}
             </Link>
           </li>

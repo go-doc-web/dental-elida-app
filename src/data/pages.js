@@ -14,7 +14,7 @@ const pages = [
   {
     id: "3",
     title: "Periodontist",
-    link: "Periodontist",
+    link: "periodontist",
     src: "../../public/img/hero/img_1.jpg",
   },
   {
