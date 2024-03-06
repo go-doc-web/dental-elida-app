@@ -1,11 +1,12 @@
-import { Inter } from "next/font/google";
+import { Roboto_Condensed } from "next/font/google";
 import "./globals.css";
 
 import Wrapper from "@/componets/Wrapper/Wrapper";
-import Header from "@/componets/Header/Header";
-import Footer from "@/componets/Footer/Footer";
+import Header from "@/componets/Header";
+import Footer from "@/componets/Footer/";
+import Container from "@/componets/Container";
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto_Condensed({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Dental Elida Groupe",
@@ -15,10 +16,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={roboto.className}>
         <Wrapper>
           <Header />
-          {children}
+          <main>
+            <Container>{children}</Container>
+          </main>
+
           <Footer />
         </Wrapper>
       </body>
