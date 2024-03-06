@@ -56,13 +56,13 @@ const pages = [
   {
     id: "10",
     title: "Implants",
-    link: "Implants",
+    link: "implants",
     src: "../../public/img/hero/img_1.jpg",
   },
   {
     id: "11",
-    title: "reviews",
-    link: "Implants",
+    title: "Reviews",
+    link: "reviews",
     src: "../../public/img/hero/img_1.jpg",
   },
   {
