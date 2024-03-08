@@ -83,7 +83,7 @@ export const mainMenu = [
   {
     id: '2',
     title: 'Dental Services',
-    link: '/dental-services',
+    link: '#',
     whisChildrens: true,
     childrens: pages,
   },

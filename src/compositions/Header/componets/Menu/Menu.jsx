@@ -7,11 +7,13 @@ function Menu({ menu }) {
   return (
     <nav>
       <ul className={css.navList}>
-        {menu.map(({ id, title, link }) => (
-          <li key={id} className={css.linkItem}>
-            <Link href={link}>{title}</Link>
-          </li>
-        ))}
+        {menu.map(({ id, title, link }) => {
+          return (
+            <li key={id} className={css.linkItem}>
+              <Link href={link}>{title}</Link>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );
