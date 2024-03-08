@@ -1,5 +1,5 @@
 .wrapper {
-  min-width: 23.5rem;
+  max-width: 33.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,9 +13,6 @@
   gap: 0.3rem;
 }
 
-.wrapperAddress {
-}
-
 .linkTel,
 .linkAddress {
   font-size: 1.4rem;
@@ -24,4 +21,16 @@
 
   letter-spacing: 0.56px;
   color: var(--text-color-white);
+}
+
+@media screen and (max-width: 374px) {
+  .linkTel,
+  .linkAddress {
+    font-size: 1rem;
+
+    font-weight: 400;
+
+    letter-spacing: 0.56px;
+    color: var(--text-color-white);
+  }
 }

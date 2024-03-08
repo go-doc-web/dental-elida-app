@@ -4,8 +4,8 @@ import css from './AddressPanel.module.css';
 
 import CallIcon from '@/componets/Icon/CallIcon';
 import Location from '@/componets/Icon/LocationIcon';
-import { constans } from '@/constans/const.header';
-import { removeDashInTelNumber } from '@/constans/const.header';
+import { constans } from '@/constants/const.header';
+import removeDashInTelNumber from '@/helpers';
 
 const AddressPanel = () => {
   return (
