@@ -1,0 +1,24 @@
+.navList {
+  display: none;
+}
+
+.linkItem {
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0, 064rem;
+  color: var(--text-color-white, #ffffff);
+}
+
+@media screen and (min-width: 768px) {
+  .navList {
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+  }
+}
+@media screen and (min-width: 1140px) {
+}
+@media screen and (min-width: 1440px) {
+}
+@media screen and (min-width: 1920px) {
+}

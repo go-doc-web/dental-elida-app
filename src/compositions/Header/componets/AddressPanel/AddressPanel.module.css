@@ -1,0 +1,27 @@
+.wrapper {
+  min-width: 23.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.2rem;
+}
+
+.wrapperTel,
+.wrapperAddress {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.wrapperAddress {
+}
+
+.linkTel,
+.linkAddress {
+  font-size: 1.4rem;
+
+  font-weight: 400;
+
+  letter-spacing: 0.56px;
+  color: var(--text-color-white);
+}

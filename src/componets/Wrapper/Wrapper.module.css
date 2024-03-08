@@ -1,9 +1,0 @@
-.wrapper {
-  /* min-height: 100%; */
-  width: 100%;
-  max-width: 114rem;
-  display: flex;
-  flex-direction: column;
-  outline: 1px solid tomato;
-  margin: 0 auto;
-}

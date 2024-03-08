@@ -1,0 +1,53 @@
+:root {
+  /*   Colors */
+
+  --header-color-bg: #1386c7;
+  --footer-color-bg: #1386c7;
+  --text-color-white: #ffffff;
+  --text-color-primery: rgba(0, 0, 0, 0.7);
+  --text-color-accent: #1386c7;
+
+  accent-color: #f8f387;
+
+  /* Container size */
+
+  --sm: 33.4rem; /* 375 */
+  --md: 68.7rem; /* 768 */
+  --lg: 98rem; /* 1140px */
+  --xl: 98rem;
+  --xxl: 128rem;
+
+  --pad-sm: 1rem * 2;
+  --pad-md: 1.5rem * 2;
+  --pad-xl: 2rem * 2;
+
+  /* Container size  + paddings*/
+  --cont-sm: calc(var(--sm) + var(--pad-md));
+  --cont-md: calc(var(--md) + var(--pad-md));
+  --cont-lg: calc(var(--lg) + var(--pad-md));
+  --cont-xl: calc(var(--xl) + var(--pad-md));
+  --cont-xxl: calc(var(--xxl) + var(--pad-xl));
+}
+
+/* --md: calc(68.7rem + var(--ps-cont)); */
+
+/* Template */
+
+/* @media screen and (min-width: 375px) {
+  
+  
+}
+
+@media screen and (min-width: 768px) {
+  
+}
+@media screen and (min-width: 1140px) {
+  
+  
+}
+@media screen and (min-width: 1440px) {
+  
+}
+@media screen and (min-width: 1920px) {
+  
+}  */

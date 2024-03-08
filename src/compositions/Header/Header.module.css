@@ -1,0 +1,44 @@
+.header {
+  padding: 1.2rem 0;
+  background-color: var(--header-color-bg);
+  border-radius: 0px 0px 20px 20px;
+}
+
+.wrapperMenu {
+  display: flex;
+  align-items: center;
+
+  gap: 4rem;
+}
+
+.hamburger {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 375px) {
+  .header {
+    padding: 1.2rem 0;
+  }
+  .wrapperMenu {
+    justify-content: flex-start;
+    gap: 9.4rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .wrapperMenu {
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .wrapperMenu {
+    justify-content: space-between;
+  }
+}
+@media screen and (min-width: 1140px) {
+}
+@media screen and (min-width: 1440px) {
+}
+@media screen and (min-width: 1920px) {
+}
