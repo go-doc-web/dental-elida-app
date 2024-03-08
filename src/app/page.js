@@ -6,7 +6,6 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <>
-      <h1>Home</h1>
       <section className={css.sectionGallary}>
         {/* сделать компонент */}
         <h2 className={`${css.sectionTitle} ${css.visuallyHidden}`}>Our services</h2>

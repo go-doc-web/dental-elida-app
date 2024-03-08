@@ -1,8 +1,8 @@
 .header {
   outline: 1px solid tomato;
-  padding: 1.2rem 0rem;
+  padding: 1.2rem 0rem 1.3rem;
   background-color: var(--header-color-bg);
-  border-radius: 0px 0px 2rem 2rem;
+  border-radius: 0 0 2rem 2rem;
 }
 
 .wrapperMenu {
@@ -27,7 +27,6 @@
 
 @media screen and (min-width: 375px) {
   .header {
-    border-radius: 0px 0px 30px 30px;
   }
   .wrapperMenu {
     gap: 6.6rem;

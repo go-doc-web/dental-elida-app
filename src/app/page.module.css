@@ -10,15 +10,8 @@
 }
 
 .wrapper {
-  display: grid;
-  grid-template-columns: repeat(4, 230px);
-  /* display: flex;
-  flex-wrap: wrap; */
-  gap: 2rem;
 }
 
 .Card {
-  width: 23rem;
-  /* height: 15rem; */
   border: 1px solid #ccc;
 }
