@@ -1,6 +1,6 @@
 :root {
   /*   Colors */
-
+  --body-bg: #e4f3fc;
   --header-color-bg: #1386c7;
   --footer-color-bg: #1386c7;
   --text-color-white: #ffffff;
@@ -11,22 +11,22 @@
 
   /* Container size */
 
-  --sm: 33.4rem; /* 375 */
-  --md: 68.7rem; /* 768 */
-  --lg: 98rem; /* 1140px */
+  --sm: 68.7rem; /* 375 */
+  --md: 98rem; /* 768 */
+  /* --lg: 98rem; 
   --xl: 98rem;
-  --xxl: 128rem;
+  --xxl: 128rem; */
 
-  --pad-sm: 1rem * 2;
-  --pad-md: 1.5rem * 2;
-  --pad-xl: 2rem * 2;
+  --pad-sm: 2rem;
+  --pad-md: 3rem;
+  /* --pad-xl: 2rem * 2; */
 
   /* Container size  + paddings*/
-  --cont-sm: calc(var(--sm) + var(--pad-md));
-  --cont-md: calc(var(--md) + var(--pad-md));
+  --cont-sm: calc(var(--sm) + var(--pad-sm) * 2);
+  --cont-md: calc(var(--md) + var(--pad-md) * 2);
   --cont-lg: calc(var(--lg) + var(--pad-md));
   --cont-xl: calc(var(--xl) + var(--pad-md));
-  --cont-xxl: calc(var(--xxl) + var(--pad-xl));
+  --cont-xxl: calc(var(--xxl) + var(--pad-md));
 }
 
 /* --md: calc(68.7rem + var(--ps-cont)); */

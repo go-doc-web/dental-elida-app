@@ -1,5 +1,4 @@
 .header {
-  /* outline: 1px solid tomato; */
   padding: 1.2rem 0rem 1.3rem;
   background-color: var(--header-color-bg);
   border-radius: 0 0 2rem 2rem;
@@ -8,45 +7,11 @@
 .wrapperMenu {
   display: flex;
   align-items: center;
-
-  gap: 4rem;
+  justify-content: space-between;
 }
-
-.hamburger {
-  cursor: pointer;
-}
-
-@media screen and (max-width: 374px) {
-  .header {
-  }
-  .wrapperMenu {
-    justify-content: flex-start;
-    gap: 6.6rem;
-  }
-}
-
-@media screen and (min-width: 375px) {
-  .header {
-  }
-  .wrapperMenu {
-    gap: 6.6rem;
-    justify-content: space-between;
-  }
-}
-
-/* @media (max-width: 767px) {
-  .wrapperMenu {
-    justify-content: space-between;
-  }
-  .wrapperMenu {
-  }
-} */
 
 @media screen and (min-width: 768px) {
-}
-@media screen and (min-width: 1140px) {
-}
-@media screen and (min-width: 1440px) {
-}
-@media screen and (min-width: 1920px) {
+  .header {
+    padding: 2rem 0rem;
+  }
 }

@@ -1,5 +1,6 @@
 @import url('./normalize.css');
 @import url('./variables.css');
+@import url('./container.css');
 
 * {
   box-sizing: border-box;
@@ -11,24 +12,15 @@ html {
   font-size: 62.5%;
 }
 
-@media screen and (min-width: 2560px) {
-  html {
-    font-size: 72%;
-  }
-}
-
-html,
-body {
-  /* height: 100%; */
-  /* width: 100%;
+.body {
+  /* igor */
+  width: 100%;
   max-width: 100vw;
-  overflow-x: hidden; */
-}
-
-body {
+  overflow-x: hidden;
+  /* /igor */
   color: var(--text-color-primery, black);
   line-height: normal;
-  background: #e4f3fc;
+  background: var(--body-bg, #e4f3fc);
 }
 
 a {
@@ -45,11 +37,3 @@ p {
   margin: 0;
   padding: 0;
 }
-main {
-}
-
-/* @media screen and (min-width: 2560px) {
-  html {
-    font-size: 90%;
-  }
-} */

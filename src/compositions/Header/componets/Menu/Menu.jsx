@@ -1,20 +1,26 @@
 import React from 'react';
 import Link from 'next/link';
 
+import Hamburger from '@/componets/Icon/Hamburger';
+import useViewportWidth from '@/hooks/useViewportWidth';
 import css from './Menu.module.css';
 
 function Menu({ menu }) {
+  const { isEqualWidth } = useViewportWidth({ expect: 768 });
   return (
-    <nav>
-      <ul className={css.navList}>
-        {menu.map(({ id, title, link }) => {
-          return (
-            <li key={id} className={css.linkItem}>
-              <Link href={link}>{title}</Link>
-            </li>
-          );
-        })}
-      </ul>
+    <nav className={css.nav}>
+      {isEqualWidth && <Hamburger color={'white'} />}
+      {!isEqualWidth && (
+        <ul className={css.navList}>
+          {menu.map(({ id, title, link }) => {
+            return (
+              <li key={id} className={css.linkItem}>
+                <Link href={link}>{title}</Link>
+              </li>
+            );
+          })}
+        </ul>
+      )}
     </nav>
   );
 }

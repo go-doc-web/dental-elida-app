@@ -20,10 +20,8 @@
 
 .card {
   width: 100%;
-  flex-basis: calc((100% - 20px) / 2);
-
-  border-radius: 12px;
   overflow: hidden;
+  border-radius: 12px;
 }
 
 .image {
@@ -51,6 +49,12 @@
   font-weight: 400;
 
   letter-spacing: 0.139px;
+}
+
+@media screen and (min-width: 353px) {
+  .card {
+    flex-basis: calc((100% - 20px) / 2);
+  }
 }
 
 @media screen and (min-width: 768px) {
