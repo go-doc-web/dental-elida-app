@@ -2,13 +2,15 @@ import Image from 'next/image';
 import css from './page.module.css';
 import pages from '@/data/pages';
 import Link from 'next/link';
+import Banner from '@/compositions/Banner';
 
 export default function Home() {
   return (
     <>
-      <div className={css.root}>
+      <Banner />
+
+      {/* <div className={css.root}>
         <section className={css.sectionGallary}>
-          {/* сделать компонент */}
           <h2 className={`${css.sectionTitle} ${css.visuallyHidden}`}>Our services</h2>
           <ul className={css.wrapper}>
             {pages.map(({ id, title, link, src }) => (
@@ -26,7 +28,7 @@ export default function Home() {
             ))}
           </ul>
         </section>
-      </div>
+      </div> */}
     </>
   );
 }
