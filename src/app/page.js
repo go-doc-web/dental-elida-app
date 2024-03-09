@@ -6,23 +6,27 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <>
-      <section className={css.sectionGallary}>
-        {/* сделать компонент */}
-        <h2 className={`${css.sectionTitle} ${css.visuallyHidden}`}>Our services</h2>
-        <ul className={css.wrapper}>
-          {pages.map(({ id, title, link, src }) => (
-            <li key={id}>
-              <Link href={link}>
-                <div className={css.Card}>
-                  <Image className={css.image} src={src} alt={title} width={230} height={164} />
+      <div className={css.root}>
+        <section className={css.sectionGallary}>
+          {/* сделать компонент */}
+          <h2 className={`${css.sectionTitle} ${css.visuallyHidden}`}>Our services</h2>
+          <ul className={css.wrapper}>
+            {pages.map(({ id, title, link, src }) => (
+              <li className={css.card} key={id}>
+                <Link href={link}>
+                  <div>
+                    <Image className={css.image} src={src} alt={title} width={160} height={114} />
 
-                  <h3 className={css.cardTitle}>{title}</h3>
-                </div>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
+                    <div className={css.cardBody}>
+                      <h3 className={css.cardTitle}>{title}</h3>
+                    </div>
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      </div>
     </>
   );
 }
