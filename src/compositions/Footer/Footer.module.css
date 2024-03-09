@@ -5,11 +5,10 @@
 }
 
 .wrapper {
-  padding-top: 3.2rem;
+  /* padding-top: 3.2rem; */
   text-align: center;
   border-radius: 30px;
   border: 2px solid #fff;
-  margin-bottom: 0.8rem;
 }
 
 .tel {
@@ -21,6 +20,7 @@
   font-weight: 700;
   line-height: normal;
   letter-spacing: -2.4px;
+  margin-bottom: 0.8rem;
 }
 
 .address {
