@@ -28,6 +28,7 @@ body {
 body {
   color: var(--text-color-primery, black);
   line-height: normal;
+  background: #e4f3fc;
 }
 
 a {
@@ -45,7 +46,6 @@ p {
   padding: 0;
 }
 main {
-  background: #e4f3fc;
 }
 
 /* @media screen and (min-width: 2560px) {

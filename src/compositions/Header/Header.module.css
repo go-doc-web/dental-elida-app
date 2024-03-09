@@ -1,5 +1,5 @@
 .header {
-  outline: 1px solid tomato;
+  /* outline: 1px solid tomato; */
   padding: 1.2rem 0rem 1.3rem;
   background-color: var(--header-color-bg);
   border-radius: 0 0 2rem 2rem;
