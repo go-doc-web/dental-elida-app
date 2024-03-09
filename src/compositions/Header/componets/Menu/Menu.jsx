@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import Link from 'next/link';
 
@@ -9,7 +10,11 @@ function Menu({ menu }) {
   const { isEqualWidth } = useViewportWidth({ expect: 768 });
   return (
     <nav className={css.nav}>
-      {isEqualWidth && <Hamburger color={'white'} />}
+      {isEqualWidth && (
+        <button onClick={() => console.log('Hello')} type="button">
+          <Hamburger color={'white'} />
+        </button>
+      )}
       {!isEqualWidth && (
         <ul className={css.navList}>
           {menu.map(({ id, title, link }) => {

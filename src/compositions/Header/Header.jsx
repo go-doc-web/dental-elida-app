@@ -1,13 +1,10 @@
-'use client';
-import clsx from 'clsx';
-
 import Menu from './componets/Menu';
 import AddressPanel from './componets/AddressPanel';
 
 import * as menu from '@/config/navMenu';
 import css from './Header.module.css';
 
-const cn = clsx;
+// const cn = clsx;
 
 const Header = () => {
   return (
@@ -19,8 +16,6 @@ const Header = () => {
             <AddressPanel />
           </div>
         </div>
-
-        {/*  сделать компонентом */}
       </header>
     </>
   );
