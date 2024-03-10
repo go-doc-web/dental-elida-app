@@ -59,16 +59,17 @@ export const pages = [
     link: '/implants',
     src: '/img/hero/img_1.jpg',
   },
+
   {
     id: '11',
-    title: 'Reviews',
-    link: '/reviews',
+    title: 'Insurances',
+    link: '/insurances',
     src: '/img/hero/img_1.jpg',
   },
   {
     id: '12',
-    title: 'Insurances',
-    link: '/insurances',
+    title: 'Reviews',
+    link: '/reviews',
     src: '/img/hero/img_1.jpg',
   },
 ];

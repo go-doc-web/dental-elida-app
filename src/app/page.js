@@ -3,11 +3,13 @@ import css from './page.module.css';
 import pages from '@/data/pages';
 import Link from 'next/link';
 import Banner from '@/compositions/Banner';
+import GallaryOfPage from '@/compositions/GallaryOfPage';
 
 export default function Home() {
   return (
     <>
       <Banner />
+      <GallaryOfPage />
 
       {/* <div className={css.root}>
         <section className={css.sectionGallary}>

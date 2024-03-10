@@ -4,7 +4,7 @@
   padding-left: var(--pad-sm);
   padding-right: var(--pad-sm);
   margin: 0 auto;
-  outline: 1px solid black;
+  /* outline: 1px solid black; */
 }
 
 @media screen and (min-width: 375px) {

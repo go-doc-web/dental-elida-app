@@ -1,0 +1,19 @@
+.gallary {
+  padding: 2rem 0;
+
+  background-color: var(--gallary-bg, #bbe2f8);
+}
+
+.visuallyHidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+@media screen and (min-width: 768px) {
+  .gallary {
+    padding: 4rem 0;
+  }
+}
