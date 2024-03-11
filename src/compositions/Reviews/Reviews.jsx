@@ -12,7 +12,7 @@ const Reviews = () => {
       </Heading>
       <Line className={css.line} />
 
-      {/* <ReviewsList /> */}
+      <ReviewsList />
     </>
   );
 };
