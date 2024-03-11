@@ -1,10 +1,11 @@
 import { Roboto_Condensed } from 'next/font/google';
-import './styles/globals.css';
+
+import ReduxProvider from '@/lib/Provider';
 
 import Header from '@/compositions/Header';
 import Footer from '@/compositions/Footer';
-import Container from '@/componets/Container';
 
+import './styles/globals.css';
 const roboto = Roboto_Condensed({ subsets: ['latin'] });
 
 export const metadata = {
@@ -16,10 +17,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={roboto.className}>
-        <Header />
-        <main>{children}</main>
+        <ReduxProvider>
+          <Header />
+          <main>{children}</main>
 
-        <Footer />
+          <Footer />
+        </ReduxProvider>
       </body>
     </html>
   );

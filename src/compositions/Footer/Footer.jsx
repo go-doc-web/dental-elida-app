@@ -5,6 +5,8 @@ import css from './Footer.module.css';
 
 import { constans } from '@/constants/const.header';
 
+// TODO Rewrite it to the composition
+
 const Footer = () => {
   return (
     <div className={css.root}>

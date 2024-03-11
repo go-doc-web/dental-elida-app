@@ -1,5 +1,17 @@
 import { useEffect, useState } from 'react';
 
+/**
+ *
+ * @param {number} expect
+ * @returns boolean
+ */
+
+/**
+ *
+ * @param {*} param0
+ * @returns
+ */
+
 const useViewportWidth = ({ expect = 0 }) => {
   const [width, setWidth] = useState(0);
 

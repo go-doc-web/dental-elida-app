@@ -13,6 +13,7 @@ const Header = () => {
         <div className="container">
           <div className={css.wrapperMenu}>
             <Menu menu={menu.mainMenu} />
+
             <AddressPanel />
           </div>
         </div>
