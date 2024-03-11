@@ -7,7 +7,7 @@ import css from './ReviewsList.module.css';
 import formattedDate from '@/helpers/formatedDate';
 const getReviews = async () => {
   try {
-    const res = await fetch(`${process.env.API_HOST}/reviews`);
+    const res = await fetch(`${process.env.API_HOST}/reviews`, { next: { revalidate: 15 } });
 
     if (!res.ok) {
       // This will activate the closest `error.js` Error Boundary
