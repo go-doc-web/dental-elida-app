@@ -2,10 +2,12 @@
   /*   Colors */
   --body-bg: #ffffff;
   --gallary-bg: #bbe2f8;
+  --reviews-bg: #d4ecfa;
   --header-color-bg: #1386c7;
   --footer-color-bg: #1386c7;
   --text-color-white: #ffffff;
   --text-color-primery: rgba(0, 0, 0, 0.7);
+  --text-color-heading-primery: #000000;
   --text-color-accent: #1386c7;
 
   accent-color: #f8f387;

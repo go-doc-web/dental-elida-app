@@ -1,0 +1,15 @@
+.mainHeading {
+  color: #000;
+  font-size: 5.4rem;
+  font-weight: 700;
+  letter-spacing: 1.08px;
+  color: var(--text-color-heading-primery);
+  margin: 4rem 0;
+}
+
+.line {
+  margin-bottom: 2rem;
+  width: 619px;
+  height: 1px;
+  background: #1386c7;
+}

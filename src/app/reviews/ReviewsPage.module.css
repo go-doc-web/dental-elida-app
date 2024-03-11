@@ -1,0 +1,18 @@
+.root {
+  background: linear-gradient(to right, #d4ecfa 70%, #ffffff 30%);
+}
+.wrapper {
+  display: flex;
+  background-color: #d4ecfa;
+  justify-content: flex-start;
+}
+
+.reviews {
+  width: 66.7rem;
+  background-color: var(--reviews-bg);
+}
+
+.form {
+  width: 33.3rem;
+  background-color: rgb(243, 240, 240);
+}
