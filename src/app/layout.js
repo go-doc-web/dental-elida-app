@@ -1,4 +1,5 @@
 import { Roboto_Condensed } from 'next/font/google';
+import { Suspense } from 'react';
 
 import ReduxProvider from '@/lib/Provider';
 
@@ -6,6 +7,7 @@ import Header from '@/compositions/Header';
 import Footer from '@/compositions/Footer';
 
 import './styles/globals.css';
+
 const roboto = Roboto_Condensed({ subsets: ['latin'] });
 
 export const metadata = {
@@ -19,7 +21,9 @@ export default function RootLayout({ children }) {
       <body className={roboto.className}>
         <ReduxProvider>
           <Header />
-          <main>{children}</main>
+          <Suspense>
+            <main>{children}</main>
+          </Suspense>
 
           <Footer />
         </ReduxProvider>

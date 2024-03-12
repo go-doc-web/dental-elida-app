@@ -1,19 +1,23 @@
+'use client';
+import { useSelector, useDispatch } from 'react-redux';
 import Menu from './componets/Menu';
 import AddressPanel from './componets/AddressPanel';
 
-import * as menu from '@/config/navMenu';
+import { menuItems } from '@/config/navMenu';
 import css from './Header.module.css';
 
 // const cn = clsx;
 
 const Header = () => {
+  const isActive = useSelector(state => state.isActive);
   return (
     <>
       <header className={css.header}>
         <div className="container">
           <div className={css.wrapperMenu}>
-            <Menu menu={menu.mainMenu} />
-
+            <Menu menuItems={menuItems} />
+            {isActive && <p>Logout</p>}
+            {!isActive && <p>login</p>}
             <AddressPanel />
           </div>
         </div>

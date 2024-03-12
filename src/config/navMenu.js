@@ -74,7 +74,7 @@ export const pages = [
   },
 ];
 
-export const mainMenu = [
+export const menuItems = [
   {
     id: '1',
     title: 'Home',

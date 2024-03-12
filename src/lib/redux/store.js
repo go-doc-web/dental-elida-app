@@ -7,6 +7,7 @@ export const initialState = {
   isOpen: false,
   status: 'all',
   isShowModal: false,
+  isActive: false,
 };
 
 const enhancer = devToolsEnhancer();

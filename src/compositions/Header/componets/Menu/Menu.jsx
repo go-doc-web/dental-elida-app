@@ -1,22 +1,30 @@
 'use client';
-import React from 'react';
-import Link from 'next/link';
+// import { useState } from 'react';
+
 import { useSelector, useDispatch } from 'react-redux';
 import Modal from '../../../Modal/Modal';
 
 import Hamburger from '@/componets/Icon/Hamburger';
+import MenuItem from './MenuItem';
 import useViewportWidth from '@/hooks/useViewportWidth';
 import { getIsShowBurger } from '@/lib/redux/selectors';
 import css from './Menu.module.css';
 
-function Menu({ menu }) {
+function Menu({ menuItems }) {
   const dispatch = useDispatch();
   const isShow = useSelector(state => getIsShowBurger(state));
+
   const openMenu = () => {
     dispatch({ type: 'open-close/burger', payload: true });
   };
   const closeMenu = () => {
     dispatch({ type: 'open-close/burger', payload: false });
+  };
+  const login = () => {
+    dispatch({ type: 'login/auth', payload: true });
+  };
+  const logout = () => {
+    dispatch({ type: 'logout/auth', payload: false });
   };
 
   const { isEqualWidth } = useViewportWidth({ expect: 768 });
@@ -25,11 +33,30 @@ function Menu({ menu }) {
       {isShow && (
         <Modal closeModal={closeMenu}>
           {
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, nisi. Odit recusandae
-              ipsam, ratione doloremque vero architecto iusto iure ea est non libero quas quae,
-              sapiente, eum numquam porro asperiores.
-            </p>
+            <>
+              {/* <p style={{ marginBottom: '20px' }}>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, nisi. Odit
+                recusandae ipsam, ratione doloremque vero architecto iusto iure ea est non libero
+                quas quae, sapiente, eum numquam porro asperiores.
+              </p> */}
+              <button
+                onClick={login}
+                style={{
+                  background: 'tomato',
+                  color: 'white',
+                  padding: '6px 12px',
+                  marginRight: '10px',
+                }}
+              >
+                login
+              </button>
+              <button
+                onClick={logout}
+                style={{ background: 'teal', color: 'white', padding: '6px 12px' }}
+              >
+                Logout
+              </button>
+            </>
           }
         </Modal>
       )}
@@ -41,11 +68,12 @@ function Menu({ menu }) {
       )}
       {!isEqualWidth && (
         <ul className={css.navList}>
-          {menu.map(({ id, title, link }) => {
+          {menuItems.map(item => {
             return (
-              <li key={id} className={css.linkItem}>
-                <Link href={link}>{title}</Link>
-              </li>
+              <MenuItem key={item.id} item={item} />
+              // <li key={item.id} className={css.linkItem}>
+              //   <Link href={item.link}>{item.title}</Link>
+              // </li>
             );
           })}
         </ul>

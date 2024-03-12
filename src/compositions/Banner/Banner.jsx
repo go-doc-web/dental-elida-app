@@ -12,13 +12,16 @@ const Banner = () => {
         <div className={css.thumb}>
           <Image
             src={logo}
-            alt={'Logo'}
-            sizes="100vw"
-            style={{
-              width: '100%',
-              height: 'auto',
-              display: 'block',
-            }}
+            alt={'logo'}
+            // sizes="100vw"
+            // style={{
+            //   width: '100%',
+            //   height: 'auto',
+            //   display: 'block',
+            // }}
+            // width={300}
+            // height={200}
+            className={css.logo}
           />
         </div>
       </div>
