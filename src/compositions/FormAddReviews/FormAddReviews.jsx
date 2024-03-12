@@ -20,13 +20,14 @@ const createReviews = async FormData => {
     headers: {
       'Content-Type': 'application/json',
     },
+    // body: JSON.stringify({ userName, lastName, text, rating }),
     body: JSON.stringify({ userName, lastName, text, rating }),
   });
 
   const reviews = await response.json();
   console.log(reviews);
   revalidatePath('/reviews');
-  // redirect(`${process.env.CLIENT_URL}/reviews`);
+  redirect(`${process.env.CLIENT_URL}/reviews`);
 };
 
 const FormAddReviews = async () => {
