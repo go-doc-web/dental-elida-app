@@ -11,6 +11,7 @@ import { redirect } from 'next/navigation';
  */
 
 const createReviews = async FormData => {
+  'use server';
   const { userName, lastName, text, rating } = Object.fromEntries(FormData);
   console.log(userName, lastName, text, rating);
 
@@ -23,11 +24,12 @@ const createReviews = async FormData => {
   });
 
   const reviews = await response.json();
+  console.log(reviews);
   revalidatePath('/reviews');
   // redirect(`${process.env.CLIENT_URL}/reviews`);
 };
 
-const FormAddReviews = () => {
+const FormAddReviews = async () => {
   return (
     <form className={css.form} action={createReviews}>
       <div className={css.wrapperInput}>
