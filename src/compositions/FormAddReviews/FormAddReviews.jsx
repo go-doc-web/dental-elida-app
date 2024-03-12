@@ -27,7 +27,7 @@ const createReviews = async FormData => {
   const reviews = await response.json();
   console.log(reviews);
   revalidatePath('/reviews');
-  redirect(`${process.env.CLIENT_URL}/reviews`);
+  // redirect(`${process.env.CLIENT_URL}/reviews`);
 };
 
 const FormAddReviews = async () => {
