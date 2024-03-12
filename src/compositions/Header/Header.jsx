@@ -16,8 +16,7 @@ const Header = () => {
         <div className="container">
           <div className={css.wrapperMenu}>
             <Menu menuItems={menuItems} />
-            {isActive && <p>Logout</p>}
-            {!isActive && <p>login</p>}
+
             <AddressPanel />
           </div>
         </div>

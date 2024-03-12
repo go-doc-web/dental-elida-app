@@ -1,5 +1,4 @@
 import { Roboto_Condensed } from 'next/font/google';
-import { Suspense } from 'react';
 
 import ReduxProvider from '@/lib/Provider';
 
@@ -21,9 +20,8 @@ export default function RootLayout({ children }) {
       <body className={roboto.className}>
         <ReduxProvider>
           <Header />
-          <Suspense>
-            <main>{children}</main>
-          </Suspense>
+
+          <main>{children}</main>
 
           <Footer />
         </ReduxProvider>

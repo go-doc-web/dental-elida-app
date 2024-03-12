@@ -30,7 +30,7 @@ const createReviews = async FormData => {
   // redirect(`${process.env.CLIENT_URL}/reviews`);
 };
 
-const FormAddReviews = async () => {
+const FormAddReviews = () => {
   return (
     <form className={css.form} action={createReviews}>
       <div className={css.wrapperInput}>
