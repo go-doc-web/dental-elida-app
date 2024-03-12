@@ -23,13 +23,13 @@ const ReviewsList = async () => {
 
   return (
     <ul className={css.list}>
-      {data.map(({ _id: id, body, userName, secondName, rating, createdAt }) => {
+      {data.map(({ _id: id, text, userName, lastName, rating, createdAt }) => {
         return (
           <li className={css.listItem} key={id}>
-            <h2 className={css.itemHeading}>{`${userName} ${secondName ? secondName : ''}`}</h2>
+            <h2 className={css.itemHeading}>{`${userName} ${lastName ? lastName : ''}`}</h2>
             <span className={css.date}>{formattedDate(createdAt)}</span>
             <Rating value={rating} />
-            <p className={css.itemText}>{`"${body}"`}</p>
+            <p className={css.itemText}>{`"${text}"`}</p>
             <Line className={css.line} />
           </li>
         );

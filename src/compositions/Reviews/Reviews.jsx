@@ -19,7 +19,7 @@ const Reviews = () => {
       <ReviewsList />
       <div className={css.pagination}>
         <Pagination
-          showSizeChanger
+          //   showSizeChanger
           // onShowSizeChange={onShowSizeChange}
           defaultCurrent={3}
           total={500}

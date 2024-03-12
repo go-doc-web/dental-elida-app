@@ -6,7 +6,9 @@ import Review from '@/models/Reviews';
 export async function GET() {
   try {
     await dbConnect();
-    const data = await Review.find();
+    const data = await Review.find({
+      isModeration: 'false',
+    });
 
     return Response.json(data);
   } catch (error) {

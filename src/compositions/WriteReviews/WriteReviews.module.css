@@ -1,0 +1,14 @@
+.titleSection {
+  margin-bottom: 3.8rem;
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 0.096rem;
+  color: var(--text-color-accent);
+}
+
+.line {
+  margin-bottom: 2rem;
+  width: 265px;
+  height: 1px;
+  background: #1386c7;
+}

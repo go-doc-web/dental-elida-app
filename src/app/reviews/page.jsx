@@ -1,16 +1,19 @@
 import React from 'react';
 import css from './ReviewsPage.module.css';
 import Reviews from '@/compositions/Reviews';
+import WriteReviews from '@/compositions/WriteReviews';
 
 const ReviewsPage = () => {
   return (
     <div className={css.root}>
       <div className="container">
         <div className={css.wrapper}>
-          <div className={css.reviews}>
+          <section className={css.reviews}>
             <Reviews />
-          </div>
-          <div className={css.form}>Write a Review</div>
+          </section>
+          <section className={css.formSection}>
+            <WriteReviews />
+          </section>
         </div>
       </div>
     </div>
