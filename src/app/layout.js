@@ -1,4 +1,5 @@
 import { Roboto_Condensed } from 'next/font/google';
+import { AntdRegistry } from '@ant-design/nextjs-registry';
 
 import ReduxProvider from '@/lib/Provider';
 
@@ -18,13 +19,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={roboto.className}>
-        <ReduxProvider>
-          <Header />
+        <AntdRegistry>
+          <ReduxProvider>
+            <Header />
 
-          <main>{children}</main>
+            <main>{children}</main>
 
-          <Footer />
-        </ReduxProvider>
+            <Footer />
+          </ReduxProvider>
+        </AntdRegistry>
       </body>
     </html>
   );

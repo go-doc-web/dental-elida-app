@@ -13,7 +13,6 @@ import { redirect } from 'next/navigation';
 const createReviews = async FormData => {
   'use server';
   const { userName, lastName, text, rating } = Object.fromEntries(FormData);
-  console.log(userName, lastName, text, rating);
 
   const response = await fetch(`${process.env.API_HOST}/reviews`, {
     method: 'POST',
@@ -25,9 +24,9 @@ const createReviews = async FormData => {
   });
 
   const reviews = await response.json();
-  console.log(reviews);
+
   revalidatePath('/reviews');
-  // redirect(`${process.env.CLIENT_URL}/reviews`);
+  redirect(`${process.env.CLIENT_URL}/reviews`);
 };
 
 const FormAddReviews = () => {

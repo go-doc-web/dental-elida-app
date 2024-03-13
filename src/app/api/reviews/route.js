@@ -1,14 +1,10 @@
 import dbConnect from '@/lib/db-connect';
 import Review from '@/models/Reviews';
-// export const fetchCache = 'only-no-store';
-// export const runtime = 'nodejs';
 
 export async function GET() {
   try {
     await dbConnect();
-    const data = await Review.find({
-      isModeration: 'false',
-    });
+    const data = await Review.find();
 
     return Response.json(data);
   } catch (error) {

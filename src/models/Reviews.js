@@ -2,10 +2,10 @@ import { Schema, model, models } from 'mongoose';
 
 const reviewSchema = new Schema(
   {
-    userName: { type: String },
+    userName: { type: String, required: true },
     lastName: { type: String },
-    rating: { type: Number },
-    text: { type: String },
+    rating: { type: Number, required: true },
+    text: { type: String, required: true },
     isModeration: { type: String, default: false }, //  - для отзывов, ожидающих проверки
   },
   { timestamps: true }
