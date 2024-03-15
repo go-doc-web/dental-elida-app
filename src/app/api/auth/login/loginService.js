@@ -15,10 +15,10 @@ export const loginService = async (email, password) => {
       return { error: true, message: 'Error authorization', status: 401 };
     }
 
-    user.isActivated = true;
+    user.token = 'token';
     await user.save();
 
-    return { userName: user.userName, email: user.email, isActivated: user.isActivated };
+    return { userName: user.userName, email: user.email, token: user.token, role: user.role };
   } catch (error) {
     console.log(error);
     throw new Error('Login failed');

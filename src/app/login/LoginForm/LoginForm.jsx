@@ -1,19 +1,25 @@
 import { useState } from 'react';
 import css from './LoginForm.module.css';
 import { useRouter } from 'next/navigation';
-import axios from 'axios';
+import { useDispatch } from 'react-redux';
+
+// import axios from 'axios';
+import { authorization } from '@/api/request';
 
 const initialState = {
   email: '',
   password: '',
 };
 
-// TODO Сделать валидацию на сервере или на клиенте email и password
+export // TODO Сделать валидацию на сервере или на клиенте email и password
 
 const LoginForm = () => {
   const route = useRouter();
   const [state, setState] = useState({ ...initialState });
   const [messageError, setMessageError] = useState('');
+
+  const dispatch = useDispatch();
+  // dispatch('auth/login', { ...state });
 
   const handleChange = ({ target }) => {
     setMessageError('');
@@ -27,26 +33,52 @@ const LoginForm = () => {
     setState({ ...initialState });
   };
 
-  const handleSubmit = async e => {
-    e.preventDefault();
-    const { email, password } = state;
+  const loginUser = (email, password) => async dispatch => {
     try {
-      const response = await axios.post('/api/auth/login', { email, password });
+      const response = await authorization({ email, password });
       const res = response.data;
-      if (res.status === 401) {
-        setMessageError(res.message);
-      }
 
       if (res.status === 200) {
-        const { isActivated } = res.data;
+        const { token } = res.data;
 
-        localStorage.setItem('active', isActivated);
-        resetForm();
+        localStorage.setItem('active', Boolean(token));
+        dispatch({ type: 'LOGIN_SUCCESS', payload: res.data });
         route.push('/reviews-management');
+      }
+
+      if (res.status === 401) {
+        dispatch({ type: 'LOGIN_ERROR', payload: res.message });
       }
     } catch (error) {
       console.error(error);
+      dispatch({ type: 'LOGIN_ERROR', payload: error.message });
     }
+  };
+
+  const handleSubmit = async e => {
+    e.preventDefault();
+    const { email, password } = state;
+
+    dispatch(loginUser(email, password));
+    // try {
+    //   const response = await authorization({ email, password });
+    //   const res = response.data;
+    //   console.log(res.data);
+
+    //   if (res.status === 200) {
+    //     const { token } = res.data;
+    //     dispatch('auth/login', res.data);
+    //     localStorage.setItem('active', Boolean(token));
+    //     resetForm();
+    //     route.push('/reviews-management');
+    //   }
+
+    //   if (res.status === 401) {
+    //     setMessageError(res.message);
+    //   }
+    // } catch (error) {
+    //   console.error(error);
+    // }
 
     // onSubmit(res);
   };

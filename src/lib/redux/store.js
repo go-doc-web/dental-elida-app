@@ -1,10 +1,9 @@
-import { createStore } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
+import { thunk } from 'redux-thunk';
+
 import { devToolsEnhancer } from '@redux-devtools/extension';
-import { rootReducer } from './reducer';
+import combineReducers from './redusers/index';
 
-export const initialState = {
-  isActivated: false,
-};
-const enhancer = devToolsEnhancer();
+const enhancer = compose(applyMiddleware(thunk), devToolsEnhancer());
 
-export const store = createStore(rootReducer, enhancer);
+export const store = createStore(combineReducers, enhancer);

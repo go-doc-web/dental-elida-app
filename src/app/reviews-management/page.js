@@ -8,18 +8,26 @@ function ReviewsManagement() {
 
   useEffect(() => {
     let key = localStorage.getItem('active');
+    if (!key) {
+      router.push('/login');
+    }
 
     setIsLoggedIn(key);
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  if (!isLoggedIn) {
-    return <h1>You are not authorized to access this page.</h1>;
-  }
+  // if (!isLoggedIn) {
+  //   return <h1>You are not authorized to access this page.</h1>;
+  // }
 
   return (
-    <div>
-      <h1>Welcome, Admin!</h1>
-    </div>
+    <>
+      {!isLoggedIn && <h1>You are not authorized to access this page.</h1>}
+      {isLoggedIn && (
+        <div>
+          <h1>Welcome, Admin!</h1>
+        </div>
+      )}
+    </>
   );
 }
 
