@@ -6,6 +6,7 @@ import LoginForm from './LoginForm';
 
 const Login = () => {
   const route = useRouter();
+
   useEffect(() => {
     const active = localStorage.getItem('active');
     if (active) {

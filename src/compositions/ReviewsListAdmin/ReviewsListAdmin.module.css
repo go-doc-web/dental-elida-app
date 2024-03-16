@@ -1,0 +1,52 @@
+/* .line {
+  max-width: 980px;
+  height: 1px;
+  background-color: #1386c7;
+} */
+
+.list {
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.listItem {
+  margin-bottom: 2rem;
+}
+
+.itemHeading {
+  margin-bottom: 0.6rem;
+
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.032rem;
+  text-transform: capitalize;
+
+  color: var(--text-color-accent, #1386c7);
+}
+
+.date {
+  display: block;
+
+  color: var(--text-color-accent, #1386c7);
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 0.012rem;
+  text-transform: capitalize;
+  margin-bottom: 1.3rem;
+}
+
+.itemText {
+  margin-top: 1.6rem;
+  margin-bottom: 2rem;
+  font-size: 1.4rem;
+
+  font-weight: 400;
+  line-height: normal; /* 128.571% */
+  letter-spacing: 0.014rem;
+  color: var(--text-color-primery, rgba(0, 0, 0, 0.7));
+}
+
+.line {
+  height: 1px;
+  background: #1386c7;
+}

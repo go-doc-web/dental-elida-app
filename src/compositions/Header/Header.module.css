@@ -4,6 +4,16 @@
   border-radius: 0 0 2rem 2rem;
 }
 
+.titleAdminPanel {
+  color: #fff;
+
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.28px;
+}
+
 .wrapperMenu {
   display: flex;
   align-items: center;

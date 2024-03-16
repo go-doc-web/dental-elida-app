@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import css from './LoginForm.module.css';
 import { useRouter } from 'next/navigation';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 // import axios from 'axios';
 import { authorization } from '@/api/request';
@@ -16,21 +16,23 @@ export // TODO Сделать валидацию на сервере или на
 const LoginForm = () => {
   const route = useRouter();
   const [state, setState] = useState({ ...initialState });
-  const [messageError, setMessageError] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const message = useSelector(s => s.auth.error);
 
   const dispatch = useDispatch();
   // dispatch('auth/login', { ...state });
 
+  const resetForm = () => {
+    setState({ ...initialState });
+  };
+
   const handleChange = ({ target }) => {
-    setMessageError('');
+    setErrorMessage('');
     const { name, value } = target;
     setState(prevState => {
       return { ...prevState, [name]: value };
     });
-  };
-
-  const resetForm = () => {
-    setState({ ...initialState });
   };
 
   const loginUser = (email, password) => async dispatch => {
@@ -48,10 +50,12 @@ const LoginForm = () => {
 
       if (res.status === 401) {
         dispatch({ type: 'LOGIN_ERROR', payload: res.message });
+        setErrorMessage(message);
       }
     } catch (error) {
       console.error(error);
       dispatch({ type: 'LOGIN_ERROR', payload: error.message });
+      setErrorMessage(message);
     }
   };
 
@@ -111,7 +115,7 @@ const LoginForm = () => {
           />
         </label>
       </div>
-      {messageError && <span className={css.messageError}>{messageError}</span>}
+      {errorMessage && <span className={css.messageError}>{errorMessage}</span>}
 
       <button className={css.btn} type="submit">
         SignIn{' '}
