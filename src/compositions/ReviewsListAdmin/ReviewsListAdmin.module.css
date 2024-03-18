@@ -9,6 +9,12 @@
   width: 100%;
 }
 
+.itemWrap {
+  display: flex;
+
+  gap: 21.3rem;
+}
+
 .listItem {
   margin-bottom: 2rem;
 }
@@ -47,6 +53,95 @@
 }
 
 .line {
+  /* width: 100%; */
   height: 1px;
   background: #1386c7;
+}
+
+.bodyReviews {
+  width: 62rem;
+}
+
+.statusBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.statusPanel {
+  margin-left: auto;
+
+  position: relative;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.24px;
+  text-transform: capitalize;
+  color: var(--text-color-accent, #1386c7);
+}
+
+.watingLabel::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0.9rem;
+  height: 0.9rem;
+  background-color: var(--wating-label-color, #f6d459);
+  top: 0.3rem;
+  left: -1.7rem;
+  border-radius: 50%;
+}
+
+.postedLabel::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0.9rem;
+  height: 0.9rem;
+  background-color: var(--posted-label-color, #00865a);
+  top: 0.3rem;
+  left: -1.7rem;
+  border-radius: 50%;
+}
+
+.btn {
+  width: 147px;
+  height: 40px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: calc(24 / 16); /* 150% */
+  letter-spacing: 0.32px;
+
+  border-radius: var(--button-borderRadius, 0.8rem);
+
+  cursor: pointer;
+}
+
+/* .postBtn {
+  color: var(--post-btn-color-text, #1386c7);
+  border: 1px solid var(--post-btn-color-text, #1386c7);
+}
+
+.postBtn:hover,
+.postBtn:focus {
+  background-color: var(--hover-post-btn, #d4ecfa);
+}
+
+.postBtn:active {
+  background-color: var(--active-post-btn, #1386c7);
+  color: var(--text-color-white, #ffffff);
+} */
+
+.deleteBtn {
+  border: 1px solid var(--delete-btn-color-text, #ef2a33);
+  color: var(--delete-btn-color-text, #ef2a33);
+}
+
+.deleteBtn:hover,
+.postBtn:focus {
+  background-color: var(--hover-delete-btn, rgba(239, 42, 51, 0.15));
+}
+
+.deleteBtn:active {
+  background-color: var(--active-delete-btn, #ef2a33);
+  color: var(--text-color-white, #ffffff);
 }

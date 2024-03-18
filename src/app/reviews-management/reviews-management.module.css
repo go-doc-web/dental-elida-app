@@ -38,3 +38,7 @@
   line-height: 22px; /* 157.143% */
   letter-spacing: 0.14px;
 }
+
+.reviewsWrapper {
+  display: flex;
+}

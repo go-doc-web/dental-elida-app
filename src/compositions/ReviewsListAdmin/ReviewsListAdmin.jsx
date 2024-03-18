@@ -40,10 +40,29 @@ const ReviewsListAdmin = () => {
           reviews.map(({ _id: id, text, userName, lastName, rating, createdAt }) => {
             return (
               <li className={css.listItem} key={id}>
-                <h2 className={css.itemHeading}>{`${userName} ${lastName ? lastName : ''}`}</h2>
-                <span className={css.date}>{formattedDate(createdAt)}</span>
-                <Rating value={rating} />
-                <p className={css.itemText}>{`"${text}"`}</p>
+                <div className={css.itemWrap}>
+                  <div className={css.bodyReviews}>
+                    <h2 className={css.itemHeading}>{`${userName} ${lastName ? lastName : ''}`}</h2>
+                    <span className={css.date}>{formattedDate(createdAt)}</span>
+                    <Rating value={rating} />
+                    <p className={css.itemText}>{`"${text}"`}</p>
+                  </div>
+
+                  <div>
+                    {/* <div className={css.statusBlock}>
+                      <span className={`${css.statusPanel} ${css.watingLabel}`}>Waiting</span>
+                      <button type="button" className={`${css.btn} ${css.postBtn}`}>
+                        Post
+                      </button>
+                    </div> */}
+                    <div className={css.statusBlock}>
+                      <span className={`${css.statusPanel} ${css.postedLabel}`}>Posted</span>
+                      <button type="button" className={`${css.btn} ${css.deleteBtn}`}>
+                        Delete
+                      </button>
+                    </div>
+                  </div>
+                </div>
                 <Line className={css.line} />
               </li>
             );

@@ -1,3 +1,5 @@
+import './styles/globals.css';
+
 import { Roboto_Condensed } from 'next/font/google';
 import { AntdRegistry } from '@ant-design/nextjs-registry';
 
@@ -5,8 +7,6 @@ import ReduxProvider from '@/lib/Provider';
 
 import Header from '@/compositions/Header';
 import Footer from '@/compositions/Footer';
-
-import './styles/globals.css';
 
 const roboto = Roboto_Condensed({ subsets: ['latin'] });
 

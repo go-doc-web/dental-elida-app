@@ -1,11 +1,14 @@
 import React from 'react';
 import clsx from 'clsx';
+
 import css from './Button.module.css'; // Подключение модуля стилей
 
 const Button = ({ icon, text, callback, style = null, variant, externalStyles, styleName }) => {
   const buttonClasses = clsx({
     [css.button]: true,
     [css.secondaryButton]: variant === 'secondary',
+    [css.postButton]: variant === 'post',
+    [css.deleteButton]: variant === 'delete',
     styleName: true,
   });
 

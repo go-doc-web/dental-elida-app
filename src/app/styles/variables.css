@@ -10,6 +10,16 @@
   --text-color-heading-primery: #000000;
   --text-color-accent: #1386c7;
 
+  --wating-label-color: #f6d459;
+  --posted-label-color: #00865a;
+  --button-borderRadius: 0.8rem;
+  --post-btn-color-text: #1386c7;
+  --delete-btn-color-text: #ef2a33;
+  --hover-post-btn: #d4ecfa;
+  --hover-delete-btn: rgba(239, 42, 51, 0.15);
+  --active-post-btn: #1386c7;
+  --active-delete-btn: #ef2a33;
+
   accent-color: #f8f387;
 
   /* Container size */

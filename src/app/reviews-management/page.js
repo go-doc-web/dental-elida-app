@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 
 import Heading from '@/componets/Heading';
+
 import StatusSelect from '@/componets/StatusSelect';
 import SortSelect from '@/componets/SortSelect';
 import RatingSelect from '@/componets/RatingSelect';
@@ -57,6 +58,7 @@ function ReviewsManagement() {
                 </div>
               </div>
             </div>
+
             <ReviewsListAdmin />
           </div>
         </section>
