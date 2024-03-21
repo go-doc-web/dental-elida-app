@@ -38,10 +38,11 @@ const LoginForm = () => {
   const loginUser = (email, password) => async dispatch => {
     try {
       const response = await authorization({ email, password });
-      const res = response.data;
+      console.log('response.data', response.data);
+      const res = response;
 
-      if (res.status === 200) {
-        const { token } = res.data;
+      if (response.status === 200) {
+        const { token } = response.data;
 
         localStorage.setItem('active', Boolean(token));
         dispatch({ type: 'LOGIN_SUCCESS', payload: res.data });

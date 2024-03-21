@@ -7,7 +7,7 @@ export async function POST(req) {
     const data = await loginService(email, password);
     // console.log(data);
 
-    return NextResponse.json({ data });
+    return NextResponse.json({ ...data });
   } catch (error) {
     console.log(error);
     return NextResponse.json({ message: 'An error occurred', status: 500 });
