@@ -6,6 +6,8 @@ import MenuAdmin from './componets/MenuAdmin/MenuAdmin';
 import AddressPanel from './componets/AddressPanel';
 
 import { menuItems } from '@/config/navMenu';
+
+import { useUserAuthorization } from '@/hooks/useUserAuthorization';
 import css from './Header.module.css';
 
 // const cn = clsx;
@@ -14,6 +16,7 @@ const Header = () => {
   // const isActive = useSelector(state => state.isActive);
   const pathname = usePathname();
   const path = pathname === '/reviews-management';
+  useUserAuthorization();
 
   return (
     <>
