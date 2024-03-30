@@ -10,7 +10,7 @@ const initialState = {
   password: '',
 };
 
-export // TODO Сделать валидацию на сервере или на клиенте email и password
+// TODO Сделать валидацию на сервере или на клиенте email и password
 
 const LoginForm = () => {
   const router = useRouter();
