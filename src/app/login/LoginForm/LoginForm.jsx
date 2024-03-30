@@ -37,7 +37,6 @@ const LoginForm = () => {
     const { email, password } = state;
 
     dispatch(postLogin({ email, password })).then(token => {
-      console.log('token', token);
       if (token) {
         dispatch(getUserProfile({ router }));
       }

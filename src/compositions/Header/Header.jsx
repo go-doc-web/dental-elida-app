@@ -13,10 +13,10 @@ import css from './Header.module.css';
 // const cn = clsx;
 
 const Header = () => {
-  // const isActive = useSelector(state => state.isActive);
+  useUserAuthorization();
+  const isActive = useSelector(state => state.isActive);
   const pathname = usePathname();
   const path = pathname === '/reviews-management';
-  useUserAuthorization();
 
   return (
     <>

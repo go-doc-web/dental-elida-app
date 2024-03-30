@@ -7,27 +7,24 @@ export default ({ router }) =>
     try {
       //TODO refactor endpoint url
       const request = await api.post('/user', {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-        body: {
-          token,
-        },
+        token,
       });
 
-      console.log('request', request);
-
       const response = request?.data;
+      console.log('responseresponse', response);
 
       if (response?.status === 200) {
         localStorage.setItem('isActive', true);
         const data = response?.data || {};
         dispatch({ type: 'SET_USER_PROFILE', payload: data });
+        dispatch({ type: 'SET_USER_STATUS', payload: localStorage.getItem('isActive') });
         router.push('/reviews-management');
       }
 
       if (response?.logout) {
-        localStorage.setItem('isActive', false);
+        localStorage.removeItem('isActive');
+        localStorage.removeItem('token');
+        router.push('/login');
       }
       if (response?.status === 401) {
         dispatch({

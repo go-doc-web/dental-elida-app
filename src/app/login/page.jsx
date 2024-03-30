@@ -8,7 +8,7 @@ const Login = () => {
   const route = useRouter();
 
   useEffect(() => {
-    const active = localStorage.getItem('active');
+    const active = localStorage.getItem('isActive');
     if (active) {
       route.push('/reviews-management');
     }

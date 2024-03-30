@@ -1,6 +1,7 @@
 const initialState = {
   email: '',
   role: 0,
+  isActive: false,
 };
 
 export default (state = initialState, action) => {
@@ -9,6 +10,11 @@ export default (state = initialState, action) => {
       return {
         ...state,
         ...action.payload,
+      };
+    case 'SET_USER_STATUS':
+      return {
+        ...state,
+        isActive: Boolean(action.payload),
       };
 
     default:

@@ -1,3 +1,4 @@
+'use client';
 import { api } from '../api';
 
 export default ({ email, password }) =>
@@ -6,16 +7,14 @@ export default ({ email, password }) =>
       const request = await api.post('/auth/login', { email, password });
       const response = request?.data;
 
-      console.log('response', response);
-
       if (response?.status === 200 && response?.token) {
-        console.log('if...');
         localStorage.setItem('token', response?.token);
         return response.token;
       }
 
       if (response?.logout) {
         localStorage.setItem('isActive', false);
+        localStorage.removeItem('token');
       }
       if (response?.status === 401) {
         dispatch({

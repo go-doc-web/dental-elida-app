@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
 
             <main>{children}</main>
 
-            <Footer />
+            {/* <Footer /> */}
           </ReduxProvider>
         </AntdRegistry>
       </body>

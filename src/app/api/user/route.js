@@ -2,7 +2,6 @@ import { NextResponse } from 'next/server';
 import { tokenService } from './tokenService';
 
 export async function POST(req) {
-  console.log('req', req);
   try {
     const { token } = await req.json();
 

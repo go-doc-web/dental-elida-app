@@ -19,7 +19,7 @@ function ReviewsManagement() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    const key = localStorage.getItem('active');
+    const key = localStorage.getItem('isActive');
     if (!key) {
       router.push('/login');
     }

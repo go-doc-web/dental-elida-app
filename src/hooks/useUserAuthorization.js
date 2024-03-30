@@ -1,18 +1,48 @@
+// 'use client';
+
+// import { useEffect } from 'react';
+// import { useRouter } from 'next/navigation';
+// import { useDispatch } from 'react-redux';
+
+// import getUserProfile from '@/api/requests/getUserProfile';
+
+// export const useUserAuthorization = () => {
+//   const router = useRouter();
+//   const dispatch = useDispatch();
+
+//   // const token = localStorage.getItem('token');
+//   const isActive = localStorage.getItem('isActive');
+//   console.log('useUserAuthorization', isActive);
+
+//   useEffect(() => {
+//     if (isActive) {
+//       dispatch(getUserProfile({ router }));
+//     }
+//   }, []);
+// };
+
 'use client';
 
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useDispatch } from 'react-redux';
 
+import getUserProfile from '@/api/requests/getUserProfile';
+
 export const useUserAuthorization = () => {
   const router = useRouter();
   const dispatch = useDispatch();
-  const token = localStorage.getItem('token');
-  const isActive = localStorage.getItem('isActive');
 
-  useEffect(() => {
-    if (isActive) {
-      dispatch(getUserProfile({ router }));
-    }
-  }, []);
+  if (typeof window !== 'undefined') {
+    // we are brouser
+    const isActive = window.localStorage.getItem('isActive');
+    useEffect(() => {
+      if (isActive) {
+        dispatch(getUserProfile({ router }));
+      }
+    }, []);
+  } else {
+    // we are server componets
+    // console.log('server');
+  }
 };
