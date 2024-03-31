@@ -36,11 +36,12 @@ export const useUserAuthorization = () => {
   if (typeof window !== 'undefined') {
     // we are brouser
     const isActive = window.localStorage.getItem('isActive');
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     useEffect(() => {
       if (isActive) {
         dispatch(getUserProfile({ router }));
       }
-    }, []);
+    }, [dispatch, isActive, router]);
   } else {
     // we are server componets
     // console.log('server');
