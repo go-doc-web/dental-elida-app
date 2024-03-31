@@ -41,6 +41,7 @@ export const useUserAuthorization = () => {
       if (isActive) {
         dispatch(getUserProfile({ router }));
       }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
   } else {
     // we are server componets
