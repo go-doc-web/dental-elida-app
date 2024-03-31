@@ -5,16 +5,6 @@ import dbConnect from '@/lib/db-connect';
 import User from '@/models/User-model';
 import Token from '@/models/Token-model';
 
-// бекенд
-// postAuth - приймає 2 параметра login password
-// якщо знайшов такого користувача та валідний пароль
-// генеруємо любий ключ та записуємо його цьому узеру у базу
-// в ідеалі ще запускаємо таймер який через 30 хв видалить токен з бази
-
-// getUserProfile - очикує 1 агрумент token  по якому виконує пошук у базі
-
-// якщо знайщов користувача з таким токен то повертаємо userData  якщо ні 400 logout true
-
 export const loginService = async (email, password) => {
   await dbConnect();
 

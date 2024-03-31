@@ -31,6 +31,7 @@ import getUserProfile from '@/api/requests/getUserProfile';
 
 export const useUserAuthorization = () => {
   const router = useRouter();
+
   const dispatch = useDispatch();
 
   if (typeof window !== 'undefined') {

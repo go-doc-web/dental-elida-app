@@ -5,7 +5,6 @@ export async function POST(req) {
   try {
     const { email, password } = await req.json();
     const data = await loginService(email, password);
-    console.log('datadatadata', data);
 
     return NextResponse.json({ ...data });
   } catch (error) {

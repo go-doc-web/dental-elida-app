@@ -38,7 +38,12 @@ const LoginForm = () => {
 
     dispatch(postLogin({ email, password })).then(token => {
       if (token) {
-        dispatch(getUserProfile({ router }));
+        dispatch(getUserProfile({ router })).then(() => {
+          const isActive = localStorage.getItem('isActive');
+          if (isActive) {
+            router.push('/reviews-management');
+          }
+        });
       }
     });
   };
