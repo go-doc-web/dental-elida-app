@@ -1,6 +1,7 @@
-'use client';
+// 'use client';
 import { api } from '../api';
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default ({ email, password }) =>
   async dispatch => {
     try {

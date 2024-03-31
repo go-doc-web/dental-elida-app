@@ -41,7 +41,7 @@ export const useUserAuthorization = () => {
       if (isActive) {
         dispatch(getUserProfile({ router }));
       }
-    }, [dispatch, isActive, router]);
+    }, []);
   } else {
     // we are server componets
     // console.log('server');
