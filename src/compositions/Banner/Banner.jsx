@@ -13,15 +13,10 @@ const Banner = () => {
           <Image
             src={logo}
             alt={'logo'}
-            // sizes="100vw"
-            // style={{
-            //   width: '100%',
-            //   height: 'auto',
-            //   display: 'block',
-            // }}
-            // width={300}
-            // height={200}
+            width={300}
+            height={200}
             className={css.logo}
+            priority={true}
           />
         </div>
       </div>
