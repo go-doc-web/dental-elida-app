@@ -23,7 +23,10 @@ export default function RootLayout({ children }) {
           <ReduxProvider>
             <Header />
 
-            <main>{children}</main>
+            <main>
+              <div>{children}</div>
+              <div></div>
+            </main>
 
             {/* <Footer /> */}
           </ReduxProvider>
