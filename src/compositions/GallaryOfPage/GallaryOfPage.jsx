@@ -5,10 +5,8 @@ import GalaryList from './GalaryList';
 const GallaryOfPage = () => {
   return (
     <section className={css.gallary}>
-      <div className={'container'}>
-        <h2 className={css.visuallyHidden}>Our services</h2>
-        <GalaryList />
-      </div>
+      <h2 className={css.visuallyHidden}>Our services</h2>
+      <GalaryList />
     </section>
   );
 };

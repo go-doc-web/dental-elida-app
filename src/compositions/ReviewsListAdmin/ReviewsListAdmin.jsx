@@ -14,8 +14,6 @@ const ReviewsListAdmin = () => {
   const reviews = useSelector(state => state.reviewsReducer.reviews);
   const dispatch = useDispatch();
 
-  console.log(reviews);
-
   useEffect(() => {
     const fetchReviews = async () => {
       try {
