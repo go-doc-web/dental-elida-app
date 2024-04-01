@@ -5,6 +5,9 @@
   justify-content: center;
 }
 
+.wrapperTel {
+  margin-bottom: 0.7rem;
+}
 .wrapperTel,
 .wrapperAddress {
   display: flex;
@@ -23,6 +26,20 @@
 @media screen and (min-width: 375px) {
   .wrapper {
     max-width: 26.5rem;
+  }
+
+  .linkTel,
+  .linkAddress {
+    font-size: 1.4rem;
+    letter-spacing: 0.56px;
+  }
+}
+@media screen and (min-width: 1140px) {
+  .wrapper {
+    min-width: 33.3rem;
+
+    padding-right: 34px;
+    padding-left: 34px;
   }
 
   .linkTel,

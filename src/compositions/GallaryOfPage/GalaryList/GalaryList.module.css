@@ -9,21 +9,22 @@
   width: 100%;
 
   border-radius: 1.2rem;
-  background: var(--text-color-white);
+
+  background: var(--card-bg, #e4f3fc);
   overflow: hidden;
 }
 
 @media screen and (min-width: 768px) {
   .wrapperGallary {
-    gap: 2rem;
+    gap: 1.1rem;
   }
 
   .card {
-    flex-basis: calc((100% - 4rem) / 3);
+    flex-basis: calc((100% - 2.2rem) / 3);
     border-radius: 1.7rem;
   }
 }
-@media screen and (min-width: 1140px) {
+/* @media screen and (min-width: 1140px) {
   .wrapperGallary {
     gap: 2rem;
   }
@@ -32,4 +33,4 @@
     flex-basis: calc((100% - 6rem) / 4);
     border-radius: 2rem;
   }
-}
+} */

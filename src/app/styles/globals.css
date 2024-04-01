@@ -47,3 +47,24 @@ button {
 }
 .main {
 }
+
+.rigth {
+  /* background-color: teal; */
+}
+@media screen and (min-width: 1140px) {
+  .main {
+    display: flex;
+    flex-wrap: nowrap;
+    column-gap: 3.4rem;
+  }
+  .left {
+    width: 64.7rem;
+  }
+
+  .rigth {
+    width: 33.3rem;
+    padding-left: 3.3rem;
+    padding-right: 3.4rem;
+    /* max-width: 33.3rem; */
+  }
+}

@@ -6,39 +6,25 @@
 }
 
 .thumb {
-  max-width: 22.9rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .logo {
-  width: 229px;
-  height: 186px;
+  width: 22.9rem;
+  height: 17.6rem;
 }
 
 @media screen and (min-width: 375px) {
   .section {
     padding-bottom: 4rem;
   }
-
-  .logo {
-    width: 327px;
-    height: 253px;
-  }
-
-  .thumb {
-    max-width: 328rem;
-  }
 }
-/* @media screen and (min-width: 375px) {
-  .thumb {
-    max-width: 478rem;
-  }
-} */
 
 @media screen and (min-width: 768px) {
   .logo {
-    width: 478px;
-    height: 369px;
+    width: 47.8rem;
+    height: 36.9rem;
   }
 }

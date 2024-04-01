@@ -3,7 +3,7 @@
 */
 
 .list {
-  width: 61.9rem;
+  width: 100%;
 }
 
 .listItem {
@@ -44,7 +44,7 @@
 }
 
 .line {
-  width: 619px;
+  width: 100%;
   height: 1px;
   background: #1386c7;
 }

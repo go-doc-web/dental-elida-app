@@ -7,6 +7,7 @@ import ReduxProvider from '@/lib/Provider';
 
 import Header from '@/compositions/Header';
 import Footer from '@/compositions/Footer';
+import ReviewsList from '@/compositions/Reviews/ReviewsList';
 
 const roboto = Roboto_Condensed({ subsets: ['latin'] });
 
@@ -23,12 +24,16 @@ export default function RootLayout({ children }) {
           <ReduxProvider>
             <Header />
 
-            <main>
-              <div>{children}</div>
-              <div></div>
-            </main>
+            <div className="container">
+              <main className="main">
+                <div className="left">{children}</div>
+                <div className="rigth">
+                  <ReviewsList />
+                </div>
+              </main>
+            </div>
 
-            {/* <Footer /> */}
+            <Footer />
           </ReduxProvider>
         </AntdRegistry>
       </body>

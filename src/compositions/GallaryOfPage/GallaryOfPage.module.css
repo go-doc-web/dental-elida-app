@@ -1,7 +1,5 @@
 .gallary {
-  padding: 2rem 0;
-
-  background-color: var(--gallary-bg, #bbe2f8);
+  padding-bottom: 3.5rem;
 }
 
 .visuallyHidden {
@@ -12,8 +10,8 @@
   margin: -1px;
 }
 
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
   .gallary {
-    padding: 4rem 0;
+   
   }
-}
+} */

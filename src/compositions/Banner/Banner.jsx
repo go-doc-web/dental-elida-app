@@ -8,17 +8,15 @@ import css from './Banner.module.css';
 const Banner = () => {
   return (
     <section className={css.section}>
-      <div className="container" style={{ display: 'flex', justifyContent: 'center' }}>
-        <div className={css.thumb}>
-          <Image
-            src={logo}
-            alt={'logo'}
-            width={300}
-            height={200}
-            className={css.logo}
-            priority={true}
-          />
-        </div>
+      <div className={css.thumb}>
+        <Image
+          src={logo}
+          alt={'logo'}
+          width={300}
+          height={200}
+          className={css.logo}
+          priority={true}
+        />
       </div>
     </section>
   );
