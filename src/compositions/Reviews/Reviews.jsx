@@ -2,7 +2,7 @@ import React from 'react';
 import { Pagination } from 'antd';
 import css from './Reviews.module.css';
 import Heading from '@/componets/Heading';
-import ReviewsList from './ReviewsList';
+import ReviewsPageList from './ReviewsPageList';
 import Line from '@/componets/Line';
 
 const onShowSizeChange = (current, pageSize) => {
@@ -16,7 +16,7 @@ const Reviews = () => {
         Reviews
       </Heading>
       <Line className={css.line} />
-      <ReviewsList />
+      <ReviewsPageList />
       <div className={css.pagination}>
         <Pagination
           //   showSizeChanger

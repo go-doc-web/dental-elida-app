@@ -2,7 +2,7 @@
 import { usePathname, useRouter } from 'next/navigation';
 import { memberAria } from '@/constants/routes';
 import SideBar from '@/componets/SideBar';
-import ReviewsList from '@/compositions/Reviews/ReviewsList';
+
 import LateralReviews from '@/compositions/LateralReviews';
 import css from './Mainpage.module.css';
 
@@ -15,18 +15,18 @@ function MainPage({ children }) {
 
   return (
     <>
-      <div className="container">
-        {isPrivateLocation ? (
-          children
-        ) : (
+      {isPrivateLocation ? (
+        <div className="container">{children}</div>
+      ) : (
+        <div className="container">
           <div className={css.main}>
             <div className={css.left}>{children}</div>
             <div className={css.rigth}>
               <SideBar>{!reviewsPage && <LateralReviews />}</SideBar>
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </>
   );
 }

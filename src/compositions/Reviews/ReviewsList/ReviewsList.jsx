@@ -1,29 +1,12 @@
-import { Suspense } from 'react';
+import React from 'react';
+
 import Rating from '@/componets/Rating';
 import Line from '@/componets/Line';
+import formattedDate from '@/helpers/formatedDate';
 
 import css from './ReviewsList.module.css';
 
-import formattedDate from '@/helpers/formatedDate';
-
-const getReviews = async () => {
-  try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/reviews`, {
-      next: { revalidate: 60 },
-    });
-
-    if (!res.ok) {
-      throw new Error('Failed to fetch data');
-    }
-
-    return res.json();
-  } catch (error) {
-    console.log(error);
-  }
-};
-const ReviewsList = async () => {
-  const data = await getReviews();
-
+const ReviewsList = ({ data }) => {
   return (
     <>
       <ul className={css.list}>
