@@ -51,7 +51,7 @@
   letter-spacing: 0.139px;
 }
 
-@media screen and (min-width: 353px) {
+/* @media screen and (min-width: 353px) {
   .card {
     flex-basis: calc((100% - 20px) / 2);
   }
@@ -72,4 +72,4 @@
   .card {
     flex-basis: calc((100% - 96px) / 4);
   }
-}
+} */

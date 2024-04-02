@@ -1,2 +1,2 @@
-export const memberAria = ['reviews-management'];
+export const memberAria = ['/reviews-management', '/login'];
 export const publicAria = [];
