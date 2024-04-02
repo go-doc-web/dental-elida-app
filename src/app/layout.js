@@ -7,7 +7,7 @@ import ReduxProvider from '@/lib/Provider';
 
 import Header from '@/compositions/Header';
 import Footer from '@/compositions/Footer';
-import ReviewsList from '@/compositions/Reviews/ReviewsList';
+import MainPage from '@/compositions/MainPage';
 
 const roboto = Roboto_Condensed({ subsets: ['latin'] });
 
@@ -24,14 +24,9 @@ export default function RootLayout({ children }) {
           <ReduxProvider>
             <Header />
 
-            <div className="container">
-              <main className="main">
-                <div className="left">{children}</div>
-                <div className="rigth">
-                  <ReviewsList />
-                </div>
-              </main>
-            </div>
+            <main>
+              <MainPage>{children}</MainPage>
+            </main>
 
             <Footer />
           </ReduxProvider>
