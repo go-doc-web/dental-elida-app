@@ -8,9 +8,7 @@ const ReviewsPage = () => {
     <div className={css.root}>
       <div className="container">
         <div className={css.wrapper}>
-          <section className={css.reviews}>
-            <Reviews />
-          </section>
+          <section className={css.reviews}>{<Reviews />}</section>
           <section className={css.formSection}>
             <WriteReviews />
           </section>
