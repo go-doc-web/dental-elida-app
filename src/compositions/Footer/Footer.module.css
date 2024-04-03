@@ -2,58 +2,89 @@
   background-color: var(--gallary-bg, #bbe2f8);
 }
 .footer {
-  border-radius: 2rem 2rem 0 0;
-  background: #1386c7;
-  padding: 2rem 0;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  background-color: var(--footer-color-bg, #1386c7);
+  padding: 2rem;
 }
 
 .wrapper {
-  /* padding-top: 3.2rem; */
   text-align: center;
   border-radius: 30px;
-  border: 2px solid #fff;
+  border: 2px solid var(--text-color-white, #ffffff);
+}
+
+.wrapperAddress {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3.2rem 0;
 }
 
 .tel {
-  color: #fff;
-  padding-top: 3.2rem;
-  font-family: 'Roboto Condensed';
-  font-size: 48px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  letter-spacing: -2.4px;
   margin-bottom: 0.8rem;
+  font-family: 'Roboto Condensed';
+  font-size: 4.8rem;
+  font-weight: 700;
+  /* letter-spacing: -1.4px; */
+  color: var(--text-color-white, #ffffff);
 }
 
 .address {
   color: #fff;
-  margin-bottom: 3.2rem;
+
   font-family: 'Roboto Condensed';
-  font-size: 18px;
+  font-size: 1.8rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 127%; /* 22.86px */
+  line-height: 127%; /* 40.64px */
 }
 
 .thumb {
-  /* width: 100%; */
-
-  padding: 2.5rem 0 3.6rem 0;
+  padding: 2.5rem 0 3.6rem;
   background-color: #fff;
-  border-radius: 20px;
+  border-radius: 2rem;
+}
+
+.logo {
+  width: 19.3rem;
+  height: 14.9rem;
 }
 
 /* Template */
 
-@media screen and (min-width: 375px) {
-}
-
-@media screen and (min-width: 768px) {
-}
 @media screen and (min-width: 1140px) {
-}
-@media screen and (min-width: 1440px) {
-}
-@media screen and (min-width: 1920px) {
+  .root {
+    background-color: var(--body-bg, #ffffff);
+  }
+  .wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .wrapperAddress {
+    padding: 3rem 0 2.7rem;
+
+    text-align: center;
+    flex-grow: 2;
+  }
+  .tel {
+    margin-bottom: 1rem;
+    font-size: 8.8rem;
+    /* letter-spacing: -1.4px; */
+  }
+
+  .address {
+    font-size: 3.2rem;
+  }
+
+  .thumb {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+
+  .logo {
+    width: 19.3rem;
+    height: 14.9rem;
+  }
 }
