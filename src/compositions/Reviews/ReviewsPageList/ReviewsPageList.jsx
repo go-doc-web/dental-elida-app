@@ -1,44 +1,26 @@
-import ReviewsList from '../ReviewsList';
+'use client';
+import { useEffect, useState } from 'react';
+
+import ReviewsList from '@/compositions/Reviews/ReviewsList';
 import css from './ReviewsPageList.module.css';
+import { getReviews } from '@/api/requests/getReviews';
 
-const getReviews = async () => {
-  try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/reviews`, {
-      next: { revalidate: 60 },
-    });
+const ReviewsPageList = () => {
+  const [data, setData] = useState([]);
 
-    if (!res.ok) {
-      throw new Error('Failed to fetch data');
-    }
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await getReviews();
+        console.log(data);
+        setData(data);
+      } catch (error) {}
+    };
 
-    return res.json();
-  } catch (error) {
-    console.log(error);
-  }
-};
+    fetchData();
+  }, []);
 
-const ReviewsPageList = async () => {
-  const data = await getReviews();
-
-  return (
-    <ReviewsList data={data} />
-    // <>
-    //   <ul className={css.list}>
-    //     {data &&
-    //       data.map(({ _id: id, text, userName, lastName, rating, createdAt }) => {
-    //         return (
-    //           <li className={css.listItem} key={id}>
-    //             <h2 className={css.itemHeading}>{`${userName} ${lastName ? lastName : ''}`}</h2>
-    //             <span className={css.date}>{formattedDate(createdAt)}</span>
-    //             <Rating value={rating} />
-    //             <p className={css.itemText}>{`"${text}"`}</p>
-    //             <Line className={css.line} />
-    //           </li>
-    //         );
-    //       })}
-    //   </ul>
-    // </>
-  );
+  return <ReviewsList items={data} />;
 };
 
 export default ReviewsPageList;

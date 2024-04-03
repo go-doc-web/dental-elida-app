@@ -6,12 +6,12 @@ import formattedDate from '@/helpers/formatedDate';
 
 import css from './ReviewsList.module.css';
 
-const ReviewsList = ({ data }) => {
+const ReviewsList = ({ items }) => {
   return (
     <>
       <ul className={css.list}>
-        {data &&
-          data.map(({ _id: id, text, userName, lastName, rating, createdAt }) => {
+        {items &&
+          items.map(({ _id: id, text, userName, lastName, rating, createdAt }) => {
             return (
               <li className={css.listItem} key={id}>
                 <h2 className={css.itemHeading}>{`${userName} ${lastName ? lastName : ''}`}</h2>

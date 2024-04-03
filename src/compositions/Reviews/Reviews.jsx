@@ -2,12 +2,12 @@ import React from 'react';
 import { Pagination } from 'antd';
 import css from './Reviews.module.css';
 import Heading from '@/componets/Heading';
-import ReviewsPageList from './ReviewsPageList';
+import ReviewsPageList from '@/compositions/Reviews/ReviewsPageList/ReviewsPageList';
 import Line from '@/componets/Line';
 
-const onShowSizeChange = (current, pageSize) => {
-  console.log(current, pageSize);
-};
+// const onShowSizeChange = (current, pageSize) => {
+//   console.log(current, pageSize);
+// };
 
 const Reviews = () => {
   return (

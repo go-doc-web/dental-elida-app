@@ -1,6 +1,6 @@
 import React from 'react';
 import css from './LateralReviews.module.css';
-import ReviewsPageList from '@/compositions/Reviews/ReviewsPageList';
+import ReviewsPageList from '@/compositions/Reviews/ReviewsPageList/ReviewsPageList';
 
 import Heading from '@/componets/Heading';
 import Line from '@/componets/Line';
