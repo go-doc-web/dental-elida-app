@@ -4,15 +4,9 @@ import Review from '@/models/Reviews';
 export async function GET() {
   try {
     await dbConnect();
-    const data = await Review.find();
+    const data = await Review.find().sort({ createdAt: -1 });
 
-    return Response.json(data, {
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-      },
-    });
+    return Response.json(data);
   } catch (error) {
     console.log(error.message);
   }

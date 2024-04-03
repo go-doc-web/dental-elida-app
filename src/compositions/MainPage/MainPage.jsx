@@ -3,7 +3,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { memberAria } from '@/constants/routes';
 import SideBar from '@/componets/SideBar';
 
-import LateralReviews from '@/compositions/LateralReviews';
+import LateralReviews from '@/compositions/LateralReviews/LateralReviews';
 import css from './Mainpage.module.css';
 
 import React from 'react';
