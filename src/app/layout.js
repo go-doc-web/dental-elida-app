@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import './styles/globals.css';
 
 import { Roboto_Condensed } from 'next/font/google';
@@ -23,10 +24,27 @@ export default function RootLayout({ children }) {
         <AntdRegistry>
           <ReduxProvider>
             <Header />
-
-            <main>
-              <MainPage>{children}</MainPage>
-            </main>
+            <Suspense
+              fallback={
+                <p
+                  style={{
+                    width: '100wh',
+                    height: '100vh',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '3.2rem',
+                    background: 'red',
+                  }}
+                >
+                  Loading Suspense ...
+                </p>
+              }
+            >
+              <main>
+                <MainPage>{children}</MainPage>
+              </main>
+            </Suspense>
 
             <Footer />
           </ReduxProvider>
