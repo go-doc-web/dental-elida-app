@@ -1,40 +1,60 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
+import { Select, Space } from 'antd';
+
 import css from './FormAddReviews.module.css';
-import { revalidatePath } from 'next/cache';
-import { redirect } from 'next/navigation';
-
-// TODO add counter symbol textarea
-
-/**
- *
- * @param {*} FormData
- */
-
-const createReviews = async FormData => {
-  'use server';
-  const { userName, lastName, text, rating } = Object.fromEntries(FormData);
-
-  const response = await fetch(`${process.env.API_HOST}/reviews`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    // body: JSON.stringify({ userName, lastName, text, rating }),
-    body: JSON.stringify({ userName, lastName, text, rating }),
-  });
-
-  const reviews = await response.json();
-
-  revalidatePath('/reviews');
-  redirect(`${process.env.CLIENT_URL}/reviews`);
-};
 
 const FormAddReviews = () => {
+  const [formData, setFormData] = useState({
+    userName: '',
+    lastName: '',
+    text: '',
+    rating: 'defaultOption',
+  });
+
+  const handleChange = e => {
+    const { name, value } = e.target;
+    setFormData(prevData => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async e => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/reviews`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to add review');
+      }
+
+      // Reset form after successful submission
+      setFormData({
+        userName: '',
+        lastName: '',
+        text: '',
+        rating: 'defaultOption',
+      });
+
+      // Redirect to reviews page or handle navigation as per your routing setup
+    } catch (error) {
+      console.error('Error adding review:', error);
+    }
+  };
+
   return (
-    <form className={css.form} action={createReviews}>
+    <form className={css.form} onSubmit={handleSubmit}>
       <div className={css.wrapperInput}>
         <label htmlFor="userName" className={css.label}>
-          <span className={css.spanLabel}>*</span>Full Name
+          <span className={css.spanLabel}>*</span>First Name
         </label>
         <input
           className={css.input}
@@ -42,6 +62,8 @@ const FormAddReviews = () => {
           name="userName"
           id="userName"
           placeholder="Type here"
+          value={formData.userName}
+          onChange={handleChange}
           required
         />
       </div>
@@ -55,12 +77,14 @@ const FormAddReviews = () => {
           name="lastName"
           id="lastName"
           placeholder="Type here"
+          value={formData.lastName}
+          onChange={handleChange}
           required
         />
       </div>
       <div className={css.wrapperInput}>
-        <label htmlFor="" className={css.label}>
-          <span className={css.spanLabel}>*</span>Lave a comment
+        <label htmlFor="text" className={css.label}>
+          <span className={css.spanLabel}>*</span>Leave a comment
         </label>
         <textarea
           className={`${css.input} ${css.textarea}`}
@@ -68,35 +92,49 @@ const FormAddReviews = () => {
           placeholder="Type here"
           name="text"
           maxLength="255"
+          value={formData.text}
+          onChange={handleChange}
           required
         />
       </div>
       <div className={css.wrapperInput}>
-        <label htmlFor="" className={css.label}>
+        <label htmlFor="rating" className={css.label}>
           <span className={css.spanLabel}>*</span>Rate us
         </label>
-        <select name="rating" className={css.select} defaultValue="defaultOption" required>
-          <option className={css.selectPlaceholder} hidden disabled value="defaultOption">
+        <select
+          name="rating"
+          className={css.select}
+          value={formData.rating}
+          onChange={handleChange}
+          required
+        >
+          <option value="defaultOption" disabled>
             Choose here...
           </option>
-          <option className={css.option} value="1">
-            1 Star
-          </option>
-          <option className={css.option} value="2">
-            2 Stars
-          </option>
-          <option className={css.option} value="3">
-            3 Stars
-          </option>
-          <option className={css.option} value="4">
-            4 Stars
-          </option>
-          <option className={css.option} value="5">
-            5 Stars
-          </option>
+          <option value="1">1 Star</option>
+          <option value="2">2 Stars</option>
+          <option value="3">3 Stars</option>
+          <option value="4">4 Stars</option>
+          <option value="5">5 Stars</option>
         </select>
+        {/* <Space wrap>
+          <Select
+            defaultValue="lucy"
+            style={{ width: 260 }}
+            name={'rating'}
+            onChange={handleChange}
+            options={[
+              { value: '1', label: '1 Star' },
+              { value: '2', label: '2 Star' },
+              { value: '3', label: '3 Star' },
+              { value: '4', label: '4 Star' },
+              { value: '5', label: '5 Star' },
+              { value: 'disabled', label: 'Disabled', disabled: true },
+            ]}
+          />
+        </Space> */}
       </div>
-      <button className={css.button} type={'submit'}>
+      <button className={css.button} type="submit">
         Leave Review
       </button>
     </form>
