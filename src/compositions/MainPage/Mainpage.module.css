@@ -1,6 +1,10 @@
 .rigth {
   background: rgba(187, 226, 248, 0.4);
 }
+
+.bg {
+  background: linear-gradient(to right, #d4ecfa 61.7%, #ffffff 39.3%);
+}
 @media screen and (min-width: 1140px) {
   .main {
     display: flex;

@@ -20,6 +20,7 @@ html {
   /* /igor */
   color: var(--text-color-primery, black);
   line-height: normal;
+
   background: var(--body-bg, white);
 }
 

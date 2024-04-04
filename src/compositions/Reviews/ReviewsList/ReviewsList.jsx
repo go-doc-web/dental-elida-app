@@ -1,4 +1,4 @@
-import React from 'react';
+import { Suspense } from 'react';
 
 import Rating from '@/componets/Rating';
 import Line from '@/componets/Line';

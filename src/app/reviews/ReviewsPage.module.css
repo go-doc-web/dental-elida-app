@@ -1,19 +1,22 @@
 .root {
-  background: linear-gradient(to right, #d4ecfa 50%, #ffffff 50%);
+  /* background: linear-gradient(to right, #d4ecfa 50%, #ffffff 50%); */
 }
 .wrapper {
   display: flex;
-  /* background-color: #d4ecfa; */
+
   justify-content: space-between;
+
   min-height: 70vh;
 }
 
 .reviews {
-  width: 66.7rem;
-  background-color: var(--reviews-bg);
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
-.formSection {
-  padding-top: 7.7rem;
-  /* background-color: rgb(243, 240, 240); */
+@media screen and (min-width: 1140px) {
+  .reviews {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }

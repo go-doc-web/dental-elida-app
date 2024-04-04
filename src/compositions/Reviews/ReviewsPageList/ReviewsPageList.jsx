@@ -12,7 +12,7 @@ const ReviewsPageList = () => {
     const fetchData = async () => {
       try {
         const data = await getReviews();
-        console.log(data);
+
         setData(data);
       } catch (error) {}
     };
