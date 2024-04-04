@@ -4,6 +4,7 @@ import { memberAria } from '@/constants/routes';
 import SideBar from '@/componets/SideBar';
 
 import LateralReviews from '@/compositions/LateralReviews/LateralReviews';
+import WriteReviews from '@/compositions/WriteReviews';
 import css from './Mainpage.module.css';
 
 import React from 'react';
@@ -22,7 +23,12 @@ function MainPage({ children }) {
           <div className={css.main}>
             <div className={css.left}>{children}</div>
             <div className={css.rigth}>
-              <SideBar>{!reviewsPage && <LateralReviews />}</SideBar>
+              <SideBar>
+                <>
+                  {!reviewsPage && <LateralReviews />}
+                  {reviewsPage && <WriteReviews />}
+                </>
+              </SideBar>
             </div>
           </div>
         </div>

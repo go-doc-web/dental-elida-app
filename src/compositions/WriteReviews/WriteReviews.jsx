@@ -7,11 +7,13 @@ import FormAddReviews from '../FormAddReviews';
 const WriteReviews = () => {
   return (
     <>
-      <Heading type={'h2'} className={css.titleSection}>
-        Write a Review
-      </Heading>
-      <Line className={css.line} />
-      <FormAddReviews />
+      <section className={css.section}>
+        <Heading type={'h2'} className={css.titleSection}>
+          Write a Review
+        </Heading>
+        <Line className={css.line} />
+        <FormAddReviews />
+      </section>
     </>
   );
 };
