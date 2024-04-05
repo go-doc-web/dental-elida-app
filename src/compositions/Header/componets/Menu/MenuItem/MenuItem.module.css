@@ -1,4 +1,16 @@
-.linkItem {
+.wrapperLink {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.item {
+  position: relative;
+}
+
+.itemLink {
+  display: block;
+  text-transform: capitalize;
   font-size: 1.6rem;
   font-weight: 400;
   letter-spacing: 0.64px;
@@ -6,9 +18,44 @@
 }
 
 .activeMenu {
-  margin-top: 0.2rem;
+  position: absolute;
+  /* margin-top: 0.2rem; */
   width: 2.4rem;
   height: 0.2rem;
+  bottom: -0.4rem;
+  left: 0;
 
   background-color: var(--accent-color, #f8f387);
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 5rem; /* Размещаем меню под ссылкой */
+  left: -1.6rem;
+  width: 14.4rem;
+
+  padding: 0px 16px 16px 16px;
+  background: #1386c7;
+  margin: 0;
+  border-radius: 0px 0px 10px 10px;
+  display: none;
+  z-index: 20;
+}
+
+.childLink {
+  position: relative;
+  margin-bottom: 2rem;
+  color: #fff;
+
+  font-size: 14px;
+
+  letter-spacing: 0.14px;
+}
+
+.childLink:hover {
+  color: var(--accent-color, #f8f387);
+}
+
+.dropdownMenu.active {
+  display: block;
 }
