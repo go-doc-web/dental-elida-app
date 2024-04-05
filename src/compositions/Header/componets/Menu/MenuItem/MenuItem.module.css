@@ -42,12 +42,16 @@
   z-index: 20;
 }
 
+.childItem {
+  margin-bottom: 1rem;
+}
+
 .childLink {
   position: relative;
-  margin-bottom: 2rem;
+
   color: #fff;
 
-  font-size: 14px;
+  font-size: 1.4rem;
 
   letter-spacing: 0.14px;
 }
