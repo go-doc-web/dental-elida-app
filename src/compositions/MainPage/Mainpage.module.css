@@ -1,4 +1,42 @@
-.rigth {
+.right {
+  padding-left: 2rem; /* Уменьшим левый отступ до 2rem */
+  padding-right: 2rem; /* Уменьшим правый отступ до 2rem */
+  background: rgba(187, 226, 248, 0.4);
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.bg {
+  background: linear-gradient(to right, #d4ecfa 61.7%, #ffffff 39.3%);
+}
+
+@media screen and (min-width: 1140px) {
+  .main {
+    display: flex;
+    gap: 3.4rem; /* column-gap заменяем на gap */
+  }
+
+  .left {
+    width: 647px;
+
+    flex: 1;
+    overflow-y: auto;
+  }
+
+  .right {
+    width: 333px;
+    padding-left: 3.4rem; /* Увеличим левый отступ до 3.4rem */
+    padding-right: 3.4rem; /* Увеличим правый отступ до 3.4rem */
+    overflow: unset;
+    overflow: hidden;
+  }
+
+  .right:hover {
+    overflow-y: auto;
+  }
+}
+
+/* .rigth {
   background: rgba(187, 226, 248, 0.4);
   padding: 0 2rem;
 }
@@ -6,20 +44,26 @@
 .bg {
   background: linear-gradient(to right, #d4ecfa 61.7%, #ffffff 39.3%);
 }
+
 @media screen and (min-width: 1140px) {
   .main {
     display: flex;
-    flex-wrap: nowrap;
     column-gap: 3.4rem;
   }
+
   .left {
     width: 64.7rem;
+    flex: 1;
+    overflow-y: auto;
   }
 
   .rigth {
     width: 33.3rem;
     padding-left: 3.3rem;
     padding-right: 3.4rem;
-    /* max-width: 33.3rem; */
+    overflow: hidden;
   }
-}
+  .rigth:hover {
+    overflow-y: auto;
+  }
+} */
