@@ -1,6 +1,14 @@
 .linkItem {
   font-size: 1.6rem;
   font-weight: 400;
-  letter-spacing: 0, 064rem;
+  letter-spacing: 0.64px;
   color: var(--text-color-white, #ffffff);
+}
+
+.activeMenu {
+  margin-top: 0.2rem;
+  width: 2.4rem;
+  height: 0.2rem;
+
+  background-color: var(--accent-color, #f8f387);
 }
