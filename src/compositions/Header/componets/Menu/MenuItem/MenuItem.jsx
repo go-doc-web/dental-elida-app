@@ -1,15 +1,59 @@
-import React from 'react';
-import css from './MenuItem.module.css';
+import { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
+import DropDown from '@/assets/icons/arrow-drop-down.svg';
+import DropUp from '@/assets/icons/arrow-drop-up.svg';
+import css from './MenuItem.module.css';
 const MenuItem = ({ item }) => {
+  const [isOpen, setIsOpen] = useState(false);
   const path = usePathname();
 
+  const handleClick = () => {
+    setIsOpen(prevState => !isOpen);
+    console.log('isOpen', isOpen);
+  };
+
   return (
-    <li className={css.linkItem}>
-      <Link href={item.link}>{item.title}</Link>
-      {/* {item.childrens && <p>Drop menu</p>} */}
+    <li onClick={item.childrens ? handleClick : null} className={css.item}>
+      <div className={css.wrapperLink}>
+        <Link className={css.itemLink} href={item.link}>
+          {item.title}
+        </Link>
+        {item.childrens && !isOpen && (
+          <Image
+            src={DropDown}
+            alt={'DropDown'}
+            width={16}
+            height={16}
+            className={css.logo}
+            priority={true}
+          />
+        )}
+        {item.childrens && isOpen && (
+          <Image
+            src={DropUp}
+            alt={'DropUp'}
+            width={16}
+            height={16}
+            className={css.logo}
+            priority={true}
+          />
+        )}
+      </div>
+      {item.childrens && (
+        <ul className={isOpen ? `${css.dropdownMenu} ${css.active}` : `${css.dropdownMenu} `}>
+          {item.childrens.map((child, index) => (
+            <li key={index}>
+              <Link className={css.childLink} href={child.link}>
+                {child.title}
+                {/* {path === child.link ? <div className={css.activeMenu}></div> : null} */}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
       {path === item.link ? <div className={css.activeMenu}></div> : null}
     </li>
   );
