@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -11,9 +11,14 @@ const MenuItem = ({ item }) => {
   const path = usePathname();
 
   const handleClick = () => {
-    setIsOpen(prevState => !isOpen);
-    console.log('isOpen', isOpen);
+    setIsOpen(prevState => !prevState);
   };
+
+  useEffect(() => {
+    if (item.link !== path) {
+      setIsOpen(false);
+    }
+  }, [item.link, path]);
 
   return (
     <li onClick={item.childrens ? handleClick : null} className={css.item}>
@@ -45,7 +50,7 @@ const MenuItem = ({ item }) => {
       {item.childrens && (
         <ul className={isOpen ? `${css.dropdownMenu} ${css.active}` : `${css.dropdownMenu} `}>
           {item.childrens.map((child, index) => (
-            <li key={index}>
+            <li className={css.childItem} key={index}>
               <Link className={css.childLink} href={child.link}>
                 {child.title}
                 {/* {path === child.link ? <div className={css.activeMenu}></div> : null} */}
