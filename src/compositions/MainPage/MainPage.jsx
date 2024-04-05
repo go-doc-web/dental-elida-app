@@ -15,17 +15,11 @@ function MainPage({ children }) {
   const isPrivateLocation = memberAria.includes(path);
 
   const [height, setHeight] = useState(0);
+  const [leftLoaded, setLeftLoaded] = useState(false); // Состояние для отслеживания загрузки left
 
   const reviewsPage = path === '/reviews';
   const leftRef = useRef(null);
   const rightRef = useRef(null);
-
-  // useEffect(() => {
-  //   if (router.asPath) {
-  //     // Проверяем, определен ли router
-  //     router.replace(router.asPath); // Принудительная перезагрузка страницы
-  //   }
-  // }, [router]);
 
   useEffect(() => {
     function handleResize() {
@@ -48,6 +42,13 @@ function MainPage({ children }) {
     }
   }, [height]);
 
+  useEffect(() => {
+    // Установка состояния leftLoaded в true при монтировании leftRef
+    if (leftRef.current) {
+      setLeftLoaded(true);
+    }
+  }, []);
+
   return (
     <>
       {isPrivateLocation ? (
@@ -57,13 +58,15 @@ function MainPage({ children }) {
           <div className={css.main}>
             <div className={css.left} ref={leftRef}>
               {children}
-            </div>{' '}
-            {/* Изменено здесь */}
+            </div>
             <div className={css.right} ref={rightRef}>
-              {/* <SideBar> */}
-              {!reviewsPage && <LateralReviews />}
-              {reviewsPage && <WriteReviews />}
-              {/* </SideBar> */}
+              {/* Проверяем, загружен ли left, прежде чем рендерить right */}
+              {leftLoaded && (
+                <>
+                  {!reviewsPage && <LateralReviews />}
+                  {reviewsPage && <WriteReviews />}
+                </>
+              )}
             </div>
           </div>
         </div>

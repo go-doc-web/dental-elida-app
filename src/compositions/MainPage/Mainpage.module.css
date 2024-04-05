@@ -3,6 +3,7 @@
   padding-right: 2rem; /* Уменьшим правый отступ до 2rem */
   background: rgba(187, 226, 248, 0.4);
   overflow: hidden;
+  overflow-y: auto;
 }
 
 .bg {
@@ -26,6 +27,11 @@
     width: 333px;
     padding-left: 3.4rem; /* Увеличим левый отступ до 3.4rem */
     padding-right: 3.4rem; /* Увеличим правый отступ до 3.4rem */
+    overflow: unset;
+    overflow: hidden;
+  }
+
+  .right:hover {
     overflow-y: auto;
   }
 }
