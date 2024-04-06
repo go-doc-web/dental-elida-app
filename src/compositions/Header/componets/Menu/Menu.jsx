@@ -8,7 +8,7 @@ import useViewportWidth from '@/hooks/useViewportWidth';
 import css from './Menu.module.css';
 
 function Menu({ menuItems }) {
-  const { isEqualWidth } = useViewportWidth({ expect: 768 });
+  const { isEqualWidth } = useViewportWidth({ expect: 1140 });
   return (
     <nav className={css.nav}>
       {isEqualWidth && (
@@ -19,12 +19,7 @@ function Menu({ menuItems }) {
       {!isEqualWidth && (
         <ul className={css.navList}>
           {menuItems.map(item => {
-            return (
-              <MenuItem key={item.id} item={item} />
-              // <li key={item.id} className={css.linkItem}>
-              //   <Link href={item.link}>{item.title}</Link>
-              // </li>
-            );
+            return <MenuItem key={item.id} item={item} />;
           })}
         </ul>
       )}
