@@ -1,0 +1,26 @@
+.menu {
+  padding-top: 7.9rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1386c7;
+  z-index: 1000;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.open {
+  transform: translateX(0%);
+}
+
+.btnClose {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+}
+
+.itemLink {
+  color: aliceblue;
+}
