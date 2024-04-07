@@ -9,6 +9,7 @@ import ReduxProvider from '@/lib/Provider';
 import Header from '@/compositions/Header';
 import Footer from '@/compositions/Footer';
 import MainPage from '@/compositions/MainPage';
+import AppNotifier from '@/compositions/AppNotifier';
 
 const roboto = Roboto_Condensed({ subsets: ['latin'] });
 
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
             <Header />
 
             <main>
+              <AppNotifier />
               <MainPage>{children}</MainPage>
             </main>
 

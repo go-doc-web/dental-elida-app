@@ -6,7 +6,7 @@ const reviewSchema = new Schema(
     lastName: { type: String },
     rating: { type: Number, required: true },
     text: { type: String, required: true },
-    isModerated: { type: String, default: false }, //  - для отзывов, ожидающих проверки
+    isModerated: { type: Boolean, default: false }, //  - для отзывов, ожидающих проверки
   },
   { timestamps: true }
 );
