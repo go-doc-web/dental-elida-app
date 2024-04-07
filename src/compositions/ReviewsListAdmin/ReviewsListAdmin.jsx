@@ -22,9 +22,7 @@ const ReviewsListAdmin = () => {
         //   console.log('Error');
         // }
         dispatch({ type: 'SET_REVIEWS', payload: data });
-      } catch (error) {
-        // dispatch({ type: 'ERROR_REVIEWS', payload: data });
-      }
+      } catch (error) {}
     };
     fetchReviews();
   }, [dispatch]);
