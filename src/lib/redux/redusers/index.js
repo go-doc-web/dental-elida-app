@@ -1,12 +1,14 @@
 import { combineReducers } from 'redux';
 import { authReduser } from './authReduser';
-import { reviewsReducer } from './reviewsReduser';
+import { reviews } from './reviewsReduser';
 import user from './user';
-import app from './app';
+import appNotifier from './appNotifier';
+// import app from './app';
 
 export default combineReducers({
   auth: authReduser,
-  reviewsReducer,
-  app,
+  reviews,
+  // app,
   user,
+  appNotifier,
 });

@@ -1,17 +1,17 @@
 const initialState = {
-  reviews: [],
+  items: [],
 };
 
-export const reviewsReducer = (state = initialState, action) => {
+export const reviews = (state = initialState, action) => {
   switch (action.type) {
     case 'SET_REVIEWS':
       return {
         ...state,
-        reviews: action.payload,
+        items: action.payload,
       };
     default:
       return state;
   }
 };
 
-export default reviewsReducer;
+export default reviews;

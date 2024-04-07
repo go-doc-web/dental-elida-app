@@ -11,7 +11,7 @@ import css from './ReviewsListAdmin.module.css';
 export const SET_REVIEWS = 'SET_REVIEWS';
 
 const ReviewsListAdmin = () => {
-  const reviews = useSelector(state => state.reviewsReducer.reviews);
+  const reviews = useSelector(state => state.reviews.items);
   const dispatch = useDispatch();
 
   useEffect(() => {

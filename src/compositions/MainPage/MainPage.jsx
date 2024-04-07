@@ -60,7 +60,6 @@ function MainPage({ children }) {
               {children}
             </div>
             <div className={css.right} ref={rightRef}>
-              {/* Проверяем, загружен ли left, прежде чем рендерить right */}
               {leftLoaded && (
                 <>
                   {!reviewsPage && <LateralReviews />}

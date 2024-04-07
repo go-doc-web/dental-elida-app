@@ -19,21 +19,17 @@ export default ({ email, password }) =>
       }
       if (response?.status === 401) {
         dispatch({
-          type: 'APP_ERROR',
-          payload: {
-            notification: response?.message,
-            typeNotification: 'error',
-          },
+          type: 'SET_APP_NOTIFIER',
+          message: response?.message,
+          key: 'error',
         });
       }
     } catch (error) {
       console.error(error);
       dispatch({
-        type: 'APP_ERROR',
-        payload: {
-          notification: response?.message,
-          typeNotification: 'error',
-        },
+        type: 'SET_APP_NOTIFIER',
+        message: response?.message,
+        key: 'error',
       });
     }
   };
