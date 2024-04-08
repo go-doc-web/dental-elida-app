@@ -1,13 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
+import close from '@/assets/icons/close.svg';
+import dentalGroup from '@/assets/icons/elida-dental-group.svg';
 import { menuItems } from '@/config/navMenu';
 import Hamburger from '@/componets/Icon/Hamburger';
+import CallIcon from '@/componets/Icon/CallIcon';
+import Location from '@/componets/Icon/LocationIcon';
+import { constans } from '@/constants/const.header';
+import removeDashInTelNumber from '@/helpers';
+
+import Line from '@/componets/Line';
 
 import css from './BurgerMenu.module.css';
 
+const pages = menuItems.filter(item => item.childrens);
+
 const BurgerMenu = () => {
+  const path = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-  console.log('menuItems', menuItems);
 
   const openMenu = () => {
     setIsOpen(true);
@@ -16,27 +28,75 @@ const BurgerMenu = () => {
     setIsOpen(false);
   };
 
+  const handleLinkClick = () => {
+    closeMenu();
+  };
+
   return (
     <>
-      <button type="button" onClick={openMenu}>
+      <button className={css.hamburger} type="button" onClick={openMenu}>
         <Hamburger color={'white'} />
       </button>
       <div className={isOpen ? `${css.menu} ${css.open}` : css.menu}>
         <button className={css.btnClose} type="button" onClick={closeMenu}>
-          X
+          <Image
+            src={close}
+            alt={'close'}
+            width={14}
+            height={14}
+            className={css.closeIcon}
+            priority={true}
+          />
         </button>
 
-        <ul className={css.navList}>
-          {menuItems.map(item => {
-            return (
-              <li key={item.id}>
-                <Link className={css.itemLink} href={item.link}>
-                  {item.title}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+        <div className={css.wrapperMenu}>
+          <ul className={css.navList}>
+            <li className={css.listItem}>
+              <Link className={css.itemLink} href="/" onClick={handleLinkClick}>
+                Home
+                {path === '/' ? <div className={css.activeMenu}></div> : null}
+              </Link>
+            </li>
+            {pages[0]?.childrens.map(item => {
+              return (
+                <li className={css.listItem} key={item.id}>
+                  <Link className={css.itemLink} href={item.link} onClick={handleLinkClick}>
+                    {item.title}
+                    {path === item.link ? <div className={css.activeMenu}></div> : null}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+          <Line className={css.line} />
+          <div className={css.thumbImage}>
+            <Image
+              src={dentalGroup}
+              alt={'close'}
+              width={133}
+              height={39}
+              className={css.closeIcon}
+              priority={true}
+            />
+          </div>
+          <div className={css.wrapper}>
+            <div className={css.wrapperTel}>
+              <CallIcon />
+              <Link
+                className={css.linkTel}
+                href={`tel:${removeDashInTelNumber(constans.numberTel)}`}
+              >
+                {constans.numberTel}
+              </Link>
+            </div>
+            <div className={css.wrapperAddress}>
+              <Location />
+              <Link className={css.linkAddress} href={'#'}>
+                {constans.location}
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );

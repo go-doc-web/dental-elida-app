@@ -1,26 +1,123 @@
 .menu {
-  padding-top: 7.9rem;
+  padding: 6.9rem 0 2.7rem;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background-color: #1386c7;
+  height: 100vh;
+  background-color: var(--header-color-bg, #1386c7);
   z-index: 1000;
   transform: translateX(-100%);
   transition: transform 0.3s ease-in-out;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  overflow-y: auto;
+}
+
+.wrapperMenu {
+  width: 25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.navList {
+  margin-bottom: 2.5rem;
 }
 
 .open {
   transform: translateX(0%);
 }
 
+.hamburger {
+  cursor: pointer;
+}
+
 .btnClose {
+  padding: 0.8rem;
   position: absolute;
-  top: 30px;
-  left: 40px;
+  top: 21px;
+  left: 20px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 250ms;
+}
+
+.btnClose:hover .closeIcon {
+  transform: scale(1.2);
+}
+
+.listItem {
+  margin-bottom: 2rem;
+  position: relative;
+  text-align: center;
+}
+
+.listItem:last-child {
+  margin-bottom: 0;
 }
 
 .itemLink {
-  color: aliceblue;
+  position: relative;
+  display: inline-block;
+  color: var(--text-color-white, #ffffff);
+
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.8px;
+}
+
+.activeMenu {
+  position: absolute;
+
+  width: 100%;
+  height: 0.2rem;
+  bottom: -0.4rem;
+  left: 0;
+
+  background-color: var(--accent-color, #f8f387);
+}
+
+.line {
+  width: 100%;
+  margin-bottom: 1.8rem;
+  height: 1px;
+  opacity: 0.5;
+  background: #fff;
+}
+
+.thumbImage {
+  margin-bottom: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapperTel {
+  margin-bottom: 0.7rem;
+}
+.wrapperTel,
+.wrapperAddress {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.linkTel,
+.linkAddress {
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: 0.56px;
+  color: var(--text-color-white, #ffffff);
 }
