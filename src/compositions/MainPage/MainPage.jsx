@@ -3,11 +3,13 @@ import React, { useState, useEffect, useRef } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 
 import { memberAria } from '@/constants/routes';
+import useViewportWidth from '@/hooks/useViewportWidth';
 import SideBar from '@/componets/SideBar';
 import LateralReviews from '@/compositions/LateralReviews/LateralReviews';
 import WriteReviews from '@/compositions/WriteReviews';
 import css from './Mainpage.module.css';
 
+// TODO use Debounce
 function MainPage({ children }) {
   const path = usePathname();
   const router = useRouter();
@@ -20,8 +22,17 @@ function MainPage({ children }) {
   const reviewsPage = path === '/reviews';
   const leftRef = useRef(null);
   const rightRef = useRef(null);
+  const { isEqualWidth } = useViewportWidth({ expect: 1140 });
 
   useEffect(() => {
+    if (reviewsPage) {
+      setLeftLoaded(true);
+      return;
+    }
+    if (isEqualWidth) {
+      setLeftLoaded(true);
+      return;
+    }
     function handleResize() {
       if (leftRef.current) {
         setHeight(leftRef.current.offsetHeight);
@@ -34,20 +45,31 @@ function MainPage({ children }) {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, [path, router]);
+  }, [isEqualWidth, path, reviewsPage]);
 
   useEffect(() => {
+    if (reviewsPage) {
+      return;
+    }
+    if (isEqualWidth) {
+      return;
+    }
     if (rightRef.current) {
       rightRef.current.style.height = `${height}px`;
     }
-  }, [height]);
+  }, [height, reviewsPage, isEqualWidth]);
 
   useEffect(() => {
-    // Установка состояния leftLoaded в true при монтировании leftRef
+    if (reviewsPage) {
+      return;
+    }
+    if (isEqualWidth) {
+      return;
+    }
     if (leftRef.current) {
       setLeftLoaded(true);
     }
-  }, []);
+  }, [reviewsPage, isEqualWidth]);
 
   return (
     <>
