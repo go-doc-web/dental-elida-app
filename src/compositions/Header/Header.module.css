@@ -1,11 +1,11 @@
 .header {
   padding: 1.2rem 2rem 1.3rem;
-  background-color: var(--header-color-bg);
+  background-color: var(--header-color-bg, #1386c7);
   border-radius: 0 0 2rem 2rem;
 }
 
 .titleAdminPanel {
-  color: #fff;
+  color: var(--text-color-white, #ffffff);
 
   font-size: 32px;
   font-style: normal;
