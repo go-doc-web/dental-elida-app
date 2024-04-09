@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import css from './FixedBtnReviews.module.css';
 
 const FixedBtnReviews = ({ onClick }) => {
