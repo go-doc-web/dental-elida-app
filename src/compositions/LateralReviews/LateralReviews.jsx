@@ -16,9 +16,9 @@ const LateralReviews = () => {
       </Heading>
       <Line className={css.line} />
       <ReviewsPageList />
-      <Link className={css.viewsAllLink} href="/reviews">
+      <a className={css.viewsAllLink} href="/reviews">
         View all
-      </Link>
+      </a>
     </section>
   );
 };

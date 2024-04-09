@@ -25,6 +25,7 @@
     width: 333px;
     padding-left: 3.4rem; /* Увеличим левый отступ до 3.4rem */
     padding-right: 3.4rem; /* Увеличим правый отступ до 3.4rem */
+
     overflow-y: auto;
     overflow: hidden;
   }

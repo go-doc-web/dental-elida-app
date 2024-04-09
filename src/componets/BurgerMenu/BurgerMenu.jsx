@@ -52,18 +52,18 @@ const BurgerMenu = () => {
         <div className={css.wrapperMenu}>
           <ul className={css.navList}>
             <li className={css.listItem}>
-              <Link className={css.itemLink} href="/" onClick={handleLinkClick}>
+              <a className={css.itemLink} href="/" onClick={handleLinkClick}>
                 Home
                 {path === '/' ? <div className={css.activeMenu}></div> : null}
-              </Link>
+              </a>
             </li>
             {pages[0]?.childrens.map(item => {
               return (
                 <li className={css.listItem} key={item.id}>
-                  <Link className={css.itemLink} href={item.link} onClick={handleLinkClick}>
+                  <a className={css.itemLink} href={item.link} onClick={handleLinkClick}>
                     {item.title}
                     {path === item.link ? <div className={css.activeMenu}></div> : null}
-                  </Link>
+                  </a>
                 </li>
               );
             })}
@@ -82,18 +82,15 @@ const BurgerMenu = () => {
           <div className={css.wrapper}>
             <div className={css.wrapperTel}>
               <CallIcon />
-              <Link
-                className={css.linkTel}
-                href={`tel:${removeDashInTelNumber(constans.numberTel)}`}
-              >
+              <a className={css.linkTel} href={`tel:${removeDashInTelNumber(constans.numberTel)}`}>
                 {constans.numberTel}
-              </Link>
+              </a>
             </div>
             <div className={css.wrapperAddress}>
               <Location />
-              <Link className={css.linkAddress} href={'#'}>
+              <a className={css.linkAddress} href={'#'}>
                 {constans.location}
-              </Link>
+              </a>
             </div>
           </div>
         </div>

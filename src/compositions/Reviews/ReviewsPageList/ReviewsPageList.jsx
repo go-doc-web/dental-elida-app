@@ -8,6 +8,7 @@ import css from './ReviewsPageList.module.css';
 import { getReviews } from '@/api/requests/getReviews';
 
 const ReviewsPageList = () => {
+  const dispatch = useDispatch();
   const reviews = useSelector(state => state.reviews.items);
 
   const [data, setData] = useState([]);
@@ -22,30 +23,42 @@ const ReviewsPageList = () => {
       try {
         setLoading(true);
         const data = await getReviews();
-
-        setData(data);
+        dispatch({ type: 'SET_REVIEWS', payload: data });
+        // setData(data);
+      } catch (error) {
+      } finally {
         setLoading(false);
-      } catch (error) {}
+      }
     };
 
     fetchData();
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
-      {loading && (
-        <ThreeDots
-          visible={true}
-          height="80"
-          width="80"
-          color={`var(--text-color-accent, #1386c7)`}
-          radius="9"
-          ariaLabel="three-dots-loading"
-          wrapperStyle={{}}
-          wrapperClass=""
-        />
+      {loading ? (
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            // height: '100vh',
+          }}
+        >
+          <ThreeDots
+            visible={true}
+            height="80"
+            width="80"
+            color={`var(--text-color-accent, #1386c7)`}
+            radius="9"
+            ariaLabel="three-dots-loading"
+            wrapperStyle={{}}
+            wrapperClass=""
+          />
+        </div>
+      ) : (
+        <ReviewsList items={reviews} />
       )}
-      <ReviewsList items={data} />
     </>
   );
 };
