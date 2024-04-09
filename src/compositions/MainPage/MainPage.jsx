@@ -85,7 +85,7 @@ function MainPage({ children }) {
               {leftLoaded && (
                 <>
                   {!reviewsPage && <LateralReviews />}
-                  {reviewsPage && <WriteReviews />}
+                  {reviewsPage && !isEqualWidth && <WriteReviews />}
                 </>
               )}
             </div>
