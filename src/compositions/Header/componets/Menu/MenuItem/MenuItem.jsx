@@ -23,9 +23,9 @@ const MenuItem = ({ item }) => {
   return (
     <li onClick={item.childrens ? handleClick : null} className={css.item}>
       <div className={css.wrapperLink}>
-        <Link className={css.itemLink} href={item.link}>
+        <a className={css.itemLink} href={item.link}>
           {item.title}
-        </Link>
+        </a>
         {item.childrens && !isOpen && (
           <Image
             src={DropDown}
@@ -51,10 +51,10 @@ const MenuItem = ({ item }) => {
         <ul className={isOpen ? `${css.dropdownMenu} ${css.active}` : `${css.dropdownMenu} `}>
           {item.childrens.map((child, index) => (
             <li className={css.childItem} key={index}>
-              <Link className={css.childLink} href={child.link}>
+              <a className={css.childLink} href={child.link}>
                 {child.title}
                 {/* {path === child.link ? <div className={css.activeMenu}></div> : null} */}
-              </Link>
+              </a>
             </li>
           ))}
         </ul>
