@@ -1,9 +1,12 @@
 import React from 'react';
-import css from './LateralReviews.module.css';
+import Link from 'next/link';
+
 import ReviewsPageList from '@/compositions/Reviews/ReviewsPageList/ReviewsPageList';
 
 import Heading from '@/componets/Heading';
 import Line from '@/componets/Line';
+
+import css from './LateralReviews.module.css';
 
 const LateralReviews = () => {
   return (
@@ -13,6 +16,9 @@ const LateralReviews = () => {
       </Heading>
       <Line className={css.line} />
       <ReviewsPageList />
+      <Link className={css.viewsAllLink} href="/reviews">
+        View all
+      </Link>
     </section>
   );
 };

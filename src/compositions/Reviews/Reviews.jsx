@@ -13,7 +13,7 @@ const Reviews = () => {
   return (
     <>
       <Heading className={css.mainHeading} type="h1">
-        Reviews
+        Verified Reviews
       </Heading>
       <Line className={css.line} />
       <ReviewsPageList />
