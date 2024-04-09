@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
-import Link from 'next/link';
+
 import Image from 'next/image';
 import close from '@/assets/icons/close.svg';
 import dentalGroup from '@/assets/icons/elida-dental-group.svg';
