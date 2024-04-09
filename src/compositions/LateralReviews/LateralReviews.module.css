@@ -2,6 +2,7 @@
   padding-top: 4rem;
   padding-left: 2rem;
   padding-right: 2rem;
+  padding-bottom: 2.8rem;
 }
 
 .sectionTitle {
@@ -18,6 +19,20 @@
   background: var(--text-color-accent, #1386c7);
   margin-top: 3.2rem;
   margin-bottom: 2rem;
+}
+
+.viewsAllLink {
+  display: block;
+  width: 100%;
+  margin-top: 3.2rem;
+  color: #1386c7;
+
+  font-size: 20px;
+  text-align: center;
+  font-weight: 700;
+
+  letter-spacing: 0.4px;
+  text-transform: capitalize;
 }
 
 @media screen and (min-width: 1140px) {

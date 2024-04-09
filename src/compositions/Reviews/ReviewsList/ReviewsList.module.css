@@ -6,6 +6,10 @@
   margin-bottom: 2rem;
 }
 
+.listItem:last-child {
+  margin-bottom: 0;
+}
+
 .itemHeading {
   margin-bottom: 0.6rem;
 
