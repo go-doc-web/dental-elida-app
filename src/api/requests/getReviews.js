@@ -10,6 +10,7 @@ export const getReviews = async () => {
 
     return res.json();
   } catch (error) {
-    console.log(error);
+    console.log(error.message);
+    throw new Error('Failed to fetch reviews');
   }
 };
