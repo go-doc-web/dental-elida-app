@@ -13,6 +13,7 @@ const ReviewsPageList = () => {
 
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const verifyReviews = useMemo(() => {
     return reviews.map(item => item?.isisModerated);
@@ -26,41 +27,32 @@ const ReviewsPageList = () => {
         dispatch({ type: 'SET_REVIEWS', payload: data });
         // setData(data);
       } catch (error) {
+        setError(error.message); // Обработка ошибки
       } finally {
         setLoading(false);
       }
     };
 
     fetchData();
-  }, [dispatch]);
+  }, [dispatch, setLoading]);
 
-  return (
-    <>
-      {loading ? (
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            // height: '100vh',
-          }}
-        >
-          <ThreeDots
-            visible={true}
-            height="80"
-            width="80"
-            color={`var(--text-color-accent, #1386c7)`}
-            radius="9"
-            ariaLabel="three-dots-loading"
-            wrapperStyle={{}}
-            wrapperClass=""
-          />
-        </div>
-      ) : (
-        <ReviewsList items={reviews} />
-      )}
-    </>
-  );
+  // TODO Реализовать нрм лоадер
+
+  if (loading) {
+    return (
+      <ThreeDots
+        visible={true}
+        height="80"
+        width="80"
+        color="#1386c7"
+        radius="9"
+        ariaLabel="three-dots-loading"
+        wrapperStyle={{}}
+        wrapperClass=""
+      />
+    );
+  }
+  return <ReviewsList items={reviews} />;
 };
 
 export default ReviewsPageList;

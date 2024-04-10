@@ -1,42 +1,26 @@
-function Modal({ closeModal, children }) {
-  return (
-    <div
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        backgroundColor: 'rgba(0, 0, 0, 0.5)',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
-    >
-      <div
-        style={{
-          backgroundColor: 'white',
-          padding: '5rem',
-          maxWidth: '30rem',
-          height: '30rem',
-          borderRadius: '20px',
-        }}
-      >
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            flexDirection: 'column',
-            marginTop: '25px',
-          }}
-        >
-          <h2>Модальное окно</h2>
-          <p style={{ marginTop: '20px' }}>{children}</p>
-        </div>
+import Image from 'next/image';
 
-        <button style={{ fontSize: '16px', marginTop: '20px' }} onClick={closeModal}>
-          Закрыть
+import close from '@/assets/icons/close.svg';
+
+import css from './Modal.module.css';
+
+function Modal({ closeModal, children, title }) {
+  return (
+    <div className={css.modalBackdrop}>
+      <div className={css.modalContent}>
+        <button className={css.modalClose} onClick={closeModal}>
+          x
+          {/* <Image
+            src={close}
+            alt={'close'}
+            width={14}
+            height={14}
+            className={css.closeIcon}
+            priority={true}
+          /> */}
         </button>
+        <h2 className={css.title}>{title}</h2>
+        {children}
       </div>
     </div>
   );
