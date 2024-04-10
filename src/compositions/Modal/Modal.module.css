@@ -13,7 +13,7 @@
   z-index: 2500;
 }
 
-.modalContent {
+/* .modalContent {
   position: absolute;
 
   top: 50%;
@@ -22,11 +22,35 @@
 
   transform: translate(-50%, -50%);
   max-width: 600px;
-  min-height: 450px;
-  width: 100%;
+  min-height: 300px;
+  
 
   background-color: #fff;
   border-radius: 8px;
+
+  overflow-y: auto;
+} */
+
+.modalContent {
+  position: relative; /* изменение позиции на relative */
+  top: 50%;
+  left: 50%;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 8px;
+  transform: translate(-50%, -50%);
+
+  padding: 40px;
+  max-width: 600px;
+  min-height: 500px;
+  width: calc(100% - 40px);
+  max-height: calc(100vh - 40px);
+
+  overflow-y: hidden;
+}
+
+.modalContent:hover {
+  overflow: auto;
 }
 
 .title {
