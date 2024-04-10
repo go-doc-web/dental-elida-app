@@ -24,6 +24,9 @@ html {
   background: var(--body-bg, white);
 }
 
+.modalOpen {
+  overflow: hidden; /* Отключение скролла */
+}
 /* Стилизация скроллбара */
 ::-webkit-scrollbar {
   width: 8px;

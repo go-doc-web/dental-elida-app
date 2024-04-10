@@ -23,9 +23,11 @@ const Reviews = () => {
 
   const openModal = () => {
     setShowModal(true);
+    document.body.classList.add('modalOpen');
   };
   const closeModal = () => {
     setShowModal(false);
+    document.body.classList.remove('modalOpen');
   };
 
   return (
@@ -35,7 +37,7 @@ const Reviews = () => {
           <FormAddReviews />
         </Modal>
       )}
-      <FixedBtnReviews onClick={openModal} />
+      {!showModal && <FixedBtnReviews onClick={openModal} />}
 
       <>
         <Heading className={css.mainHeading} type="h1">

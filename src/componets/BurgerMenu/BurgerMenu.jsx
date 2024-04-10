@@ -23,9 +23,11 @@ const BurgerMenu = () => {
 
   const openMenu = () => {
     setIsOpen(true);
+    document.body.classList.add('modalOpen');
   };
   const closeMenu = () => {
     setIsOpen(false);
+    document.body.classList.remove('modalOpen');
   };
 
   const handleLinkClick = () => {
