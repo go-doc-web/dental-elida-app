@@ -1,18 +1,37 @@
-import { useState } from 'react';
-import { TfiWrite } from 'react-icons/tfi';
-import useViewportWidth from '@/hooks/useViewportWidth';
+import { useState, useEffect } from 'react';
+
 import css from './FixedBtnReviews.module.css';
 
 const FixedBtnReviews = ({ onClick }) => {
-  const { isEqualWidth } = useViewportWidth({ expect: 1139 });
-  const [isShowBtn, setIsShowBtn] = useState(false);
+  const [isSticky, setSticky] = useState(false);
+
+  const checkScroll = () => {
+    if (window.pageYOffset + window.innerHeight >= document.body.offsetHeight - 100) {
+      setSticky(true);
+    } else {
+      setSticky(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', checkScroll);
+    return () => {
+      window.removeEventListener('scroll', checkScroll);
+    };
+  }, []);
   return (
-    <div className={css.wrapperBtn}>
-      <button onClick={onClick} type="button" className={css.fixedButton}>
-        <TfiWrite />
-        <span>Write Review</span>
-      </button>
-    </div>
+    <button
+      onClick={onClick}
+      type="button"
+      className={css.fixedButton}
+      style={{
+        position: isSticky ? 'absolute' : 'fixed',
+        bottom: '20px',
+        width: isSticky ? '100%' : 'calc(100% - 2rem)',
+      }}
+    >
+      <span>Write Review</span>
+    </button>
   );
 };
 
