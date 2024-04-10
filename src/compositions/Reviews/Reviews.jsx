@@ -37,13 +37,13 @@ const Reviews = () => {
           <FormAddReviews />
         </Modal>
       )}
-      {!showModal && <FixedBtnReviews onClick={openModal} />}
 
-      <>
+      <div className={css.wrapper}>
         <Heading className={css.mainHeading} type="h1">
           Verified Reviews
         </Heading>
         <Line className={css.line} />
+        {!showModal && <FixedBtnReviews onClick={openModal} />}
         <ReviewsPageList />
 
         {!isEqualWidth && (
@@ -56,7 +56,7 @@ const Reviews = () => {
             />
           </div>
         )}
-      </>
+      </div>
     </>
   );
 };

@@ -24,7 +24,8 @@ html {
   background: var(--body-bg, white);
 }
 
-.modalOpen {
+.modalOpen,
+.burgerOpen {
   overflow: hidden; /* Отключение скролла */
 }
 /* Стилизация скроллбара */

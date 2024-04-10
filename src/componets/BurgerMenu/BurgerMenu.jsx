@@ -10,6 +10,7 @@ import CallIcon from '@/componets/Icon/CallIcon';
 import Location from '@/componets/Icon/LocationIcon';
 import { constans } from '@/constants/const.header';
 import removeDashInTelNumber from '@/helpers';
+import { useBurgerState } from '@/hooks/useBurgerState';
 
 import Line from '@/componets/Line';
 
@@ -19,16 +20,7 @@ const pages = menuItems.filter(item => item.childrens);
 
 const BurgerMenu = () => {
   const path = usePathname();
-  const [isOpen, setIsOpen] = useState(false);
-
-  const openMenu = () => {
-    setIsOpen(true);
-    document.body.classList.add('modalOpen');
-  };
-  const closeMenu = () => {
-    setIsOpen(false);
-    document.body.classList.remove('modalOpen');
-  };
+  const { isOpen, openMenu, closeMenu } = useBurgerState(false);
 
   const handleLinkClick = () => {
     closeMenu();

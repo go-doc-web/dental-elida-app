@@ -1,9 +1,6 @@
 .fixedButton {
-  position: fixed;
-  width: calc(100% - 2rem);
   height: 6rem;
   margin: 0 auto;
-  bottom: 20px;
   left: 0;
   right: 0;
   display: flex;
@@ -11,17 +8,16 @@
   justify-content: center;
   gap: 0.8rem;
 
-  /* padding: 10px 20px; 
-  text-align: center;  */
-  z-index: 2000;
+  z-index: 500;
 
   border-radius: 8px;
-  border: 1px solid transparent;
-  background: #000000;
+
+  border: 1px solid #1386c7;
+  background: #e4f3fc;
 
   box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
 
-  color: var(--accent-color);
+  color: #1386c7;
 
   font-size: 16px;
 
@@ -33,15 +29,11 @@
 
 .fixedButton:hover,
 .fixedButton:focus {
-  background: #302e2e;
+  background: #97cff1;
 }
 
 .fixedButton:active {
   transform: scale(0.98);
-}
-
-.wrapperBtn {
-  display: block;
 }
 
 @media screen and (min-width: 1140px) {

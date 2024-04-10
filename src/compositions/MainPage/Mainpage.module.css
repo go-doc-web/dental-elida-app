@@ -8,6 +8,10 @@
   background: linear-gradient(to right, #d4ecfa 61.7%, #ffffff 39.3%);
 }
 
+.main {
+  position: relative;
+}
+
 @media screen and (min-width: 1140px) {
   .main {
     display: flex;

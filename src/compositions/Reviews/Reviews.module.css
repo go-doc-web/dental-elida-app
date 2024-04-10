@@ -1,3 +1,7 @@
+.wrapper {
+  position: relative;
+}
+
 .mainHeading {
   color: #000;
   font-size: 5.4rem;
