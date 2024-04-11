@@ -10,29 +10,27 @@ import { constans } from '@/constants/const.header';
 
 const Footer = () => {
   return (
-    <div className={css.root}>
-      <footer className={css.footer}>
-        <div className="container">
-          <div className={css.wrapper}>
-            <div className={css.wrapperAddress}>
-              <span className={css.tel}>{constans.numberTel}</span>
-              <span className={css.address}>{constans.location}</span>
-            </div>
+    <footer className={css.footer}>
+      <div className="container">
+        <div className={css.wrapper}>
+          <div className={css.wrapperAddress}>
+            <span className={css.tel}>{constans.numberTel}</span>
+            <span className={css.address}>{constans.location}</span>
+          </div>
 
-            <div className={css.thumb}>
-              <Image
-                src={logo}
-                alt={'logo'}
-                width={300}
-                height={200}
-                className={css.logo}
-                priority={true}
-              />
-            </div>
+          <div className={css.thumb}>
+            <Image
+              src={logo}
+              alt={'logo'}
+              width={300}
+              height={200}
+              className={css.logo}
+              priority={true}
+            />
           </div>
         </div>
-      </footer>
-    </div>
+      </div>
+    </footer>
   );
 };
 
