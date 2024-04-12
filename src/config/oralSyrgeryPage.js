@@ -5,10 +5,14 @@ export const hero = {
     'Experience excellence in oral surgery at Elida Dental Care. Our dedicated team of oral surgeons combines expertise with compassionate care to provide comprehensive solutions for a range of dental concerns. Whether you require wisdom teeth extraction, dental implants, or other surgical procedures, we are committed to ensuring your comfort and well-being throughout the process.',
 };
 
+// Section Choose
+
 export const sectionChoose = {
-  title: 'Oral Surgery',
-  spanTitle: 'Services at Elida Dental Care',
+  title: 'Why choose ',
+  spanTitle: 'our Oral Surgery Services:',
 };
+
+// List Choose
 
 export const sectionChooseList = [
   {

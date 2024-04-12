@@ -13,6 +13,7 @@ const SectionAdvantagesList = ({ title, imgUrl, description }) => {
           height={335}
           className="section-img"
           sizes="100vw"
+          priority={true}
         />
       </div>
       <div className="section-advantages_content">
