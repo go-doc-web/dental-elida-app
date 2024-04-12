@@ -38,29 +38,27 @@ function ReviewsManagement() {
         // TODO сделать компонентом Filter
 
         <section className={css.reviewsSection}>
-          <div className="container">
-            <div className={css.filter}>
-              <Heading type={'h1'} className={css.titlePage}>
-                Reviews
-              </Heading>
-              <div className={css.wrapperSelectBlock}>
-                <div className={css.wrapperSelect}>
-                  <span className={css.label}>Status</span>
-                  <StatusSelect />
-                </div>
-                <div className={css.wrapperSelect}>
-                  <span className={css.label}>Rating</span>
-                  <RatingSelect />
-                </div>
-                <div className={css.wrapperSelect}>
-                  <span className={css.label}>Sort by</span>
-                  <SortSelect />
-                </div>
+          <div className={css.filter}>
+            <Heading type={'h1'} className={css.titlePage}>
+              Reviews
+            </Heading>
+            <div className={css.wrapperSelectBlock}>
+              <div className={css.wrapperSelect}>
+                <span className={css.label}>Status</span>
+                <StatusSelect />
+              </div>
+              <div className={css.wrapperSelect}>
+                <span className={css.label}>Rating</span>
+                <RatingSelect />
+              </div>
+              <div className={css.wrapperSelect}>
+                <span className={css.label}>Sort by</span>
+                <SortSelect />
               </div>
             </div>
-
-            <ReviewsListAdmin />
           </div>
+
+          <ReviewsListAdmin />
         </section>
       )}
     </>

@@ -1,15 +1,7 @@
-.root {
-  /* background: linear-gradient(to right, #d4ecfa 50%, #ffffff 50%); */
-}
 .wrapper {
   display: flex;
 
   justify-content: space-between;
-}
-
-.reviews {
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
 
 @media screen and (min-width: 1140px) {

@@ -1,7 +1,10 @@
 .right {
-  padding-left: 2rem; /* Уменьшим левый отступ до 2rem */
-  padding-right: 2rem; /* Уменьшим правый отступ до 2rem */
   background: rgba(187, 226, 248, 0.4);
+}
+
+.left {
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .bg {
@@ -19,6 +22,8 @@
   }
 
   .left {
+    padding-left: 0;
+    padding-right: 0;
     width: 647px;
 
     flex: 1;
