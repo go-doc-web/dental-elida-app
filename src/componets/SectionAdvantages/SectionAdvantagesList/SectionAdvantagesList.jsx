@@ -17,7 +17,7 @@ const SectionAdvantagesList = ({ title, imgUrl, description }) => {
         />
       </div>
       <div className="section-advantages_content">
-        <h3 className="section-advantages_content-title">Skilled Oral Surgeons</h3>
+        <h3 className="section-advantages_content-title">{title}</h3>
         <p className="section-advantages_content-description">{description}</p>
       </div>
     </>
