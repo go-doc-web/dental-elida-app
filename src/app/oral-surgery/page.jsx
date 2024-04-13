@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
+
 import SectionHero from '@/componets/SectionHero';
 import SectionAdvantages from '@/componets/SectionAdvantages';
 

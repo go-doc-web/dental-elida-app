@@ -54,7 +54,7 @@ const MenuItem = ({ item }) => {
             <li className={css.childItem} key={index}>
               <a className={css.childLink} href={child.link}>
                 {child.title}
-                {/* {path === child.link ? <div className={css.activeMenu}></div> : null} */}
+                {path === child.link ? <div className={css.activeMenuDrop}></div> : null}
               </a>
             </li>
           ))}
