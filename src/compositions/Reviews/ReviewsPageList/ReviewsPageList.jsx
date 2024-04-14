@@ -1,7 +1,6 @@
 'use client';
 import { useEffect, useState, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { ThreeDots } from 'react-loader-spinner';
 
 import ReviewsList from '@/compositions/Reviews/ReviewsList';
 import css from './ReviewsPageList.module.css';
@@ -38,21 +37,7 @@ const ReviewsPageList = () => {
 
   // TODO Реализовать нрм лоадер
 
-  if (loading) {
-    return (
-      <ThreeDots
-        visible={true}
-        height="80"
-        width="80"
-        color="#1386c7"
-        radius="9"
-        ariaLabel="three-dots-loading"
-        wrapperStyle={{}}
-        wrapperClass=""
-      />
-    );
-  }
-  return <ReviewsList items={reviews} />;
+  return <ReviewsList items={reviews} loading={loading} />;
 };
 
 export default ReviewsPageList;

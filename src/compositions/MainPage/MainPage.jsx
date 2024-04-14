@@ -4,9 +4,10 @@ import { usePathname, useRouter } from 'next/navigation';
 
 import { memberAria } from '@/constants/routes';
 import useViewportWidth from '@/hooks/useViewportWidth';
-import SideBar from '@/componets/SideBar';
+import RigthReviewsPageSkeleton from '@/componets/RigthReviewsPageSkeleton';
 import LateralReviews from '@/compositions/LateralReviews/LateralReviews';
 import WriteReviews from '@/compositions/WriteReviews';
+
 import css from './Mainpage.module.css';
 
 // TODO use Debounce
@@ -82,6 +83,7 @@ function MainPage({ children }) {
               {children}
             </div>
             <div className={css.right} ref={rightRef}>
+              {!leftLoaded && <RigthReviewsPageSkeleton itemsCount={10} />}
               {leftLoaded && (
                 <>
                   {!reviewsPage && <LateralReviews />}

@@ -1,5 +1,5 @@
 import Reviews from '@/compositions/Reviews';
-import WriteReviews from '@/compositions/WriteReviews';
+
 import css from './ReviewsPage.module.css';
 
 const ReviewsPage = () => {

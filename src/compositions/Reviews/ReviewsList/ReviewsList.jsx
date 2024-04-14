@@ -1,14 +1,16 @@
-import { Suspense } from 'react';
-
 import Rating from '@/componets/Rating';
 import Line from '@/componets/Line';
+
+import ReviewsListSkeleton from '@/componets/ReviewsListSkeleton';
+
 import formattedDate from '@/helpers/formatedDate';
 
 import css from './ReviewsList.module.css';
 
-const ReviewsList = ({ items }) => {
+const ReviewsList = ({ items, loading }) => {
   return (
     <>
+      {loading && <ReviewsListSkeleton itemsCount={10} />}
       <ul className={css.list}>
         {items &&
           items.map(({ _id: id, text, userName, lastName, rating, createdAt }) => {
