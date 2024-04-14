@@ -1,4 +1,5 @@
-import React from 'react';
+'use client';
+import { useState } from 'react';
 import SectionAdvantagesList from './SectionAdvantagesList/SectionAdvantagesList';
 
 import css from './SectionAdvantages.module.css';

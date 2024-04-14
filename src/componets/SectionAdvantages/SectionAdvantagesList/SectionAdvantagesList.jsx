@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import css from './SectionAdvantagesList.module.css';
 
-const SectionAdvantagesList = ({ title, imgUrl, description }) => {
+const SectionAdvantagesList = ({ title, imgUrl, description, handleLoad }) => {
   return (
     <>
       <div className="section-advantages_img_thumb">
