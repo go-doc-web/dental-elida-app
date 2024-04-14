@@ -1,10 +1,12 @@
 'use client';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import React, { useState } from 'react';
-import { Select, Space } from 'antd';
+import { useDispatch, useSelector } from 'react-redux';
 
 import css from './FormAddReviews.module.css';
 
-const FormAddReviews = () => {
+const FormAddReviews = ({ closeModal, showModal }) => {
+  const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     userName: '',
     lastName: '',
@@ -43,6 +45,16 @@ const FormAddReviews = () => {
         text: '',
         rating: 'defaultOption',
       });
+
+      if (showModal) {
+        closeModal();
+      }
+      // TODO Сделать свой дизайн нотифай
+      // dispatch({
+      //   type: 'SET_APP_NOTIFIER',
+      //   payload: { key: 'success', message: 'The Reviews send on moderation' },
+      // });
+      Notify.success('Thank you! Your review has been sent for moderation');
 
       // Redirect to reviews page or handle navigation as per your routing setup
     } catch (error) {
@@ -117,22 +129,6 @@ const FormAddReviews = () => {
           <option value="4">4 Stars</option>
           <option value="5">5 Stars</option>
         </select>
-        {/* <Space wrap>
-          <Select
-            defaultValue="lucy"
-            style={{ width: 260 }}
-            name={'rating'}
-            onChange={handleChange}
-            options={[
-              { value: '1', label: '1 Star' },
-              { value: '2', label: '2 Star' },
-              { value: '3', label: '3 Star' },
-              { value: '4', label: '4 Star' },
-              { value: '5', label: '5 Star' },
-              { value: 'disabled', label: 'Disabled', disabled: true },
-            ]}
-          />
-        </Space> */}
       </div>
       <button className={css.button} type="submit">
         Leave Review

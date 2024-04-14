@@ -35,7 +35,7 @@ const Reviews = () => {
     <>
       {showModal && (
         <Modal title={'Write a Review'} closeModal={closeModal}>
-          <FormAddReviews />
+          <FormAddReviews closeModal={closeModal} showModal={showModal} />
         </Modal>
       )}
       <Suspense fallback={<RigthReviewsPageSkeleton itemsCount={10} />}>

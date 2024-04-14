@@ -21,16 +21,16 @@ const AppNotifier = () => {
     dispatch({ type: 'CLOSE_APP_NOTIFIER' });
   };
 
-  useEffect(() => {
-    let timer = null;
-    if (message) {
-      timer = setTimeout(() => {
-        onClose();
-      }, 3000);
-    }
+  // useEffect(() => {
+  //   let timer = null;
+  //   if (message) {
+  //     timer = setTimeout(() => {
+  //       onClose();
+  //     }, 3000);
+  //   }
 
-    return () => clearTimeout(timer);
-  }, [message]); // eslint-disable-line
+  //   return () => clearTimeout(timer);
+  // }, [message]); // eslint-disable-line
 
   return (
     message && (

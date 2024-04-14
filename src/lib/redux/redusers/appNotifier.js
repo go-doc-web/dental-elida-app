@@ -1,16 +1,16 @@
 const initialState = {
-  message: '',
+  message: 'asasasasasasasasas sasasas',
   key: 'success',
 };
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default (state = initialState, action) => {
-  switch (action.type) {
+export default (state = initialState, { type, payload }) => {
+  switch (type) {
     case 'SET_APP_NOTIFIER':
       return {
         ...state,
-        message: action?.message,
-        key: action?.key,
+        message: payload?.message,
+        key: payload?.key,
       };
     case 'CLOSE_APP_NOTIFIER':
       return {

@@ -5,6 +5,7 @@ const Success = props => {
   const { message = '', onClose } = props;
   return (
     <div onClick={onClose} className={`${css.success} ${css.wrapper}`}>
+      <div></div>
       {message}
     </div>
   );
