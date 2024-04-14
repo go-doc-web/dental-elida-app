@@ -1,4 +1,3 @@
 export default function Loading() {
-  // You can add any UI inside Loading, including a Skeleton.
-  return <p>Loading</p>;
+  return <div style={{ display: 'flex', marginTop: '150px', height: '600px' }}>Loading...</div>;
 }

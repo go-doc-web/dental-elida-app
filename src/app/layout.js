@@ -1,4 +1,3 @@
-import { Suspense } from 'react';
 import './styles/globals.css';
 
 import { Roboto_Condensed } from 'next/font/google';
@@ -7,6 +6,7 @@ import { AntdRegistry } from '@ant-design/nextjs-registry';
 import ReduxProvider from '@/lib/Provider';
 
 import Header from '@/compositions/Header';
+
 import Footer from '@/compositions/Footer';
 import MainPage from '@/compositions/MainPage';
 import AppNotifier from '@/compositions/AppNotifier';
@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
             <Header />
 
             <main>
-              <AppNotifier />
+              {/* <AppNotifier /> */}
               <MainPage>{children}</MainPage>
             </main>
 

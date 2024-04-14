@@ -18,7 +18,7 @@ export async function POST(request) {
     await dbConnect();
     const data = await Review.create({ ...body });
 
-    return Response.json(data);
+    return Response.json({ status: 200, data });
   } catch (error) {
     console.log(error.message);
   }
