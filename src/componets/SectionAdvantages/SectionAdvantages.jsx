@@ -14,15 +14,13 @@ const SectionAdvantages = ({ items, title, spanTitle }) => {
       <ul className="section-advantages_list list">
         {items.map(item => {
           return (
-            <>
-              <li key={item.id} className="section-advantages_list-item">
-                <SectionAdvantagesList
-                  title={item.title}
-                  imgUrl={item.imgUrl}
-                  description={item.description}
-                />
-              </li>
-            </>
+            <li key={item.id} className="section-advantages_list-item">
+              <SectionAdvantagesList
+                title={item.title}
+                imgUrl={item.imgUrl}
+                description={item.description}
+              />
+            </li>
           );
         })}
       </ul>
