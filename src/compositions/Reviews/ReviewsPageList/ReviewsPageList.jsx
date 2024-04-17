@@ -15,7 +15,7 @@ const ReviewsPageList = () => {
   const [error, setError] = useState(null);
 
   const verifyReviews = useMemo(() => {
-    return reviews.map(item => item?.isisModerated);
+    return reviews.filter(item => item?.isModerated === true);
   }, [reviews]);
 
   useEffect(() => {
@@ -37,7 +37,7 @@ const ReviewsPageList = () => {
 
   // TODO Реализовать нрм лоадер
 
-  return <ReviewsList items={reviews} loading={loading} />;
+  return <ReviewsList items={verifyReviews} loading={loading} />;
 };
 
 export default ReviewsPageList;
