@@ -11,7 +11,7 @@
 
 .itemWrap {
   display: flex;
-
+  justify-content: space-between;
   gap: 21.3rem;
 }
 
@@ -111,22 +111,21 @@
   line-height: calc(24 / 16); /* 150% */
   letter-spacing: 0.32px;
 
-  border-radius: var(--button-borderRadius, 0.8rem);
+  border-radius: 0.8rem;
 
   cursor: pointer;
 }
 
-/* .postBtn {
+.postBtn {
   color: var(--post-btn-color-text, #1386c7);
   border: 1px solid var(--post-btn-color-text, #1386c7);
 }
 
-.postBtn:hover,
-.postBtn:focus {
+.postBtn:hover {
   background-color: var(--hover-post-btn, #d4ecfa);
 }
 
-.postBtn:active {
+/* .postBtn:active {
   background-color: var(--active-post-btn, #1386c7);
   color: var(--text-color-white, #ffffff);
 } */
@@ -136,12 +135,11 @@
   color: var(--delete-btn-color-text, #ef2a33);
 }
 
-.deleteBtn:hover,
-.postBtn:focus {
+.deleteBtn:hover {
   background-color: var(--hover-delete-btn, rgba(239, 42, 51, 0.15));
 }
 
-.deleteBtn:active {
+/* .deleteBtn:active {
   background-color: var(--active-delete-btn, #ef2a33);
   color: var(--text-color-white, #ffffff);
-}
+} */

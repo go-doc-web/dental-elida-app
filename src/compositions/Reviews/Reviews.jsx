@@ -38,27 +38,26 @@ const Reviews = () => {
           <FormAddReviews closeModal={closeModal} showModal={showModal} />
         </Modal>
       )}
-      <Suspense fallback={<RigthReviewsPageSkeleton itemsCount={10} />}>
-        <div className={css.wrapper}>
-          <Heading className={css.mainHeading} type="h1">
-            Verified Reviews
-          </Heading>
-          <Line className={css.line} />
-          {!showModal && <FixedBtnReviews onClick={openModal} />}
-          <ReviewsPageList />
 
-          {!isEqualWidth && (
-            <div className={css.pagination}>
-              <Pagination
-                //   showSizeChanger
-                // onShowSizeChange={onShowSizeChange}
-                defaultCurrent={3}
-                total={500}
-              />
-            </div>
-          )}
-        </div>
-      </Suspense>
+      <div className={css.wrapper}>
+        <Heading className={css.mainHeading} type="h1">
+          Verified Reviews
+        </Heading>
+        <Line className={css.line} />
+        {!showModal && <FixedBtnReviews onClick={openModal} />}
+        <ReviewsPageList />
+
+        {!isEqualWidth && (
+          <div className={css.pagination}>
+            <Pagination
+              //   showSizeChanger
+              // onShowSizeChange={onShowSizeChange}
+              defaultCurrent={3}
+              total={500}
+            />
+          </div>
+        )}
+      </div>
     </>
   );
 };
