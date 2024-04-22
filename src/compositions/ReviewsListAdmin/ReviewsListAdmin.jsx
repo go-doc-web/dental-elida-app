@@ -44,7 +44,8 @@ const ReviewsListAdmin = () => {
         // if (!data) {
         //   console.log('Error');
         // }
-        dispatch({ type: 'SET_REVIEWS', payload: data });
+
+        dispatch({ type: 'SET_REVIEWS', payload: data.data });
       } catch (error) {}
     };
     fetchReviews();

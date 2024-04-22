@@ -24,7 +24,6 @@ const ReviewsPageList = () => {
         setLoading(true);
         const { data } = await getReviewsAll();
 
-        console.log('datadata', data);
         dispatch({ type: 'SET_REVIEWS', payload: data.data });
         // setData(data);
       } catch (error) {
