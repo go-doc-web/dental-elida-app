@@ -10,7 +10,7 @@ import { paramReq } from '@/config/reviewsPage';
 import css from './ReviewsPage.module.css';
 
 const { limit } = paramReq();
-
+//TODO Обработать Error
 const ReviewsPage = () => {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(false);
