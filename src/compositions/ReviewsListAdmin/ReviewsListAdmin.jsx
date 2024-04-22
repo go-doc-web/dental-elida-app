@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import Rating from '@/componets/Rating';
 import Line from '@/componets/Line';
 
-import { getReviewsAll } from '@/api/getReviews';
-import { updateReview } from '@/api/updateReview';
+import { getReviewsAll } from '@/api/requests/getReviews';
+import { updateReview } from '@/api/requests/updateReview';
 import formattedDate from '@/helpers/formatedDate';
 
 import css from './ReviewsListAdmin.module.css';

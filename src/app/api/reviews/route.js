@@ -1,12 +1,60 @@
 import dbConnect from '@/lib/db-connect';
 import Review from '@/models/Reviews';
 
-export async function GET() {
-  try {
-    await dbConnect();
-    const data = await Review.find().sort({ createdAt: -1 });
+import { checkRatingExistence } from './checkRatingExistence.js';
 
-    return Response.json(data);
+export async function GET(request) {
+  const { searchParams } = new URL(request.url);
+  const sort = searchParams.get('sort');
+  const status = searchParams.get('status');
+  const rating = searchParams.get('rating');
+  // const limit = searchParams.get('limit');
+  const page = parseInt(searchParams.get('page')) || 1;
+  const limit = parseInt(searchParams.get('limit')) || 10;
+
+  try {
+    if (page === 1 && limit === 10 && !sort && !status && !rating) {
+      await dbConnect();
+      const totalReviews = await Review.countDocuments({});
+      const totalPages = Math.ceil(totalReviews / limit);
+      const data = await Review.find({}).sort({ createdAt: -1 });
+      return Response.json({ data, totalPages, page, totalReviews });
+    }
+
+    let query = {};
+    let sortOptions = { createdAt: -1 };
+    if (status) {
+      query.isModerated = status === 'posted' ? true : false;
+    }
+    if (rating) {
+      query.rating = rating;
+    }
+
+    if (sort === 'old') {
+      sortOptions = { createdAt: 1 };
+    }
+
+    await dbConnect();
+    const totalReviews = await Review.countDocuments(query);
+    const totalPages = Math.ceil(totalReviews / limit);
+
+    const data = await Review.find(query)
+      .sort(sortOptions)
+      .skip((page - 1) * limit)
+      .limit(limit);
+
+    if (rating) {
+      const ratingExists = await checkRatingExistence(rating);
+      if (!ratingExists) {
+        return Response.json({ status: 404, message: `No reviews found with rating ${rating}` });
+      }
+    }
+
+    if (data.length === 0) {
+      return Response.json({ status: 404, message: 'No reviews found with specified filters' });
+    }
+
+    return Response.json({ data, totalPages, page, totalReviews });
   } catch (error) {
     console.log(error.message);
   }
