@@ -1,7 +1,7 @@
 export const paramReq = (page = 1) => {
   return {
     page,
-    limit: 4,
+    limit: 5,
     status: 'posted',
   };
 };
