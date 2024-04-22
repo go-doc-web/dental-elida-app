@@ -3,14 +3,14 @@ import { useEffect, useState, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import ReviewsList from '@/compositions/Reviews/ReviewsList';
+import { getReviewsAll, getReviewsForAside } from '@/api/requests/getReviews';
+
 import css from './ReviewsPageList.module.css';
-import { getReviews } from '@/api/requests/getReviews';
 
 const ReviewsPageList = () => {
   const dispatch = useDispatch();
   const reviews = useSelector(state => state.reviews.items);
 
-  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -22,8 +22,10 @@ const ReviewsPageList = () => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const data = await getReviews();
-        dispatch({ type: 'SET_REVIEWS', payload: data });
+        const { data } = await getReviewsAll();
+
+        console.log('datadata', data);
+        dispatch({ type: 'SET_REVIEWS', payload: data.data });
         // setData(data);
       } catch (error) {
         setError(error.message); // Обработка ошибки

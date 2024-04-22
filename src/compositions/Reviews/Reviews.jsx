@@ -1,6 +1,6 @@
 'use client';
 import { useState, useMemo } from 'react';
-import { Suspense } from 'react';
+
 import { Pagination } from 'antd';
 
 import Heading from '@/componets/Heading';
