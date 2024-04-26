@@ -27,7 +27,8 @@ const FixedBtnReviews = ({ onClick }) => {
       style={{
         position: isSticky ? 'absolute' : 'fixed',
         bottom: '20px',
-        width: isSticky ? '100%' : 'calc(100% - 2rem)',
+        // width: isSticky ? '100%' : 'calc(100% - 2rem)',
+        width: 'calc(100% - 2rem)',
       }}
     >
       <span>Write Review</span>

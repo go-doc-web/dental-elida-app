@@ -28,6 +28,7 @@ export default function RootLayout({ children }) {
 
             <main>
               {/* <AppNotifier /> */}
+
               <MainPage>{children}</MainPage>
             </main>
 

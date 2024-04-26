@@ -1,7 +1,34 @@
 .wrapper {
-  display: flex;
+  /* display: flex; */
   /* height: 80vh; */
-  justify-content: space-between;
+  /* justify-content: space-between; */
+}
+
+.reviews {
+  padding: 4rem 0 5rem;
+}
+
+.reviewsTitle {
+  margin-bottom: 4rem;
+  font-size: 5.4rem;
+  font-weight: 700;
+
+  letter-spacing: 1.08px;
+  color: var(--text-color-heading-primery, #000);
+}
+
+.line {
+  margin-bottom: 20px;
+  width: 100%;
+  height: 1px;
+  background-color: #1386c7;
+}
+
+.wrapperPagination {
+  padding-top: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media screen and (min-width: 1140px) {
