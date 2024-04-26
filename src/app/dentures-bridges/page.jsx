@@ -1,7 +1,8 @@
-import React from "react";
+import React from 'react';
+import css from './page.module.css';
 
 const DenturesBridgesPage = () => {
-  return <h1>Dentures / Bridges Page </h1>;
+  return <h1>DenturesBridgesPage</h1>;
 };
 
 export default DenturesBridgesPage;
