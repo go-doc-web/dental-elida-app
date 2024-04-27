@@ -12,7 +12,7 @@ export const loginService = async (email, password) => {
     const user = await User.findOne({ email });
 
     if (!user) {
-      return { message: 'User not found', status: 401 };
+      return { status: 401, message: 'User not found' };
     }
     if (!user.password) {
       return { message: 'User not found', status: 401 };

@@ -1,5 +1,6 @@
 // 'use client';
 import { api } from '../api';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default ({ email, password }) =>
@@ -14,22 +15,23 @@ export default ({ email, password }) =>
       }
 
       if (response?.logout) {
+        Notify.info('Вы вышли из кабинета пользователя');
         localStorage.setItem('isActive', false);
         localStorage.removeItem('token');
       }
       if (response?.status === 401) {
-        dispatch({
-          type: 'SET_APP_NOTIFIER',
-          message: response?.message,
-          key: 'error',
-        });
+        Notify.failure(response.message);
+        // dispatch({
+        //   type: 'SET_APP_NOTIFIER',
+        //   payload: { message: response?.message, key: 'error' },
+        // });
       }
     } catch (error) {
       console.error(error);
-      dispatch({
-        type: 'SET_APP_NOTIFIER',
-        message: response?.message,
-        key: 'error',
-      });
+      Notify.failure(response.message);
+      // dispatch({
+      //   type: 'SET_APP_NOTIFIER',
+      //   payload: { message: response?.message, key: 'error' },
+      // });
     }
   };
