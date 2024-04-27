@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Rating from '@/componets/Rating';
 import Line from '@/componets/Line';
 
-import { getReviewsAll } from '@/api/requests/getReviews';
+// import { getReviewsAll } from '@/api/requests/getReviews';
 import { updateReview } from '@/api/requests/updateReview';
 import formattedDate from '@/helpers/formatedDate';
 
@@ -27,6 +27,7 @@ const ReviewsListAdmin = () => {
       const { data } = await updateReview({ _id, isModerated });
       console.log('res', data);
       dispatch({ type: 'PUT_REVIEWS', payload: data });
+
       // Обновляем состояние отзыва или делаем другие необходимые действия после успешного обновления
       // Можете использовать Redux для обновления списка отзывов
     } catch (error) {
@@ -37,19 +38,19 @@ const ReviewsListAdmin = () => {
     }
   };
 
-  useEffect(() => {
-    const fetchReviews = async () => {
-      try {
-        const { data } = await getReviewsAll();
-        // if (!data) {
-        //   console.log('Error');
-        // }
+  // useEffect(() => {
+  //   const fetchReviews = async () => {
+  //     try {
+  //       const { data } = await getReviewsAll();
+  //       // if (!data) {
+  //       //   console.log('Error');
+  //       // }
 
-        dispatch({ type: 'SET_REVIEWS', payload: data.data });
-      } catch (error) {}
-    };
-    fetchReviews();
-  }, [dispatch]);
+  //       dispatch({ type: 'SET_REVIEWS', payload: data.data });
+  //     } catch (error) {}
+  //   };
+  //   fetchReviews();
+  // }, [dispatch]);
 
   return (
     <div className={css.wrapper}>

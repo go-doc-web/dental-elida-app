@@ -5,7 +5,7 @@ import css from './RatingSelect.module.css';
 const handleChange = value => {
   console.log(`selected ${value}`);
 };
-const RatingSelect = () => (
+const RatingSelect = ({ handleChange }) => (
   <Space wrap>
     <Select
       defaultValue="All "
@@ -36,9 +36,8 @@ const RatingSelect = () => (
           label: '5 Stars',
         },
         {
-          value: 'disabled',
-          label: 'Disabled',
-          disabled: true,
+          value: 'all',
+          label: 'All',
         },
       ]}
     />
