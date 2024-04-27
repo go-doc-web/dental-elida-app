@@ -1,5 +1,5 @@
 const initialState = {
-  message: 'asasasasasasasasas sasasas',
+  message: '',
   key: 'success',
 };
 

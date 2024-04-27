@@ -1,5 +1,6 @@
 'use client';
 import { api } from '../api';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 // import * as routes from '@/constants/routes';
 
 // eslint-disable-next-line import/no-anonymous-default-export
@@ -27,11 +28,11 @@ export default ({ router }) =>
       }
 
       if (response?.status === 401) {
-        dispatch({
-          type: 'SET_APP_NOTIFIER',
-          message: response?.message,
-          key: 'error',
-        });
+        Notify.failure(response.message);
+        // dispatch({
+        //   type: 'SET_APP_NOTIFIER',
+        //   payload: { message: response?.message, key: 'error' },
+        // });
         if (response?.logout) {
           localStorage.removeItem('isActive');
           localStorage.removeItem('token');
@@ -40,11 +41,11 @@ export default ({ router }) =>
       }
     } catch (error) {
       console.error(error);
-      dispatch({
-        type: 'SET_APP_NOTIFIER',
-        message: response?.message,
-        key: 'error',
-      });
+      Notify.failure(response.message);
+      // dispatch({
+      //   type: 'SET_APP_NOTIFIER',
+      //   payload: { message: response?.message, key: 'error' },
+      // });
     }
   };
 
