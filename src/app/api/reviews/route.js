@@ -23,10 +23,11 @@ export async function GET(request) {
 
     let query = {};
     let sortOptions = { createdAt: -1 };
-    if (status) {
+
+    if (status && status !== 'all') {
       query.isModerated = status === 'posted' ? true : false;
     }
-    if (rating) {
+    if (rating && rating !== 'all') {
       query.rating = rating;
     }
 
@@ -43,10 +44,13 @@ export async function GET(request) {
       .skip((page - 1) * limit)
       .limit(limit);
 
-    if (rating) {
+    if (rating !== 'all') {
       const ratingExists = await checkRatingExistence(rating);
       if (!ratingExists) {
-        return Response.json({ status: 404, message: `No reviews found with rating ${rating}` });
+        return Response.json({
+          status: 404,
+          message: `No reviews found with rating ${rating}`,
+        });
       }
     }
 

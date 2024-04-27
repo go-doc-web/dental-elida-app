@@ -3,10 +3,10 @@ import React from 'react';
 import { Select, Space } from 'antd';
 
 import css from './StatusSelect.module.css';
-const handleChange = value => {
-  console.log(`selected ${value}`);
-};
-const StatusSelect = () => (
+// const handleChange = value => {
+//   console.log(`selected ${value}`);
+// };
+const StatusSelect = ({ handleChange }) => (
   <Space wrap>
     <Select
       defaultValue="All"
@@ -18,18 +18,17 @@ const StatusSelect = () => (
       onChange={handleChange}
       options={[
         {
-          value: 'Posted',
+          value: 'posted',
           label: 'Posted',
         },
         {
-          value: 'Waiting',
+          value: 'waiting',
           label: 'Waiting',
         },
 
         {
-          value: 'disabled',
-          label: 'Disabled',
-          disabled: true,
+          value: 'all',
+          label: 'All',
         },
       ]}
     />

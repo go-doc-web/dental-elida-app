@@ -1,12 +1,12 @@
 import React from 'react';
 import { Select, Space } from 'antd';
-const handleChange = value => {
-  console.log(`selected ${value}`);
-};
-const SortSelect = () => (
+// const handleChange = value => {
+//   console.log(`selected ${value}`);
+// };
+const SortSelect = ({ handleChange }) => (
   <Space wrap>
     <Select
-      defaultValue="All "
+      defaultValue=" New First"
       style={{
         width: 120,
         height: 40,
@@ -22,11 +22,10 @@ const SortSelect = () => (
           label: 'Old First',
         },
 
-        {
-          value: 'disabled',
-          label: 'Disabled',
-          disabled: true,
-        },
+        // {
+        //   value: 'all',
+        //   label: 'All',
+        // },
       ]}
     />
   </Space>
