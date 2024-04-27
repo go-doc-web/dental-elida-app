@@ -43,7 +43,7 @@ export async function GET(request) {
       .skip((page - 1) * limit)
       .limit(limit);
 
-    if (rating) {
+    if (rating !== null) {
       const ratingExists = await checkRatingExistence(rating);
       if (!ratingExists) {
         return Response.json({ status: 404, message: `No reviews found with rating ${rating}` });

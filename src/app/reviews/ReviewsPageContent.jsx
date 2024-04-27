@@ -40,8 +40,8 @@ const ReviewsPageContent = () => {
   const fetchVerifyReviewsOnPage = async page => {
     try {
       setLoading(true);
-      const { data } = await getVerifyReviewsOnPage(paramReq(page));
-      setReviews(data.data);
+      const data = await getVerifyReviewsOnPage(paramReq(page));
+      setReviews(data.data.data);
       setPagination({
         currentPage: data.page,
         totalPages: data.totalPages,
