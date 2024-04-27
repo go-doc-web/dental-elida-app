@@ -3,5 +3,6 @@ export const paramReq = (page = 1) => {
     page,
     limit: 5,
     status: 'posted',
+    rating: 'all',
   };
 };

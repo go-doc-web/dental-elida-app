@@ -43,7 +43,6 @@ export async function GET(request) {
       .sort(sortOptions)
       .skip((page - 1) * limit)
       .limit(limit);
-
     if (rating !== 'all') {
       const ratingExists = await checkRatingExistence(rating);
       if (!ratingExists) {
