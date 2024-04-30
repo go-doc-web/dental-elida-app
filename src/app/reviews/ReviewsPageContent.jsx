@@ -86,7 +86,6 @@ const ReviewsPageContent = () => {
           pageSize={limit}
         />
       </div>
-      ;
     </>
   );
 };

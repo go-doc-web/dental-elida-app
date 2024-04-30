@@ -1,6 +1,7 @@
 'use client';
 import { api } from '@/api/api';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { Pagination } from 'antd';
 
 // TODO Heading center
 // TODO Select font-size ? (разобраться как стилизовать селект)
@@ -21,7 +22,9 @@ function ReviewsManagement() {
   const dispatch = useDispatch();
   const router = useRouter();
   const { status, rating, sort } = useSelector(state => state.filtersAdmin);
-
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pageSize, setPageSize] = useState(10);
+  const [totalReviews, setTotalReviews] = useState(0);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleChangeStatus = value => {
@@ -34,27 +37,31 @@ function ReviewsManagement() {
     dispatch({ type: 'SET_SORT', payload: { sort: value } });
   };
 
-  useEffect(() => {
-    const fetchReviews = async () => {
-      try {
-        const { data } = await api.get(`/reviews?status=${status}&rating=${rating}&sort=${sort}`);
-        if (!data) {
-          console.log('Error');
-        }
+  const handlePageChange = page => {
+    setCurrentPage(page);
+    // Добавьте код для загрузки данных с новой страницы
+  };
 
-        dispatch({ type: 'SET_REVIEWS', payload: data.data });
-      } catch (error) {}
-    };
-    fetchReviews();
-  }, [dispatch, rating, sort, status]);
+  const handlePageSizeChange = (current, size) => {
+    setPageSize(size);
+    setCurrentPage(1); // Сброс текущей страницы при изменении размера страницы
+    // Добавьте код для загрузки данных с новой страницы с обновленным размером страницы
+  };
 
   useEffect(() => {
     try {
       const fetchReviews = async () => {
-        const data = await api.get(`/reviews?status=${status}&rating=${rating}&sort=${sort}`);
+        const data = await api.get(
+          `/reviews?status=${status}&rating=${rating}&sort=${sort}&page=${currentPage}&limit=${pageSize}`
+        );
+        if (!data) {
+          console.log('Error');
+        }
 
         if (data.status === 200) {
           dispatch({ type: 'SET_REVIEWS', payload: data.data.data });
+          console.log('datadata', data.data.totalReviews);
+          setTotalReviews(data.data.totalReviews);
         }
         if (data.data.status === 404) {
           Notify.info(data.data.message);
@@ -64,7 +71,7 @@ function ReviewsManagement() {
     } catch (error) {
       console.log(error.message);
     }
-  }, [dispatch, rating, sort, status]);
+  }, [currentPage, dispatch, pageSize, rating, sort, status]);
 
   useEffect(() => {
     const key = localStorage.getItem('isActive');
@@ -109,6 +116,16 @@ function ReviewsManagement() {
           <ReviewsListAdmin />
         </section>
       )}
+      <div className={css.wrapperPagination}>
+        <Pagination
+          showSizeChanger
+          onShowSizeChange={handlePageSizeChange}
+          onChange={handlePageChange}
+          current={currentPage}
+          total={totalReviews}
+          pageSize={pageSize}
+        />
+      </div>
     </>
   );
 }

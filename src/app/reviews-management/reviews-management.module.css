@@ -1,5 +1,5 @@
 .reviewsSection {
-  padding: 3.3rem 1.5rem 4rem;
+  padding: 3.3rem 0rem 4rem;
 }
 
 .filter {
@@ -41,4 +41,11 @@
 
 .reviewsWrapper {
   display: flex;
+}
+
+.wrapperPagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4rem;
 }
