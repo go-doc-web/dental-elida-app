@@ -2,12 +2,12 @@ import React from 'react';
 import Image from 'next/image';
 import css from './SectionAdvantagesList.module.css';
 
-const SectionAdvantagesList = ({ title, imgUrl, description, handleLoad }) => {
+const SectionAdvantagesList = ({ title, image, description, handleLoad }) => {
   return (
     <>
       <div className="section-advantages_img_thumb">
         <Image
-          src={imgUrl}
+          src={image}
           alt={title}
           width={335}
           height={335}

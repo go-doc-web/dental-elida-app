@@ -17,7 +17,7 @@ const SectionAdvantages = ({ items, title, spanTitle }) => {
             <li key={item.id} className="section-advantages_list-item">
               <SectionAdvantagesList
                 title={item.title}
-                imgUrl={item.imgUrl}
+                image={item.image}
                 description={item.description}
               />
             </li>
