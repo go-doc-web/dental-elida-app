@@ -20,32 +20,27 @@ import css from './reviews-management.module.css';
 function ReviewsManagement() {
   const dispatch = useDispatch();
   const router = useRouter();
+  const { status, rating, sort } = useSelector(state => state.filtersAdmin);
 
-  const [status, setStatus] = useState('all');
-  const [rating, setRating] = useState('all');
-  const [sort, setSort] = useState('new');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleChangeStatus = value => {
-    console.log(`selected ${value}`);
-    setStatus(value);
+    dispatch({ type: 'SET_STATUS', payload: { status: value } });
   };
   const handleChangeRating = value => {
-    setRating(value);
-    console.log(`selected ${value}`);
+    dispatch({ type: 'SET_RATING', payload: { rating: value } });
   };
   const handleChangeSort = value => {
-    setSort(value);
-    console.log(`selected ${value}`);
+    dispatch({ type: 'SET_SORT', payload: { sort: value } });
   };
 
   useEffect(() => {
     const fetchReviews = async () => {
       try {
         const { data } = await api.get(`/reviews?status=${status}&rating=${rating}&sort=${sort}`);
-        // if (!data) {
-        //   console.log('Error');
-        // }
+        if (!data) {
+          console.log('Error');
+        }
 
         dispatch({ type: 'SET_REVIEWS', payload: data.data });
       } catch (error) {}
@@ -57,7 +52,7 @@ function ReviewsManagement() {
     try {
       const fetchReviews = async () => {
         const data = await api.get(`/reviews?status=${status}&rating=${rating}&sort=${sort}`);
-        console.log(data);
+
         if (data.status === 200) {
           dispatch({ type: 'SET_REVIEWS', payload: data.data.data });
         }
