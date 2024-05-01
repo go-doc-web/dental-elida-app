@@ -39,13 +39,11 @@ function ReviewsManagement() {
 
   const handlePageChange = page => {
     setCurrentPage(page);
-    // Добавьте код для загрузки данных с новой страницы
   };
 
   const handlePageSizeChange = (current, size) => {
     setPageSize(size);
-    setCurrentPage(1); // Сброс текущей страницы при изменении размера страницы
-    // Добавьте код для загрузки данных с новой страницы с обновленным размером страницы
+    setCurrentPage(1);
   };
 
   useEffect(() => {

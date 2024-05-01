@@ -1,4 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 'use client';
+import { api } from '@/api/api';
 
 import React, { useState, useEffect } from 'react';
 
@@ -11,23 +13,18 @@ import FormAddReviews from '@/compositions/FormAddReviews';
 import Line from '@/componets/Line';
 import { getVerifyReviewsOnPage } from '@/api/requests/getVerifyReviewsOnPage';
 import useViewportWidth from '@/hooks/useViewportWidth';
-import { paramReq } from '@/config/reviewsPage';
-import css from './ReviewsPage.module.css';
 
-const { limit } = paramReq();
+import css from './ReviewsPage.module.css';
 
 const ReviewsPageContent = () => {
   const { isEqualWidth } = useViewportWidth({ expect: 1140 });
   const [showModal, setShowModal] = useState(false);
   const [reviews, setReviews] = useState([]);
   const [pageSize, setPageSize] = useState(10);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalReviews, setTotalReviews] = useState(0);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-  const [pagination, setPagination] = useState({
-    currentPage: 1,
-    totalPages: 1,
-    totalReviews: 0,
-  });
 
   const openModal = () => {
     setShowModal(true);
@@ -41,13 +38,13 @@ const ReviewsPageContent = () => {
   const fetchVerifyReviewsOnPage = async page => {
     try {
       setLoading(true);
-      const { data } = await getVerifyReviewsOnPage(paramReq(page, pageSize));
+      const { data } = await api.get(
+        `/reviews?status=posted&rating=all&sort=new&page=${currentPage}&limit=${pageSize}`
+      );
+      console.log('dadat', data.totalReviews);
+      console.log('dadat', data);
       setReviews(data.data);
-      setPagination({
-        currentPage: data.page,
-        totalPages: data.totalPages,
-        totalReviews: data.totalReviews,
-      });
+      setTotalReviews(data.totalReviews);
     } catch (error) {
       setError(error.message);
     } finally {
@@ -56,16 +53,16 @@ const ReviewsPageContent = () => {
   };
 
   useEffect(() => {
-    fetchVerifyReviewsOnPage(1); // Получение первой страницы изначально
-  }, []);
+    fetchVerifyReviewsOnPage(currentPage);
+  }, [currentPage]);
 
   const handlePageChange = page => {
-    fetchVerifyReviewsOnPage(page);
+    setCurrentPage(page);
   };
 
   const handlePageSizeChange = (current, size) => {
     setPageSize(size);
-    // setPagination(pagination.currentPage);
+    setCurrentPage(1);
   };
   return (
     <>
@@ -82,9 +79,9 @@ const ReviewsPageContent = () => {
           showSizeChanger
           onShowSizeChange={handlePageSizeChange}
           onChange={handlePageChange}
-          current={pagination.currentPage}
-          total={pagination.totalReviews}
-          pageSize={limit}
+          current={currentPage}
+          total={totalReviews}
+          pageSize={pageSize}
         />
       </div>
     </>
