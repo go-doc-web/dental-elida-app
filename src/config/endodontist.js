@@ -9,7 +9,7 @@ import whenIcon4 from '@/assets/endodonist/icon_4.svg';
 
 export const hero = {
   title: 'Endodontist',
-  spanTitle: ' Services at Elida Dental Care',
+  spanTitle: 'Services at Elida Dental Care',
   description:
     'Welcome to Elida Dental Care, where we prioritize your oral health with specialized care. Our dedicated team of skilled Endodontists is here to provide expert solutions for complex dental issues related to the pulp and nerves of your teeth.',
 };
@@ -17,7 +17,7 @@ export const hero = {
 // Section Choose
 
 export const sectionChoose = {
-  title: 'Why choose ',
+  title: 'Why choose',
   spanTitle: 'Our Endodontist Services?',
 };
 

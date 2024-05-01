@@ -20,6 +20,7 @@ const ReviewsPageContent = () => {
   const { isEqualWidth } = useViewportWidth({ expect: 1140 });
   const [showModal, setShowModal] = useState(false);
   const [reviews, setReviews] = useState([]);
+  const [pageSize, setPageSize] = useState(10);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [pagination, setPagination] = useState({
@@ -40,7 +41,7 @@ const ReviewsPageContent = () => {
   const fetchVerifyReviewsOnPage = async page => {
     try {
       setLoading(true);
-      const { data } = await getVerifyReviewsOnPage(paramReq(page));
+      const { data } = await getVerifyReviewsOnPage(paramReq(page, pageSize));
       setReviews(data.data);
       setPagination({
         currentPage: data.page,
@@ -62,9 +63,9 @@ const ReviewsPageContent = () => {
     fetchVerifyReviewsOnPage(page);
   };
 
-  const handlePageSizeChange = (current, pageSize) => {
-    // Обработка изменения размера страницы при необходимости
-    console.log(current, pageSize);
+  const handlePageSizeChange = (current, size) => {
+    setPageSize(size);
+    // setPagination(pagination.currentPage);
   };
   return (
     <>
