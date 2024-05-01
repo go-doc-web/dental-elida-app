@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import ReviewsListSkeleton from '@/componets/ReviewsListSkeleton';
 import FormAddReviews from '@/compositions/FormAddReviews';
 import ReviewsList from '@/compositions/Reviews/ReviewsList';
 import { getReviewsAll, getReviewsForAside } from '@/api/requests/getReviews';
@@ -36,8 +37,14 @@ const ReviewsPageList = () => {
     fetchData();
   }, [dispatch, setLoading]);
 
-  // TODO Реализовать нрм лоадер
-  if (verifyReviews.length === 0) {
+  // TODO Реализовать нрм лоаде
+  if (loading) {
+    return <ReviewsListSkeleton itemsCount={10} />;
+  }
+  if (!loading && verifyReviews.length > 0) {
+    return <ReviewsList items={verifyReviews} loading={loading} />;
+  }
+  if (!loading && verifyReviews.length === 0) {
     return (
       <>
         <p className={css.noReviews}>No Reviews...</p>
@@ -45,7 +52,7 @@ const ReviewsPageList = () => {
       </>
     );
   }
-  return <ReviewsList items={verifyReviews} loading={loading} />;
-};
 
+  // return <ReviewsList items={verifyReviews} loading={loading} />;
+};
 export default ReviewsPageList;
