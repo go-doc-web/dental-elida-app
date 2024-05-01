@@ -41,9 +41,8 @@ const ReviewsPageContent = () => {
       const { data } = await api.get(
         `/reviews?status=posted&rating=all&sort=new&page=${currentPage}&limit=${pageSize}`
       );
-      console.log('dadat', data.totalReviews);
-      console.log('dadat', data);
-      setReviews(data.data);
+
+      setReviews(data.data || []);
       setTotalReviews(data.totalReviews);
     } catch (error) {
       setError(error.message);
@@ -72,8 +71,10 @@ const ReviewsPageContent = () => {
         </Modal>
       )}
       {!showModal && <FixedBtnReviews onClick={openModal} />}
-      {loading && <ReviewsListSkeleton itemsCount={10} />}
-      {!loading && <ReviewsList items={reviews} />}
+
+      {!loading && reviews.length === 0 && <p className={css.noReviews}>No Reviews ...</p>}
+      {loading && reviews.length > 0 && <ReviewsListSkeleton itemsCount={10} />}
+      {!loading && reviews.length > 0 && <ReviewsList items={reviews} />}
       <div className={css.wrapperPagination}>
         <Pagination
           showSizeChanger

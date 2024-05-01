@@ -4,3 +4,14 @@
   align-items: flex-start;
   justify-content: center;
 }
+
+.noReviews {
+  color: rgba(0, 0, 0, 0.6);
+  color: rgba(199, 17, 17, 0.6);
+
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.32px;
+}

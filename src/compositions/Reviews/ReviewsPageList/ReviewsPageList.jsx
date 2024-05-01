@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
+import FormAddReviews from '@/compositions/FormAddReviews';
 import ReviewsList from '@/compositions/Reviews/ReviewsList';
 import { getReviewsAll, getReviewsForAside } from '@/api/requests/getReviews';
 
@@ -37,7 +37,14 @@ const ReviewsPageList = () => {
   }, [dispatch, setLoading]);
 
   // TODO Реализовать нрм лоадер
-
+  if (verifyReviews.length === 0) {
+    return (
+      <>
+        <p className={css.noReviews}>No Reviews...</p>
+        <FormAddReviews />
+      </>
+    );
+  }
   return <ReviewsList items={verifyReviews} loading={loading} />;
 };
 

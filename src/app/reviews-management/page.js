@@ -58,7 +58,7 @@ function ReviewsManagement() {
 
         if (data.status === 200) {
           dispatch({ type: 'SET_REVIEWS', payload: data.data.data });
-          console.log('datadata', data.data.totalReviews);
+
           setTotalReviews(data.data.totalReviews);
         }
         if (data.data.status === 404) {
