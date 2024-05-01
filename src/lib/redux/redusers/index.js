@@ -4,6 +4,7 @@ import { reviews } from './reviewsReduser';
 import user from './user';
 import appNotifier from './appNotifier';
 import filtersAdmin from './filters';
+import loadingReviews from './loadingReviews';
 // import app from './app';
 
 export default combineReducers({
@@ -13,4 +14,5 @@ export default combineReducers({
   filtersAdmin,
   user,
   appNotifier,
+  loadingReviews,
 });

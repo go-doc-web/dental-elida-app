@@ -41,5 +41,6 @@
 
   .right:hover {
     overflow-y: auto;
+    padding-right: 2.8rem;
   }
 }

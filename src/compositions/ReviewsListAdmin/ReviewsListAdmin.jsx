@@ -15,10 +15,10 @@ const ReviewsListAdmin = () => {
   const reviews = useSelector(state => state.reviews.items);
   const dispatch = useDispatch();
 
-  const [loading, setIsLoading] = useState(false);
+  // const [loading, setIsLoading] = useState(false);
 
   const handleUpdateReview = async ({ _id, isModerated }) => {
-    setIsLoading(true);
+    // setIsLoading(true);
     try {
       if (!_id) {
         throw new Error('Review ID is missing');
@@ -34,7 +34,7 @@ const ReviewsListAdmin = () => {
       // Обрабатываем ошибку
       console.error('Error updating review:', error);
     } finally {
-      setIsLoading(false);
+      // setIsLoading(false);
     }
   };
 

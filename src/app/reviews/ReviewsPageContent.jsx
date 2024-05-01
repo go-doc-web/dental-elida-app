@@ -23,7 +23,7 @@ const ReviewsPageContent = () => {
   const [pageSize, setPageSize] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalReviews, setTotalReviews] = useState(0);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
   const openModal = () => {
@@ -50,19 +50,19 @@ const ReviewsPageContent = () => {
       setLoading(false);
     }
   };
-
-  useEffect(() => {
-    fetchVerifyReviewsOnPage(currentPage);
-  }, [currentPage]);
+  const handlePageSizeChange = (current, size) => {
+    setPageSize(size);
+    setCurrentPage(1);
+  };
 
   const handlePageChange = page => {
     setCurrentPage(page);
   };
 
-  const handlePageSizeChange = (current, size) => {
-    setPageSize(size);
-    setCurrentPage(1);
-  };
+  useEffect(() => {
+    fetchVerifyReviewsOnPage(currentPage);
+  }, [currentPage, pageSize]);
+
   return (
     <>
       {showModal && (
@@ -72,8 +72,8 @@ const ReviewsPageContent = () => {
       )}
       {!showModal && <FixedBtnReviews onClick={openModal} />}
 
-      {!loading && reviews.length === 0 && <p className={css.noReviews}>No Reviews ...</p>}
-      {loading && reviews.length > 0 && <ReviewsListSkeleton itemsCount={10} />}
+      {loading || (reviews.length === 0 && <p className={css.noReviews}>No Reviews ...</p>)}
+      {loading && <ReviewsListSkeleton itemsCount={10} />}
       {!loading && reviews.length > 0 && <ReviewsList items={reviews} />}
       <div className={css.wrapperPagination}>
         <Pagination
