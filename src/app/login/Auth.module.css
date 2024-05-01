@@ -1,7 +1,22 @@
-.wrapper {
+.page {
+  min-height: 80vh;
+  background-image: url('../../assets/america_2.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 90vh;
+}
+.wrapper {
+  /* border: 1px solid #1386c7; */
+  border-radius: 8px;
+  background-color: #1386c7; /* Цвет фона формы */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Тень */
+  padding: 40px;
+  margin: 0 auto;
+  /* margin-top: 150px; */
+  /* justify-content: center; */
+  /* width: 30%; */
+  max-width: 320px;
 }

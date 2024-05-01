@@ -1,6 +1,6 @@
 /* eslint-disable import/no-anonymous-default-export */
 const initialState = {
-  loading: false,
+  loading: true,
 };
 
 export default (state = initialState, { type, payload }) => {
