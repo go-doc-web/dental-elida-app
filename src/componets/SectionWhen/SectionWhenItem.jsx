@@ -8,8 +8,8 @@ const SectionWhenItem = ({ title, icon }) => {
         <Image
           src={icon}
           alt={title}
-          width={32}
-          height={32}
+          width={36}
+          // height={32}
           // className="section-img"
           sizes="100vw"
           priority={true}

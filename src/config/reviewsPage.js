@@ -1,7 +1,7 @@
-export const paramReq = (page = 1) => {
+export const paramReq = (page = 1, pageSize) => {
   return {
     page,
-    limit: 5,
+    limit: pageSize,
     status: 'posted',
     rating: 'all',
   };

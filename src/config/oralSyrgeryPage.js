@@ -8,7 +8,7 @@ export const hero = {
 // Section Choose
 
 export const sectionChoose = {
-  title: 'Why choose ',
+  title: 'Why choose',
   spanTitle: 'our Oral Surgery Services:',
 };
 
