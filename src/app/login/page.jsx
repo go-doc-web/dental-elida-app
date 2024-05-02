@@ -6,27 +6,38 @@ import LoginForm from './LoginForm';
 
 const Login = () => {
   const route = useRouter();
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(true);
+  const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
+    // setLoading(true);
     const active = localStorage.getItem('isActive');
     if (active) {
-      setLoading(true);
+      setIsActive(true);
       route.push('/reviews-management');
-      setLoading(false);
+      // setLoading(false);
     }
-  }, [route]);
+  }, [route, isActive]);
 
   return (
     <>
+      {/* {loading} && <p>Loading</p> */}
+      {!isActive && (
+        <div className={css.page}>
+          <div className={css.wrapper}>
+            <LoginForm />
+          </div>
+        </div>
+      )}
+
+      {/* {loading && <p>Loading...</p>}
       <div className={css.page}>
-        {loading && <p>Loading...</p>}
-        {!loading && (
+        {!isActive && (
           <div className={css.wrapper}>
             <LoginForm />
           </div>
         )}
-      </div>
+      </div> */}
     </>
   );
 };

@@ -1,3 +1,12 @@
+.menuAdminList {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.menuAdminLink {
+  position: relative;
+}
+
 .linkItem {
   color: #fff;
 
@@ -6,4 +15,15 @@
   font-weight: 400;
   line-height: normal;
   letter-spacing: 0.064rem;
+}
+
+.activeMenu {
+  position: absolute;
+  /* margin-top: 0.2rem; */
+  width: 2.4rem;
+  height: 0.2rem;
+  bottom: -0.4rem;
+  left: 0;
+
+  background-color: var(--accent-color, #f8f387);
 }
