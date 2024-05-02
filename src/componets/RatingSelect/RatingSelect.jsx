@@ -2,9 +2,7 @@ import React from 'react';
 import { Select, Space } from 'antd';
 
 import css from './RatingSelect.module.css';
-const handleChange = value => {
-  console.log(`selected ${value}`);
-};
+const handleChange = value => {};
 const RatingSelect = ({ handleChange }) => (
   <Space wrap>
     <Select

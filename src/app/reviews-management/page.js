@@ -1,5 +1,5 @@
 'use client';
-import { Suspense } from 'react';
+
 import { api } from '@/api/api';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { Pagination } from 'antd';
@@ -110,11 +110,10 @@ function ReviewsManagement() {
               </div>
             </div>
           </div>
-          <Suspense fallback={<p>Loading feed...</p>}>
-            <div className={css.wrapperList}>
-              {loading ? <ReviewsListSkeleton count={10} /> : <ReviewsListAdmin />}
-            </div>
-          </Suspense>
+
+          <div className={css.wrapperList}>
+            {loading ? <ReviewsListSkeleton count={10} /> : <ReviewsListAdmin />}
+          </div>
 
           {!loading && (
             <div className={css.wrapperPagination}>

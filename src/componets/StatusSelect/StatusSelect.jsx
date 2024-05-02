@@ -3,9 +3,7 @@ import React from 'react';
 import { Select, Space } from 'antd';
 
 import css from './StatusSelect.module.css';
-// const handleChange = value => {
-//   console.log(`selected ${value}`);
-// };
+
 const StatusSelect = ({ handleChange }) => (
   <Space wrap>
     <Select

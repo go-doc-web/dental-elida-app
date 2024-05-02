@@ -14,10 +14,6 @@ import useViewportWidth from '@/hooks/useViewportWidth';
 
 import css from './Reviews.module.css';
 
-// const onShowSizeChange = (current, pageSize) => {
-//   console.log(current, pageSize);
-// };
-
 const Reviews = () => {
   const { isEqualWidth } = useViewportWidth({ expect: 1140 });
   const [showModal, setShowModal] = useState(false);

@@ -1,8 +1,6 @@
 import React from 'react';
 import { Select, Space } from 'antd';
-// const handleChange = value => {
-//   console.log(`selected ${value}`);
-// };
+
 const SortSelect = ({ handleChange }) => (
   <Space wrap>
     <Select

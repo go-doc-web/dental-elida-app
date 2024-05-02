@@ -23,13 +23,10 @@ const ReviewsListAdmin = () => {
       if (!_id) {
         throw new Error('Review ID is missing');
       }
-      // Отправляем запрос на обновление отзыва
-      const { data } = await updateReview({ _id, isModerated });
-      console.log('res', data);
-      dispatch({ type: 'PUT_REVIEWS', payload: data });
 
-      // Обновляем состояние отзыва или делаем другие необходимые действия после успешного обновления
-      // Можете использовать Redux для обновления списка отзывов
+      const { data } = await updateReview({ _id, isModerated });
+
+      dispatch({ type: 'PUT_REVIEWS', payload: data });
     } catch (error) {
       // Обрабатываем ошибку
       console.error('Error updating review:', error);
@@ -37,20 +34,6 @@ const ReviewsListAdmin = () => {
       // setIsLoading(false);
     }
   };
-
-  // useEffect(() => {
-  //   const fetchReviews = async () => {
-  //     try {
-  //       const { data } = await getReviewsAll();
-  //       // if (!data) {
-  //       //   console.log('Error');
-  //       // }
-
-  //       dispatch({ type: 'SET_REVIEWS', payload: data.data });
-  //     } catch (error) {}
-  //   };
-  //   fetchReviews();
-  // }, [dispatch]);
 
   return (
     <div className={css.wrapper}>

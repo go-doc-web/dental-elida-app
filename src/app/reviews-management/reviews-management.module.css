@@ -1,5 +1,6 @@
 .reviewsSection {
   padding: 3.3rem 0rem 4rem;
+  min-height: 100vh;
 }
 
 .filter {
