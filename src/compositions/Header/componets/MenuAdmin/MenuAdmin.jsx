@@ -11,7 +11,7 @@ const items = [
 
 const MenuAdmin = () => {
   const pathname = usePathname();
-  console.log('pathname', pathname);
+
   return (
     <ul className={css.menuAdminList}>
       {items.map(({ id, title, link }) => {

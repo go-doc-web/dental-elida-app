@@ -16,7 +16,7 @@ function Menu({ menuItems }) {
   useEffect(() => {
     setIsMenuVisible(true); // Показываем меню после определения ширины экрана
     const isActive = localStorage.getItem('isActive');
-    console.log('data', isActive);
+
     if (!isActive) {
       setMenuItemsState([...menuItems]);
     }
