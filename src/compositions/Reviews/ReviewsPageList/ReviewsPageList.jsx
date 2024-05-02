@@ -16,7 +16,8 @@ const ReviewsPageList = () => {
   const [error, setError] = useState(null);
 
   const verifyReviews = useMemo(() => {
-    return reviews.filter(item => item?.isModerated === true);
+    const reviewsFiltered = reviews.filter(item => item?.isModerated === true);
+    return reviewsFiltered.slice(0, 10);
   }, [reviews]);
 
   useEffect(() => {

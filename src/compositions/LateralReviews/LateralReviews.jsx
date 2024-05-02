@@ -9,11 +9,9 @@ import css from './LateralReviews.module.css';
 
 const LateralReviews = () => {
   const reviews = useSelector(state => state.reviews.items);
-  const filteredReviews = reviews.filter(review => review.isModerated === true);
 
-  let viewAllButton = '';
-
-  if (filteredReviews.length > 6) {
+  let viewAllButton;
+  if (reviews.length > 6) {
     viewAllButton = (
       <a className={css.viewsAllLink} href="/reviews">
         View all
@@ -26,7 +24,7 @@ const LateralReviews = () => {
         Verified Reviews
       </Heading>
       <Line className={css.line} />
-      <ReviewsPageList />
+      <ReviewsPageList filteredReviewsSlice />
       {viewAllButton}
     </section>
   );
