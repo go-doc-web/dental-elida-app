@@ -64,9 +64,9 @@ export const sectionWhen = {
 
 export const sectionWhenList = [
   { id: '1', title: 'Bleeding or swollen gums', icon: whenIcon1 },
-  { id: '1', title: 'Persistent bad breath', icon: whenIcon2 },
-  { id: '1', title: 'Receding gums or changes in gum texture', icon: whenIcon3 },
-  { id: '1', title: 'Loose teeth or changes in bite', icon: whenIcon4 },
+  { id: '2', title: 'Persistent bad breath', icon: whenIcon2 },
+  { id: '3', title: 'Receding gums or changes in gum texture', icon: whenIcon3 },
+  { id: '4', title: 'Loose teeth or changes in bite', icon: whenIcon4 },
 ];
 
 // DontDelay

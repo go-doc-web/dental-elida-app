@@ -63,9 +63,9 @@ export const sectionWhen = {
 
 export const sectionWhenList = [
   { id: '1', title: 'Persistent tooth pain or sensitivity', icon: whenIcon1 },
-  { id: '1', title: 'Swelling or tenderness around the gums', icon: whenIcon2 },
-  { id: '1', title: 'Pimple on the gums', icon: whenIcon3 },
-  { id: '1', title: 'Discoloration or darkening of a tooth', icon: whenIcon4 },
+  { id: '2', title: 'Swelling or tenderness around the gums', icon: whenIcon2 },
+  { id: '3', title: 'Pimple on the gums', icon: whenIcon3 },
+  { id: '4', title: 'Discoloration or darkening of a tooth', icon: whenIcon4 },
 ];
 
 // DontDelay
