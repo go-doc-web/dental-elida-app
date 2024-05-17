@@ -9,7 +9,7 @@ export const hero = {
 
 export const sectionChoose = {
   title: 'Why choose',
-  spanTitle: 'our Oral Surgery Services:',
+  spanTitle: 'Our Pediatric Services?',
 };
 
 // List Choose
