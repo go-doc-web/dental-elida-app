@@ -25,8 +25,8 @@ export const pages = [
   },
   {
     id: '5',
-    title: 'Pediatrics',
-    link: '/pediatrics',
+    title: 'Pediatric',
+    link: '/pediatric',
     src: '/img/main/img_5.jpg',
   },
   {
