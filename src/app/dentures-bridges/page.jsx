@@ -1,10 +1,10 @@
 import React from 'react';
 import SectionHero from '@/componets/SectionHero';
-import SectionAdvantages from '@/componets/SectionAdvantages';
+
 import SectionOurServices from '@/componets/SectionOurServices';
 import DontDelay from '@/componets/DontDelay';
 
-import { hero, dontDelay, sectionDenturesServices } from '@/config/bridjes';
+import { hero, dontDelay, sectionDenturesServices, sectionBridjesServices } from '@/config/bridjes';
 const DenturesBridgesPage = () => {
   return (
     <>
@@ -12,13 +12,13 @@ const DenturesBridgesPage = () => {
 
       <SectionOurServices
         title="Our"
-        spanTitle="Dentures Services"
+        spanTitle="Bridges Services"
         items={sectionDenturesServices}
       />
       <SectionOurServices
         title="Our"
         spanTitle="Dentures Services"
-        items={sectionDenturesServices}
+        items={sectionBridjesServices}
       />
 
       <DontDelay
