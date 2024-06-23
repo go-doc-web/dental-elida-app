@@ -57,13 +57,13 @@ export const sectionServises = [
   },
   {
     id: '2',
-    title: `Comprehensive TMJ Evaluation`,
+    title: `Customized Treatment Plans`,
     description: `Understanding that TMJ disorders vary from person to person, we develop personalized treatment plans tailored to your specific condition and symptoms. Our goal is to provide targeted and effective relief for your TMJ pain.`,
   },
   {
     id: '3',
-    title: `Comprehensive TMJ Evaluation`,
-    description: `Our TMJ evaluation begins with a thorough examination of your jaw, bite, and facial muscles. We use advanced diagnostic tools, including digital imaging and 3D scans, to accurately identify the underlying causes of your TMJ disorder.`,
+    title: `Non-Surgical Treatment`,
+    description: `We offer a range of non-surgical treatments designed to alleviate TMJ symptoms and restore normal jaw function. These treatments may include:`,
     nestedList: [
       {
         id: '1',
