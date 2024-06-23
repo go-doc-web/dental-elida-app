@@ -2,9 +2,8 @@ import React from 'react';
 import css from './SectionOurServices.module.css';
 
 import ListItem from './ListItem/ListItem';
-import { sectionServises } from '@/config/tmj';
 
-const SectionOurServices = ({ title, spanTitle }) => {
+const SectionOurServices = ({ title, spanTitle, items }) => {
   return (
     <section className={css.section}>
       <h2 className="section-title ">
@@ -12,7 +11,7 @@ const SectionOurServices = ({ title, spanTitle }) => {
         <span> {spanTitle}</span>
       </h2>
 
-      <ListItem items={sectionServises} />
+      <ListItem items={items} />
     </section>
   );
 };
