@@ -1,7 +1,7 @@
 import React from 'react';
 import css from './SectionOurServices.module.css';
 
-import ListItem from './ListItem/listItem';
+import ListItem from './ListItem/ListItem';
 import { sectionServises } from '@/config/tmj';
 
 const SectionOurServices = ({ title, spanTitle }) => {
