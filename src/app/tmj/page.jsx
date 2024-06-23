@@ -5,7 +5,7 @@ import SectionAdvantages from '@/componets/SectionAdvantages';
 import SectionOurServices from '@/componets/SectionOurServices';
 import DontDelay from '@/componets/DontDelay';
 
-import { hero, sectionChoose, sectionChooseList, dontDelay } from '@/config/tmj';
+import { hero, sectionChoose, sectionChooseList, dontDelay, sectionServises } from '@/config/tmj';
 
 const TMJPage = () => {
   return (
@@ -16,7 +16,7 @@ const TMJPage = () => {
         title={sectionChoose.title}
         spanTitle={sectionChoose.spanTitle}
       />
-      <SectionOurServices title="Our" spanTitle="TMJ Services" />
+      <SectionOurServices title="Our" spanTitle="TMJ Services" items={sectionServises} />
 
       <DontDelay
         spanFirst={dontDelay.spanFirst}
