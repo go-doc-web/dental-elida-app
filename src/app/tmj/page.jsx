@@ -1,3 +1,5 @@
+//YODO FUCK
+
 import SectionHero from '@/componets/SectionHero';
 import SectionAdvantages from '@/componets/SectionAdvantages';
 import SectionOurServices from '@/componets/SectionOurServices';
