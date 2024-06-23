@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SectionHero = ({ title, spanTitle, description }) => {
+const SectionHero = ({ title, spanTitle, description, wrapperCss }) => {
   return (
     <section className="section section-hero">
       <h1 className="section-hero__title">
