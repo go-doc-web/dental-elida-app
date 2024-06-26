@@ -58,10 +58,10 @@ export const sectionWhen = {
 };
 
 export const sectionWhenList = [
-  { id: '1', title: 'Traditional Braces', icon: whenIcon1 },
-  { id: '2', title: 'Early Orthodontic Intervention', icon: whenIcon2 },
-  { id: '3', title: 'Adult Orthodontics', icon: whenIcon3 },
-  { id: '4', title: 'Orthodontic Retention', icon: whenIcon4 },
+  { id: '1', title: 'Teeth Whitening', icon: whenIcon1 },
+  { id: '2', title: 'Dental Bonding', icon: whenIcon2 },
+  { id: '3', title: 'Cosmetic Dental Crowns', icon: whenIcon3 },
+  { id: '4', title: 'Gum Contouring', icon: whenIcon4 },
 ];
 
 // DontDelay
