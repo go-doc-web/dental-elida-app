@@ -1,0 +1,79 @@
+.sectionInsurance {
+  padding-bottom: 6.4rem;
+}
+
+.wrapperLists {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.insuranceTitle {
+  margin-bottom: 4rem;
+}
+
+.elementInsurance h2 {
+  margin-bottom: 2.4rem;
+  color: #1386c7;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.32px;
+}
+
+.list {
+}
+
+.listItem {
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.listItem:last-child {
+  margin-bottom: 0;
+}
+
+.itemText {
+  display: inline-block;
+  color: #000;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.32px;
+}
+
+.circle {
+  width: 8px;
+  height: 8px;
+  background-color: #1386c7;
+  border-radius: 50%;
+}
+
+.mauchMore {
+  margin-top: 7.3rem;
+  color: #1386c7;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.32px;
+}
+
+@media screen and (min-width: 768px) {
+  .wrapperLists {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    max-width: 57.7rem;
+  }
+  .insuranceTitle {
+    text-align: left;
+  }
+}
