@@ -132,8 +132,8 @@
   letter-spacing: 0.32px;
 }
 
-.dont-delay {
-  max-width: 56.3rem;
+.dont-delay,
+.contact-us-today {
   color: #000000b2;
 
   font-size: 16px;
@@ -177,6 +177,9 @@
 
   .when-list_item {
     flex-basis: calc((100% - 2.4rem) / 2);
+  }
+  .section-title-contacts {
+    font-size: 22px;
   }
 }
 
@@ -269,5 +272,12 @@
   }
   .when-list_item:nth-last-child(-n + 2) {
     margin-bottom: 0;
+  }
+  .dont-delay,
+  .contact-us-today {
+    max-width: 56.3rem;
+  }
+  .section-title-contacts {
+    margin-bottom: 3.2rem;
   }
 }
