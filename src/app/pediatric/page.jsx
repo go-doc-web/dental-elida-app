@@ -9,7 +9,7 @@ import { hero, sectionChoose, sectionChooseList, dontDelay } from '@/config/pedi
 const PediatricPage = () => {
   return (
     <>
-      <SectionHero title={hero.title} spanTitle={hero.spanTitle} description={hero.description} />
+      <SectionHero {...hero} />
       <SectionAdvantages
         title={sectionChoose.title}
         spanTitle={sectionChoose.spanTitle}

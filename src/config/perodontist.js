@@ -10,7 +10,8 @@ import whenIcon4 from '@/assets/perodontist/icon_4.svg';
 
 export const hero = {
   title: 'Periodontist',
-  spanTitle: 'Services at Elida Dental Care',
+  spanTitle1: 'Services',
+  spanTitle2: 'at Elida Dental Care',
   description:
     'Welcome to Elida Dental Care, where our dedicated team of Periodontists is committed to providing specialized care for your gum health. Periodontal health is crucial for maintaining a strong foundation for your teeth, and our expert Periodontists are here to offer a range of services tailored to address your unique needs.',
 };

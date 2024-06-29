@@ -6,7 +6,8 @@ import chooseImg4 from '@/assets/endodonist/choose_4.jpg';
 
 export const hero = {
   title: 'TMJ',
-  spanTitle: 'Services at Elida Dental Care',
+  spanTitle1: 'Services',
+  spanTitle2: 'at Elida Dental Care',
   description: `Welcome to Elida Dental Care, where we specialize in diagnosing and treating temporomandibular joint (TMJ) disorders. Our dedicated team of dental professionals is committed to providing effective solutions to alleviate your jaw pain and improve your quality of life.`,
 };
 

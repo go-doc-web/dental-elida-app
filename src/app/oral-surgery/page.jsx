@@ -8,7 +8,7 @@ import { hero, sectionChoose, sectionChooseList } from '@/config/oralSyrgeryPage
 const OralSurgeryPage = () => {
   return (
     <>
-      <SectionHero title={hero.title} spanTitle={hero.spanTitle} description={hero.description} />
+      <SectionHero {...hero} />
       <SectionAdvantages
         title={sectionChoose.title}
         spanTitle={sectionChoose.spanTitle}

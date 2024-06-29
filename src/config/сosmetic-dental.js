@@ -9,7 +9,8 @@ import whenIcon4 from '@/assets/cosmetic/icon_4.svg';
 
 export const hero = {
   title: 'Cosmetic Dental',
-  spanTitle: ' Services at Elida Dental Care',
+  spanTitle1: 'Services',
+  spanTitle2: 'at Elida Dental Care',
   description: `Welcome to Elida Dental Care, where we specialize in enhancing smiles through a wide range of cosmetic dental services. Our experienced team of dental professionals is dedicated to helping you achieve the beautiful, confident smile you’ve always wanted.`,
 };
 
