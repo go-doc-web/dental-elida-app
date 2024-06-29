@@ -9,7 +9,8 @@ import whenIcon4 from '@/assets/orthodontist/icon_4.svg';
 
 export const hero = {
   title: 'Orthodontist',
-  spanTitle: 'Services at Elida Dental Care',
+  spanTitle1: 'Services',
+  spanTitle2: 'at Elida Dental Care',
   description: `Welcome to Elida Dental Care, where our orthodontic services are tailored to transform smiles and enhance confidence. With our team of skilled orthodontists and state-of-the-art technology, we're committed to providing you with the highest quality orthodontic care.`,
 };
 

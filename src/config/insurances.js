@@ -1,6 +1,7 @@
 export const hero = {
   title: 'Insurances',
-  spanTitle: 'Services at Elida Dental Care',
+  spanTitle1: 'Services',
+  spanTitle2: 'at Elida Dental Care',
   description: `Welcome to Elida Dental Care, where we specialize in restoring smiles with state-of-the-art dental implants. Our experienced team is dedicated to providing you with the highest quality of care, ensuring that your dental implant experience is comfortable, efficient, and life-changing.`,
 };
 

@@ -6,7 +6,8 @@ import chooseImg3 from '@/assets/pediatric/choose_3.jpg';
 import chooseImg4 from '@/assets/pediatric/choose_4.jpg';
 export const hero = {
   title: 'Pediatric',
-  spanTitle: 'Services at Elida Dental Care',
+  spanTitle1: 'Services',
+  spanTitle2: 'at Elida Dental Care',
   description: `Welcome to Elida Dental Care, where we specialize in providing gentle and comprehensive dental care for children of all ages. Our pediatric dentistry services are designed to create positive dental experiences and lay the foundation for a lifetime of healthy smiles.`,
 };
 

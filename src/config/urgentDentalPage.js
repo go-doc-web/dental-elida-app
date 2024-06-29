@@ -9,7 +9,9 @@ import whenIcon4 from '@/assets/urgent-dental/icon_4.svg';
 
 export const hero = {
   title: 'Urgent Dental Care',
-  spanTitle: 'at Elida Dental Care',
+  spanTitle1: '',
+  spanTitle2: 'at Elida Dental Care',
+
   description: `We understand that when you're in pain or facing a dental crisis, immediate attention and compassionate care are paramount. That's why we've dedicated ourselves to providing a haven where your urgent dental care needs are met promptly and with the utmost professionalism.`,
 };
 

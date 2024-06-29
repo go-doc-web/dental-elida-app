@@ -6,7 +6,8 @@ import chooseImg4 from '@/assets/endodonist/choose_4.jpg';
 
 export const hero = {
   title: 'Dentures/Bridges',
-  spanTitle: 'Services at Elida Dental Care',
+  spanTitle1: 'Services',
+  spanTitle2: 'at Elida Dental Care',
   description: `Welcome to Elida Dental Care, where we offer expert solutions for tooth replacement through our high-quality dentures and bridges. Our dedicated team of dental professionals is committed to helping you regain a functional and beautiful smile`,
 };
 
