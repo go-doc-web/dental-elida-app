@@ -1,8 +1,8 @@
 //TODO Change img/jpg in production
-import chooseImg1 from '@/assets/endodonist/choose_1.jpg';
-import chooseImg2 from '@/assets/endodonist/choose_2.jpg';
-import chooseImg3 from '@/assets/endodonist/choose_3.jpg';
-import chooseImg4 from '@/assets/endodonist/choose_4.jpg';
+import chooseImg1 from '@/assets/perodontist/choose_1.jpg';
+import chooseImg2 from '@/assets/perodontist/choose_2.jpg';
+import chooseImg3 from '@/assets/perodontist/choose_3.jpg';
+import chooseImg4 from '@/assets/perodontist/choose_4.jpg';
 import whenIcon1 from '@/assets/perodontist/icon_1.svg';
 import whenIcon2 from '@/assets/perodontist/icon_2.svg';
 import whenIcon3 from '@/assets/perodontist/icon_3.svg';
