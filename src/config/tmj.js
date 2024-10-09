@@ -1,8 +1,8 @@
 //TODO Change img/jpg in production
-import chooseImg1 from '@/assets/endodonist/choose_1.jpg';
-import chooseImg2 from '@/assets/endodonist/choose_2.jpg';
-import chooseImg3 from '@/assets/endodonist/choose_3.jpg';
-import chooseImg4 from '@/assets/endodonist/choose_4.jpg';
+import chooseImg1 from '@/assets/tmj/choose_1.jpg';
+import chooseImg2 from '@/assets/tmj/choose_2.jpg';
+import chooseImg3 from '@/assets/tmj/choose_3.jpg';
+import chooseImg4 from '@/assets/tmj/choose_4.jpg';
 
 export const hero = {
   title: 'TMJ',
