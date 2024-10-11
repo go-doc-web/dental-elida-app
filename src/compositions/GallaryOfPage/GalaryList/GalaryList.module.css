@@ -7,9 +7,7 @@
 .card {
   flex-basis: calc((100% - 1.5rem) / 2);
   width: 100%;
-
   border-radius: 1.2rem;
-
   background: var(--card-bg, #e4f3fc);
   overflow: hidden;
 }

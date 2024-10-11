@@ -1,76 +1,89 @@
+import main1 from '../assets/images/img_1.jpg';
+import main2 from '../assets/images/img_2.jpg';
+import main3 from '../assets/images/img_3.jpg';
+import main4 from '../assets/images/img_4.jpg';
+import main5 from '../assets/images/img_5.jpg';
+import main6 from '../assets/images/img_6.jpg';
+import main7 from '../assets/images/img_7.png';
+import main8 from '../assets/images/img_8.jpg';
+import main9 from '../assets/images/img_9.jpg';
+import main10 from '../assets/images/img_10.jpg';
+import main11 from '../assets/images/img_11.jpg';
+import main12 from '../assets/images/img_12.jpg';
+
 export const pages = [
   {
     id: '1',
     title: 'Oral Surgery',
     link: '/oral-surgery',
-    src: '/img/main/img_1.jpg',
+    src: main1,
   },
   {
     id: '2',
     title: 'Endodontist',
     link: '/endodontist',
-    src: '/img/main/img_2.jpg',
+    src: main2,
   },
   {
     id: '3',
     title: 'Periodontist',
     link: '/periodontist',
-    src: '/img/main/img_3.jpg',
+    src: main3,
   },
   {
     id: '4',
     title: 'Urgent Dental Care',
     link: '/urgent-dental-care',
-    src: '/img/main/img_4.jpg',
+    src: main4,
   },
   {
     id: '5',
     title: 'Pediatric',
     link: '/pediatric',
-    src: '/img/main/img_5.jpg',
+    src: main5,
   },
   {
     id: '6',
     title: 'Orthodontist',
     link: '/orthodontist',
-    src: '/img/main/img_6.jpg',
+    src: main6,
   },
   {
     id: '7',
     title: 'TMJ',
     link: '/tmj',
-    src: '/img/main/img_7.jpg',
+    src: main7,
   },
   {
     id: '8',
     title: 'Cosmetic Dentist',
     link: '/cosmetic-dentist',
-    src: '/img/main/img_8.jpg',
+    src: main8,
   },
   {
     id: '9',
     title: 'Dentures / Bridges',
     link: '/dentures-bridges',
-    src: '/img/main/img_9.jpg',
+    src: main9,
   },
   {
     id: '10',
     title: 'Implants',
     link: '/implants',
-    src: '/img/main/img_10.jpg',
+    src: main10,
   },
 
   {
     id: '11',
     title: 'Insurances',
     link: '/insurances',
-    src: '/img/main/img_11.jpg',
+    src: main11,
   },
   {
     id: '12',
     title: 'Reviews',
     link: '/reviews',
-    src: '/img/main/img_12.jpg',
+    src: main12,
   },
 ];
 

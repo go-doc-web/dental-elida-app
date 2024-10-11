@@ -1,3 +1,8 @@
+import img1 from '../assets/images/img_13.jpg';
+import img2 from '../assets/images/img_14.jpg';
+import img3 from '../assets/images/img_15.jpg';
+import img4 from '../assets/images/img_16.jpg';
+
 export const hero = {
   title: 'Oral Surgery',
   spanTitle1: 'Services',

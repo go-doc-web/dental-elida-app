@@ -1,9 +1,9 @@
 // Pediatric Page
 
-import chooseImg1 from '@/assets/pediatric/choose_1.jpg';
-import chooseImg2 from '@/assets/pediatric/choose_2.jpg';
-import chooseImg3 from '@/assets/pediatric/choose_3.jpg';
-import chooseImg4 from '@/assets/pediatric/choose_4.jpg';
+import chooseImg1 from '@/assets/images/img_13.jpg';
+import chooseImg2 from '@/assets/images/img_21.jpg';
+import chooseImg3 from '@/assets/images/img_16.jpg';
+import chooseImg4 from '@/assets/images/img_22.jpg';
 export const hero = {
   title: 'Pediatric',
   spanTitle1: 'Services',
