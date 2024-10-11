@@ -1,5 +1,15 @@
 .thumb {
+  max-width: 100%;
+}
+
+.thumb img {
+  max-width: 100%;
   width: 100%;
+  height: auto;
+  display: block;
+
+  height: 114px;
+  object-fit: cover;
 }
 
 .titleBlock {
@@ -23,6 +33,11 @@
     font-size: 1.6rem;
 
     letter-spacing: 0.016rem;
+  }
+
+  .thumb img {
+    height: 148px;
+    object-fit: cover;
   }
 }
 @media screen and (min-width: 1140px) {
