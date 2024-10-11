@@ -28,7 +28,7 @@ const BurgerMenu = () => {
 
   return (
     <>
-      <button className={css.hamburger} type="button" onClick={openMenu}>
+      <button className={css.hamburger} type="button" onClick={openMenu} aria-label="burger menu">
         <Hamburger color={'white'} />
       </button>
       <div className={isOpen ? `${css.menu} ${css.open}` : css.menu}>
@@ -82,8 +82,8 @@ const BurgerMenu = () => {
             </div>
             <div className={css.wrapperAddress}>
               <Location />
-              <a className={css.linkAddress} href={'#'}>
-                {constans.location}
+              <a className={css.linkAddress} href={constans.location.addressLink} target="_blank">
+                {constans.location.address}
               </a>
             </div>
           </div>

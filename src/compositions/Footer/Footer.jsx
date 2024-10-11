@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import logo from '@/assets/icons/Logo.svg';
+import removeDashInTelNumber from '@/helpers';
 
 import css from './Footer.module.css';
 
@@ -28,8 +29,12 @@ const Footer = () => {
           <div className="container">
             <div className={css.wrapper}>
               <div className={css.wrapperAddress}>
-                <span className={css.tel}>{constans.numberTel}</span>
-                <span className={css.address}>{constans.location}</span>
+                <a href={`tel:${removeDashInTelNumber(constans.numberTel)}`}>
+                  <span className={css.tel}>{constans.numberTel}</span>
+                </a>
+                <a href={constans.location.addressLink} target="_blank" className={css.address}>
+                  {constans.location.address}
+                </a>
               </div>
 
               <div className={css.thumb}>

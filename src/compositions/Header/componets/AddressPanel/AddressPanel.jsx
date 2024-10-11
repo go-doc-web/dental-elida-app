@@ -18,9 +18,9 @@ const AddressPanel = () => {
       </div>
       <div className={css.wrapperAddress}>
         <Location />
-        <Link className={css.linkAddress} href={'#'}>
-          {constans.location}
-        </Link>
+        <a className={css.linkAddress} href={constans.location.addressLink} target="_blank">
+          {constans.location.address}
+        </a>
       </div>
     </div>
   );
