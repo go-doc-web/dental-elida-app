@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { getAltreTitle } from '@/helpers/getAltreTitle';
 import css from './SectionAdvantagesList.module.css';
 
 const SectionAdvantagesList = ({ title, image, description, handleLoad }) => {
@@ -8,7 +9,7 @@ const SectionAdvantagesList = ({ title, image, description, handleLoad }) => {
       <div className="section-advantages_img_thumb">
         <Image
           src={image}
-          alt={title}
+          alt={getAltreTitle(title)}
           width={335}
           height={335}
           className="section-img"
